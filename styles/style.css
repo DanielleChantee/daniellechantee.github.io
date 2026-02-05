@@ -1,0 +1,413 @@
+/* Body */
+html, body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Skip Navigation Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--bg-black);
+  color: var(--text-white);
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 10000;
+  font-weight: 600;
+  border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--text-white);
+  outline-offset: 2px;
+}
+
+main {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    scroll-behavior: auto;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Text */
+li,
+a,
+span,
+p,
+label,
+input,
+textarea,
+button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+/* Button */
+.btn {
+  text-decoration: none;
+  background-color: var(--bg-black);
+  border: none;
+  color: var(--text-white);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  margin: 5px;
+  border-radius: 40px;
+  transition: background-color 0.4s, outline 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, color var(--transition-normal);
+  font-weight: 500;
+  min-height: 44px;
+  min-width: 120px;
+}
+
+/* Primary CTA - More prominent */
+.btn-primary {
+  background-color: var(--bg-black);
+  font-weight: 600;
+  font-size: 16px;
+  padding: 14px 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-gray-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Secondary CTA - Less prominent */
+.btn-secondary {
+  background-color: rgba(0, 0, 0, 0.7);
+  font-weight: 400;
+  font-size: 14px;
+  padding: 12px 24px;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(0, 0, 0, 0.85);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  background-color: var(--color-gray-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:focus {
+  outline: 3px solid var(--text-white);
+  outline-offset: 3px;
+  background-color: var(--color-gray-dark);
+}
+
+.btn:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--text-white);
+  outline-offset: 3px;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Loading state for buttons */
+.btn.loading {
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+}
+
+.btn.loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: var(--text-white);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button Glow Effect - subtle, non-animated */
+.glow-black {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.glow-white {
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  animation: glowwhite 2s infinite alternate;
+}
+
+@keyframes glowwhite {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+  }
+}
+
+.content-section {
+  background-color: var(--bg-black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  transition: background-color var(--transition-normal);
+  padding: 48px 24px;
+}
+
+@media (max-width: 768px) {
+  .content-section {
+    padding: 32px 16px;
+  }
+}
+
+.content-section .content {
+  color: var(--text-white);
+  max-width: 800px;
+  padding: 0 20px;
+  margin: 0 auto;
+  transition: color var(--transition-normal);
+  width: 100%;
+}
+
+.content-section .button-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.content-section .button-row .btn {
+  background-color: var(--bg-white);
+  color: var(--text-black);
+  margin-bottom: 0;
+  padding: 12px 24px;
+  min-height: 44px;
+  min-width: 120px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+.content-section .button-row .btn.btn-primary {
+  background-color: var(--bg-black);
+  color: var(--text-white);
+  padding: 14px 32px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.content-section .button-row .btn.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--text-black);
+  padding: 12px 24px;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .content-section .button-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .content-section .button-row .btn {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 15px;
+  }
+}
+
+/* Typography - center aligned site-wide */
+.content h1,
+.content h2 {
+  font-size: 40px;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 24px;
+}
+
+.content p {
+  text-align: center;
+}
+
+.content-section .content {
+  text-align: center;
+}
+
+.content-section .content h1,
+.content-section .content h2 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-section .content p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hero banners only - center for focal impact */
+.image-banner h1 {
+  font-size: 40px;
+  text-align: center;
+}
+
+.image-banner h2 {
+  font-size: 24px;
+  text-align: center;
+}
+
+.image-banner p {
+  font-size: 16px;
+  text-align: center;
+}
+
+.image-banner h2,
+.image-banner p {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content h2 {
+  max-width: 700px;
+}
+
+.content p {
+  max-width: 700px;
+}
+
+/* CTA sections - center aligned */
+.cta-section .content,
+.cta-section .content p,
+.cta-section .content h2 {
+  text-align: center;
+}
+
+.cta-section .content h2,
+.cta-section .content p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-section .button-row {
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .content h1,
+  .image-banner h1 {
+    font-size: 36px;
+  }
+  
+  .content h2,
+  .image-banner h2 {
+    font-size: 18px;
+  }
+  
+  .content-section .content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content h1,
+  .image-banner h1 {
+    font-size: 28px;
+  }
+  
+  .content h2,
+  .image-banner h2 {
+    font-size: 16px;
+  }
+}
+
+/* Image Optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Prevent layout shift for lazy-loaded images */
+img[loading="lazy"] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* Responsive images */
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+/* Footer */
+footer {
+  background-color: var(--bg-gray-light);
+  padding: 24px 20px;
+  margin: 0;
+  text-align: center;
+  transition: background-color var(--transition-normal);
+}
+
+footer p {
+  margin: 12px 0 0 0;
+  text-align: center;
+}

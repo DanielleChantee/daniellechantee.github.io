@@ -1,0 +1,237 @@
+.client-work-image-banner {
+  background-image: url("../images/pexels-darina-belonogova-8003994.jpg");
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Scoped to client-work banner only (Services, About, Work) - prevents index.css override */
+.client-work-image-banner .image-banner-content {
+  color: var(--text-black);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.88);
+  padding: 24px 20px;
+  box-sizing: border-box;
+  transition: color var(--transition-normal);
+}
+
+.client-work-image-banner h1 {
+  font-size: 50px;
+  margin-bottom: 10px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.client-work-image-banner h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.client-work-image-banner p {
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+.client-work-image-banner .button-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.client-work-image-banner .button-row .btn {
+  text-decoration: none;
+  background-color: var(--bg-black);
+  color: var(--text-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 40px;
+  transition: background-color 0.4s, color var(--transition-normal);
+}
+.client-work-image-banner .button-row .btn:hover {
+  background-color: var(--color-gray-dark);
+}
+
+/* Recent Clients */
+.recent-clients a {
+  color: var(--text-black);
+  transition: color var(--transition-normal);
+}
+
+/* Clients */
+.client-section {
+  width: calc(100% - 40px);
+  margin: auto;
+}
+
+.client-row {
+  margin: 20px auto;
+}
+
+.client-heading,
+.client-subheading {
+  font-family: "DM Sans", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.client-heading {
+  font-size: 28px;
+  margin-top: 50px;
+}
+.client-subheading {
+  margin-bottom: 50px;
+}
+
+.client-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+a .client-image {
+  width: 100%;
+}
+
+a .client-image,
+.client-image {
+  max-width: 500px;
+  height: auto;
+}
+
+.client-text-wrapper {
+  width: 50%;
+  max-width: 500px;
+}
+
+.client-heading-text-wrapper {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 5px;
+}
+
+.client-text-heading {
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+
+.client-text {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  width: 100%;
+}
+
+.image-left {
+  order: -1; /* Keep image on the left */
+  margin-right: 20px;
+}
+
+.image-right {
+  order: 1; /* Keep image on the right */
+  margin-left: 20px;
+}
+
+.text-right {
+  order: 1;
+  margin-left: 20px;
+}
+
+.text-left {
+  order: -1;
+  margin-right: 20px;
+}
+
+@media (max-width: 768px) {
+  .client-content {
+    flex-direction: column;
+  }
+
+  .client-image,
+  .client-text {
+    width: calc(100% - 20px); /* Make each element take full width */
+    margin: 10px auto;
+  }
+
+  .client-text-wrapper {
+    width: 100%;
+  }
+
+  .image-left,
+  .image-right,
+  .text-left,
+  .text-right {
+    order: unset; /* Reset order */
+  }
+}
+
+/* -------------------- */
+/* Featured Clients */
+#featured-clients {
+  margin: auto;
+  max-width: 1200px;
+}
+
+#featured-clients img {
+  width: 300px;
+  height: 300px;
+}
+
+/* -------- */
+
+#featured-clients .splide__track {
+  padding: 0 20px;
+}
+#featured-clients .splide__slide img {
+  max-width: 500px;
+  max-height: 500px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#featured-clients .splide__slide p,
+#featured-clients .splide__slide a {
+  height: max-content;
+  width: max-content;
+}
+
+#featured-clients .splide__slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#featured-clients .splide__slide p {
+  color: var(--text-black);
+  transition: color var(--transition-normal);
+}
+
+#featured-clients .splide__arrow {
+  opacity: 0;
+}
+
+#featured-clients.splide:hover .splide__arrow {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  #featured-clients .splide__arrow {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Dynamic Meta Description -->
+    <meta
+      name="description"
+      content="{% if page.description %}{{ page.description | escape }}{% else %}Danielle Adeyemo, Product Engineer building scalable systems through frontend development and Shopify web development. Specialising in custom theme development, Shopify 2.0, Liquid coding, and e-commerce solutions. Offering expert services to optimise your Shopify store.{% endif %}"
+    />
+
+    <!-- Canonical URL -->
+    {% assign site_url = "https://daniellechantee.github.io" %}
+    {% assign base_url = site_url | append: site.baseurl %}
+    {% if page.permalink %}
+      {% assign canonical_url = base_url | append: page.permalink %}
+    {% elsif page.url %}
+      {% assign canonical_url = base_url | append: page.url %}
+    {% else %}
+      {% assign canonical_url = base_url %}
+    {% endif %}
+    <link rel="canonical" href="{{ canonical_url }}" />
+
+    <!-- Open Graph / Facebook -->
+    {% assign og_title = page.title | default: "Danielle Adeyemo - Product Engineer" %}
+    {% assign og_description = page.description | default: "Product Engineer building scalable systems through frontend development and Shopify web development." %}
+    {% if page.image %}
+      {% if page.image contains "http" %}
+        {% assign og_image = page.image %}
+      {% else %}
+        {% assign img_path = page.image %}
+        {% assign first_char = page.image | slice: 0, 1 %}
+        {% if first_char != "/" %}
+          {% assign img_path = "/" | append: page.image %}
+        {% endif %}
+        {% assign og_image = base_url | append: img_path %}
+      {% endif %}
+    {% else %}
+      {% assign og_image = base_url | append: "/images/profile-picture.jpeg" %}
+    {% endif %}
+    {% assign og_type = page.type | default: "website" %}
+    <meta property="og:type" content="{{ og_type }}" />
+    <meta property="og:url" content="{{ canonical_url }}" />
+    <meta property="og:title" content="{{ og_title | escape }}" />
+    <meta property="og:description" content="{{ og_description | escape }}" />
+    <meta property="og:image" content="{{ og_image }}" />
+    <meta property="og:site_name" content="Danielle Adeyemo - Product Engineer" />
+    <meta property="og:locale" content="en_GB" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="{{ canonical_url }}" />
+    <meta name="twitter:title" content="{{ og_title | escape }}" />
+    <meta name="twitter:description" content="{{ og_description | escape }}" />
+    <meta name="twitter:image" content="{{ og_image }}" />
+    <meta name="twitter:creator" content="@danielleadeyemo" />
+
+    <link
+      rel="shortcut icon"
+      href="{{ '/images/logos/logo-white-small.jpg' | relative_url }}"
+      type="image/x-icon"
+    />
+    <link rel="manifest" href="{{ "/manifest.json" | relative_url }}">
+    <meta name="theme-color" content="#000000">
+    <title>{{ page.title }}</title>
+    <!-- CSS Variables - must load first -->
+    <link rel="stylesheet" href="{{ "/styles/variables.css" | relative_url }}">
+    <!-- Base styles (buttons, content-section, etc.) -->
+    <link rel="stylesheet" href="{{ "/styles/style.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/styles/header.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/styles/footer.css" | relative_url }}">
+    <!-- Page-specific styles last so they can override base -->
+    {% include styles.html %}
+    <!-- SPLIDE -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <!-- AOS - Animate On Scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </head>
+  <body>
+    <!-- Skip Navigation Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    {% include header.html %}
+
+    <main id="main-content">{{ content }}</main>
+
+    <!-- Footer -->
+    {% include footer.html %}
+
+    <!-- Scripts -->
+    <script src="{{ '/scripts/scripts.js' | relative_url }}"></script>
+    <script>
+      // Initialize AOS (Animate On Scroll)
+      AOS.init({
+        duration: 800,
+        once: true
+      });
+
+      // Initialize Carousels on Page Load
+      document.addEventListener('DOMContentLoaded', function() {
+        const carousels = document.querySelectorAll('.carousel');
+        carousels.forEach(carousel => {
+          const slides = carousel.querySelectorAll('.slide');
+          const prevBtn = carousel.querySelector('.prev');
+          const nextBtn = carousel.querySelector('.next');
+          let currentIndex = 0;
+
+          const showSlide = (index) => {
+            slides.forEach((slide, i) => {
+              slide.classList.toggle('active', i === index);
+            });
+          };
+
+          if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+              currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+              showSlide(currentIndex);
+            });
+
+            nextBtn.addEventListener('click', () => {
+              currentIndex = (currentIndex + 1) % slides.length;
+              showSlide(currentIndex);
+            });
+
+            showSlide(currentIndex);
+          }
+        });
+      });
+    </script>

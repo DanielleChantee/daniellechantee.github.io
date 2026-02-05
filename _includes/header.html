@@ -1,0 +1,176 @@
+<!-- <header>
+  <nav>
+    <a href="index.html"
+      ><div class="logo">
+        <img src="./images/logos/logo-black.jpg" alt="logo" /></div
+    ></a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="client-work.html">Client Work</a></li> -->
+<!-- <li><a href="services.html">Services</a></li> -->
+<!-- <li><a href="design.html">Design</a></li> -->
+<!-- <li><a href="projects.html">Projects</a></li> -->
+<!-- <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header> -->
+<header>
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="{{ '/' | relative_url }}" aria-label="Home - Danielle Portfolio">
+      <div class="logo">
+        <img
+          src="{{ '/images/logos/logo-white-small.jpg' | relative_url }}"
+          alt="Danielle portfolio logo"
+        />
+      </div>
+    </a>
+    <!-- Desktop Menu -->
+    <ul class="desktop-menu" role="menubar">
+      <li role="none"><a href="{{ '/' | relative_url }}" role="menuitem">Home</a></li>
+      <li role="none"><a href="{{ '/services.html' | relative_url }}" role="menuitem">Services</a></li>
+      <li role="none"><a href="{{ '/about.html' | relative_url }}" role="menuitem">About</a></li>
+      <li class="has-mega-menu" role="none">
+        <a
+          href="{{ '/work.html' | relative_url }}"
+          role="menuitem"
+          aria-haspopup="true"
+          aria-expanded="false"
+          >Work</a
+        >
+        <div class="mega-menu" role="menu" aria-label="Work submenu">
+          <div class="mega-menu-content">
+            <div class="mega-menu-column">
+              <h3>Featured Projects</h3>
+              <ul role="list">
+                <li role="none">
+                  <a
+                    href="{{ '/work.html#fudge' | relative_url }}"
+                    class="mega-menu-item"
+                    role="menuitem"
+                  >
+                    <img
+                      src="{{ '/images/fudge-kitchen-image-square.jpg' | relative_url }}"
+                      alt="Vantrue project"
+                      class="mega-menu-thumbnail"
+                    />
+                    <span>Fudge Kitchen</span>
+                  </a>
+                </li>
+                <li role="none">
+                  <a
+                    href="{{ '/work.html#esl' | relative_url }}"
+                    class="mega-menu-item"
+                    role="menuitem"
+                  >
+                    <img
+                      src="{{ '/images/tuplus-image.jpg' | relative_url }}"
+                      alt="Tuplus project"
+                      class="mega-menu-thumbnail"
+                    />
+                    <span>ESL</span>
+                  </a>
+                </li>
+                <li role="none">
+                  <a
+                    href="{{ '/work.html#pets' | relative_url }}"
+                    class="mega-menu-item"
+                    role="menuitem"
+                  >
+                    <img
+                      src="{{ '/images/pets-purest-image-square.jpg' | relative_url }}"
+                      alt="Pets Purest project"
+                      class="mega-menu-thumbnail"
+                    />
+                    <span>Pets Purest</span>
+                  </a>
+                </li>
+                <li role="none">
+                  <a
+                    href="{{ '/work.html#adios' | relative_url }}"
+                    class="mega-menu-item"
+                    role="menuitem"
+                  >
+                    <img
+                      src="{{ '/images/esl-image-square.jpg' | relative_url }}"
+                      alt="ESL Shop project"
+                      class="mega-menu-thumbnail"
+                    />
+                    <span>Adios Plastic</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="mega-menu-column">
+              <h3>Project Types</h3>
+              <ul role="list">
+                <li role="none">
+                  <a href="{{ '/work.html' | relative_url }}" role="menuitem">All Work</a>
+                </li>
+                <li role="none">
+                  <a href="{{ '/work.html#theme-development' | relative_url }}" role="menuitem"
+                    >Theme Development</a
+                  >
+                </li>
+                <li role="none">
+                  <a href="{{ '/work.html#ux-debugging' | relative_url }}" role="menuitem"
+                    >UX Debugging</a
+                  >
+                </li>
+                <li role="none">
+                  <a href="{{ '/work.html#custom-sections' | relative_url }}" role="menuitem"
+                    >Custom Sections</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="mega-menu-column">
+              <h3>View All</h3>
+              <ul role="list">
+                <li role="none">
+                  <a href="{{ '/work.html' | relative_url }}" class="mega-menu-cta" role="menuitem"
+                    >Browse Portfolio</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li role="none"><a href="{{ '/working-with-me.html' | relative_url }}" role="menuitem">Working With Me</a></li>
+      <li role="none"><a href="{{ '/contact.html' | relative_url }}" role="menuitem">Contact</a></li>
+    </ul>
+    <!-- Hamburger Menu Button -->
+    <button
+      class="hamburger"
+      aria-label="Open mobile menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+    <!-- Mobile Menu Backdrop -->
+    <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+    <!-- Mobile Menu Wrapper -->
+    <div
+      class="mobile-menu-wrapper"
+      id="mobile-menu"
+      role="navigation"
+      aria-label="Mobile navigation"
+    >
+      <div class="menu-header">
+        <button class="close" aria-label="Close menu">&times;</button>
+      </div>
+      <ul class="mobile-menu" role="menubar">
+        <li role="none"><a href="{{ '/' | relative_url }}" role="menuitem">Home</a></li>
+        <li role="none"><a href="{{ '/services.html' | relative_url }}" role="menuitem">Services</a></li>
+        <li role="none"><a href="{{ '/about.html' | relative_url }}" role="menuitem">About</a></li>
+        <li role="none"><a href="{{ '/work.html' | relative_url }}" role="menuitem">Work</a></li>
+        <li role="none"><a href="{{ '/working-with-me.html' | relative_url }}" role="menuitem">Working With Me</a></li>
+        <li role="none"><a href="{{ '/contact.html' | relative_url }}" role="menuitem">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,31 @@
+<article
+  class="hover-gallery-card"
+  style="background-image: url('{{ include.image }}')"
+>
+  <div class="hover-gallery-card-overlay">
+    <h4>{{ include.subtitle }}</h4>
+    <h2>{{ include.title }}</h2>
+    <p>{{ include.description }}</p>
+  </div>
+
+  <div class="hover-gallery-card-hover">
+    <p>{{ include.details }}</p>
+  </div>
+
+  <div class="hover-gallery-card-footer">
+    <div class="hover-meta">
+      <img src="https://placehold.co/28x28" alt="icon" />
+      <div class="text">
+        <span>ThemeKit</span>
+        <span>$Free</span>
+      </div>
+    </div>
+    <a
+      href="{{ include.link }}"
+      class="hover-view-btn"
+      target="_blank"
+      rel="noopener noreferrer"
+      >View</a
+    >
+  </div>
+</article>

@@ -1,0 +1,47 @@
+- title: Vantrue Store
+  subtitle: Shopify Theme
+  description: Custom Shopify theme development tailored for Vantrue's product line.
+  details: Led the design and implementation of a fully responsive Shopify theme optimised for tech retail and conversion best practices.
+  image: https://placehold.co/600x400
+  link: https://vantrue.com
+  type: hover
+
+- title: Amerlife Redesign
+  subtitle: Shopify Redesign
+  description: Complete redesign and UX overhaul for Amerlife.
+  details: Improved navigation and conversion through research-based UX updates and theme restructuring.
+  image: https://placehold.co/600x400
+  link: https://amerlife.com
+  type: hover
+
+- title: EcoGear Integration
+  subtitle: Shopify Integration
+  description: Integrated third-party inventory and shipping tools for EcoGear.
+  details: Custom API work and syncing external logistics solutions with Shopify's ecosystem.
+  image: https://placehold.co/600x400
+  link: https://ecogear.com
+  type: hover
+
+- title: Urban Threads
+  subtitle: Fashion Theme Customisation
+  description: Bespoke theme tweaks for Urban Threads' fashion collections.
+  details: Created custom sections and upsell features to support fast-moving inventory and seasonal drops.
+  image: https://placehold.co/600x400
+  link: https://urbanthreads.com
+  type: hover
+
+- title: Pure Beauty
+  subtitle: Shopify Plus Build
+  description: High-converting beauty store built on Shopify Plus.
+  details: Included multi-region setup, Shopify Markets configuration, and B2B logic.
+  image: https://placehold.co/600x400
+  link: https://purebeauty.com
+  type: popup
+
+- title: TechNova Gadgets
+  subtitle: Shopify Theme Customisation
+  description: Gadget store built with high interaction UI for product demos.
+  details: Integrated video-rich landing sections and scroll-based animations.
+  image: https://placehold.co/600x400
+  link: https://technova.com
+  type: popup

@@ -1,0 +1,30 @@
+---
+layout: null
+---
+{
+  "name": "Danielle Adeyemo - Product Engineer Portfolio",
+  "short_name": "Danielle Portfolio",
+  "description": "Product Engineer building scalable systems through frontend development and Shopify web development",
+  "start_url": "{{ site.baseurl | append: '/' }}",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "{{ site.baseurl | append: '/images/logos/logo-white-small.jpg' }}",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "{{ site.baseurl | append: '/images/logos/logo-white-small.jpg' }}",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "product-engineer"],
+  "lang": "en-GB",
+  "dir": "ltr"
+}

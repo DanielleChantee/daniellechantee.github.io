@@ -1,0 +1,104 @@
+.hover-gallery-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+}
+
+.hover-gallery-card:hover {
+  transform: translateY(-4px);
+}
+
+.hover-gallery-card-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1.25rem;
+  color: white;
+}
+
+.hover-gallery-card-overlay h4 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.875rem;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.hover-gallery-card-overlay h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  margin: 0.25rem 0;
+}
+
+.hover-gallery-card-overlay p {
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.hover-gallery-card-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.9);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  font-family: "DM Sans", sans-serif;
+}
+
+.hover-gallery-card:hover .hover-gallery-card-hover {
+  opacity: 1;
+}
+
+.hover-gallery-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.75rem 1rem;
+  font-family: "DM Sans", sans-serif;
+}
+
+.hover-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hover-meta img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+.hover-meta .text span {
+  display: block;
+  font-size: 0.75rem;
+  color: #0a0a0a;
+  line-height: 1.1;
+}
+
+.hover-view-btn {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.hover-view-btn:hover {
+  background: #2e2e2e;
+}

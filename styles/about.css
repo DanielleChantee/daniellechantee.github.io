@@ -1,0 +1,185 @@
+.image-banner {
+  height: 400px;
+}
+
+@media (max-width: 768px) {
+  .image-banner {
+    height: 350px;
+  }
+}
+
+.about.content-section {
+  background-color: white;
+}
+
+/* Override: about-features sections must stay black (process steps, etc.) */
+.about-features.content-section {
+  background-color: black;
+}
+
+.about .content {
+  color: black;
+  max-width: 900px;
+  padding: 24px 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about p {
+  text-align: center;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+
+.about h2 {
+  text-align: center;
+  line-height: 1.7;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 990px) {
+  .about .content {
+    max-width: 1400px;
+    padding: 32px 60px;
+  }
+  
+  .about p {
+    margin: 0 0 20px 0;
+    max-width: 100%;
+  }
+}
+
+.about-features {
+  background-color: black;
+}
+
+.about-features .content {
+  max-width: 900px;
+  padding: 24px 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-features .content p {
+  text-align: center;
+}
+
+.about-features p {
+  color: white;
+  text-align: center;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+
+.about-features h2 {
+  color: white;
+  text-align: center;
+  line-height: 1.7;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.about-features strong {
+  color: white;
+}
+
+/* How I Work list - bullets visible, proper spacing */
+.about-features ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding-left: 0;
+  margin: 0 auto 24px;
+  text-align: center;
+  max-width: 600px;
+}
+
+.about-features ul li {
+  color: white;
+  margin-bottom: 12px;
+  padding-left: 0.5em;
+  line-height: 1.6;
+}
+
+.about-features ul li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .about .content,
+  .about-features .content {
+    padding: 20px 16px;
+  }
+}
+
+/* CTA Section - center aligned */
+.cta-section .button-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .cta-section .button-row {
+    align-items: center;
+  }
+}
+
+.cta-section .btn {
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-normal);
+}
+
+.cta-section .btn-primary {
+  background: var(--bg-black);
+  color: var(--text-white);
+}
+
+.cta-section .btn-primary:hover {
+  background: var(--color-gray-dark);
+}
+
+.cta-section .btn-secondary {
+  background: transparent;
+  color: var(--text-black);
+  border: 2px solid var(--accent-black);
+}
+
+.cta-section .btn-secondary:hover {
+  background: var(--bg-black);
+  color: var(--text-white);
+}
+
+/* Working With Me / Rates page - tighter spacing between sections */
+.rates-page .about.content-section,
+.rates-page .about-features.content-section,
+.rates-page .contact.content-section {
+  padding: 32px 24px;
+}
+
+.rates-page .about .content,
+.rates-page .about-features .content {
+  padding: 20px 20px;
+}
+
+@media (max-width: 768px) {
+  .rates-page .about.content-section,
+  .rates-page .about-features.content-section,
+  .rates-page .contact.content-section {
+    padding: 24px 16px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .rates-page .about .content,
+  .rates-page .about-features .content {
+    padding: 24px 40px;
+  }
+}

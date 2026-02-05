@@ -1,0 +1,245 @@
+/* Form wrapper - centers form on page */
+.contact-form-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 32px 24px 60px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form {
+  background: var(--bg-white);
+  padding: 32px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0 auto;
+  max-width: 560px;
+  width: 100%;
+  transition: background-color var(--transition-normal);
+  box-sizing: border-box;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-gray);
+  transition: color var(--transition-normal);
+  text-align: left;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 4px 0;
+  border: 2px solid var(--color-gray-dark);
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  transition: outline 0.2s ease, border-color 0.2s ease, background-color var(--transition-normal), color var(--transition-normal);
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus {
+  outline: 3px solid var(--text-black);
+  outline-offset: 2px;
+  border-color: var(--text-black);
+}
+
+input:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible) {
+  outline: none;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--text-black);
+  outline-offset: 2px;
+  border-color: var(--text-black);
+}
+
+/* Only show validation states after user interaction */
+input.touched:invalid,
+textarea.touched:invalid {
+  border-color: #d32f2f;
+}
+
+input.touched:valid,
+textarea.touched:valid {
+  border-color: #4caf50;
+}
+
+input.error,
+textarea.error {
+  border-color: #d32f2f;
+  border-width: 2px;
+}
+
+.error-message {
+  display: block;
+  color: #d32f2f;
+  font-size: 12px;
+  margin-top: 4px;
+  min-height: 18px;
+  font-weight: 500;
+}
+
+.error-message:empty {
+  display: none;
+}
+
+#form-messages {
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  min-height: 20px;
+  display: none;
+}
+
+#form-messages.success {
+  display: block;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 2px solid #4caf50;
+}
+
+#form-messages.error {
+  display: block;
+  background-color: #ffebee;
+  color: #c62828;
+  border: 2px solid #d32f2f;
+}
+
+#form-messages:empty {
+  display: none;
+}
+
+.contact-form-wrapper button {
+  text-decoration: none;
+  background-color: var(--bg-black);
+  color: var(--text-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 5px 0;
+  border-radius: 40px;
+  transition: background-color 0.4s, opacity 0.3s ease, color var(--transition-normal);
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  max-width: 200px;
+  min-width: 120px;
+  align-self: center;
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--color-gray-dark);
+}
+
+button:focus {
+  outline: 3px solid var(--text-black);
+  outline-offset: 2px;
+}
+
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--text-black);
+  outline-offset: 2px;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button-loader {
+  display: inline-block;
+}
+
+.contact-form-wrapper form .btn {
+  padding: 10px 40px;
+  margin: 5px 0;
+}
+
+/* ------- */
+.contact.content-section {
+  background-color: var(--bg-white);
+  padding: 32px 24px 24px;
+  transition: background-color var(--transition-normal);
+}
+
+.contact.content-section .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact.content-section .content {
+  color: var(--text-black);
+  transition: color var(--transition-normal);
+}
+
+.contact.content-section h2,
+.contact-options h2 {
+  font-size: 28px;
+  text-align: center;
+}
+
+.contact.content-section .button-row .btn {
+  background-color: var(--bg-black);
+  color: var(--text-white);
+}
+
+/* ---------- */
+/* Contact Options */
+.contact-options {
+  min-height: 240px;
+  background-color: var(--bg-black);
+  padding: 48px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-options .content {
+  color: var(--text-white);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contact-options .content h2 {
+  color: var(--text-white);
+  text-align: center;
+}
+.contact-options h2 {
+  margin-bottom: 24px;
+}
+
+.contact-options a {
+  color: var(--text-white);
+  display: block;
+  text-decoration: none;
+  margin: 10px 0;
+  transition: color var(--transition-normal);
+}
+
+.contact-options a:hover {
+  text-decoration: underline;
+}

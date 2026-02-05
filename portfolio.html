@@ -1,0 +1,368 @@
+---
+layout: default
+title: Shopify Portfolio | Ecommerce Stores, Themes & Custom Development
+description: Explore the portfolio of Danielle Adeyemo, showcasing expert Shopify development projects, custom themes, app integrations, and e-commerce store optimisations.
+permalink: /portfolio.html
+---
+
+<div class="scroll-reveal-slider-wrapper">
+  <section class="scroll-reveal-slider">
+    <div class="scroll-reveal-slider-left">
+      <h2>
+        <span class="outlined">SHOPIFY</span>
+        <strong>THEMES, STORES,<br />AND CUSTOM BUILDS</strong>
+      </h2>
+      <p>
+        Browse a curated collection of my Shopify projects from custom themes
+        and ecommerce UX/UI to conversion-focused storefronts and app
+        integrations.
+      </p>
+      <a href="#" class="cta-btn">
+        <span>Explore More</span>
+        <svg viewBox="0 0 24 24">
+          <path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z" />
+        </svg>
+      </a>
+    </div>
+    <div class="scroll-reveal-slider-right">
+      <div class="slider-card">
+        <div class="card-image"></div>
+        <div class="card-tag">Theme Dev, UX, Speed</div>
+        <div class="card-footer">
+          <h3>Vantrue Custom Theme</h3>
+          <a href="#" class="card-btn">View Work</a>
+        </div>
+      </div>
+      <div class="slider-card">
+        <div class="card-image"></div>
+        <div class="card-tag">UX Audit, CRO, Dev</div>
+        <div class="card-footer">
+          <h3>Tenvel Site Optimisation</h3>
+          <a href="#" class="card-btn">View Work</a>
+        </div>
+      </div>
+      <div class="slider-card">
+        <div class="card-image"></div>
+        <div class="card-tag">Theme Setup, Product UX</div>
+        <div class="card-footer">
+          <h3>Amerlife Custom Store</h3>
+          <a href="#" class="card-btn">View Work</a>
+        </div>
+      </div>
+      <div class="slider-card">
+        <div class="card-image"></div>
+        <div class="card-tag">Liquid, App Blocks</div>
+        <div class="card-footer">
+          <h3>Qidi Pro Theme Features</h3>
+          <a href="#" class="card-btn">View Work</a>
+        </div>
+      </div>
+    </div>
+    <style>
+      .scroll-reveal-slider-wrapper {
+        position: relative;
+      }
+      .scroll-reveal-slider {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        background: #f5f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 6rem 2rem;
+        overflow: hidden;
+        z-index: 2;
+      }
+      .scroll-reveal-slider-left {
+        flex: 0 0 35%;
+        z-index: 2;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      .scroll-reveal-slider-left h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+      .scroll-reveal-slider-left .outlined {
+        font-weight: 500;
+        -webkit-text-stroke: 1px #000;
+        color: transparent;
+      }
+      .scroll-reveal-slider-left p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        color: #333;
+      }
+      .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        border: 2px solid #000;
+        padding: 0.75rem 1.5rem;
+        border-radius: 999px;
+        font-weight: 600;
+        text-decoration: none;
+        color: #000;
+        background: #fff;
+      }
+      .cta-btn svg {
+        width: 1rem;
+        height: 1rem;
+        fill: currentColor;
+      }
+      .scroll-reveal-slider-right {
+        flex: 0 0 65%;
+        display: flex;
+        gap: 2rem;
+        will-change: transform;
+        position: absolute;
+        left: 35%;
+        transform: translateY(-50%) translateX(0);
+        z-index: 3;
+      }
+      .slider-card {
+        background: #fff;
+        border-radius: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        min-width: 300px;
+        max-width: 340px;
+        scroll-snap-align: start;
+        overflow: hidden;
+        position: relative;
+      }
+      .card-image {
+        background-color: #d4d4d4;
+        height: 360px;
+        border-radius: 1rem 1rem 0 0;
+      }
+      .card-tag {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 0.75rem;
+        font-size: 0.875rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      .card-footer {
+        padding: 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .card-footer h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 0;
+      }
+      .card-btn {
+        padding: 0.4rem 1.2rem;
+        border: 1px solid #000;
+        border-radius: 999px;
+        text-decoration: none;
+        color: #000;
+        font-size: 0.875rem;
+        font-weight: 500;
+        background: #fff;
+      }
+      @media (max-width: 1024px) {
+        .scroll-reveal-slider {
+          flex-direction: column;
+          height: auto;
+          min-height: 100vh;
+        }
+        .scroll-reveal-slider-left,
+        .scroll-reveal-slider-right {
+          position: static !important;
+          transform: none !important;
+          width: 100%;
+        }
+        .scroll-reveal-slider-right {
+          display: flex;
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          gap: 1rem;
+          left: 0;
+          top: auto;
+        }
+      }
+      @media (max-width: 768px) {
+        .scroll-reveal-slider {
+          flex-direction: column;
+          padding: 2rem 0.5rem;
+        }
+        .scroll-reveal-slider-left h2 {
+          font-size: 2rem;
+        }
+        .slider-card {
+          min-width: 220px;
+          max-width: 240px;
+        }
+        .scroll-reveal-slider-right {
+          gap: 0.5rem;
+        }
+      }
+      .dev-pill-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 3rem 0;
+      }
+
+      .pill-arrow {
+        background: none;
+        border: 1px solid #ccc;
+        border-radius: 999px;
+        padding: 0.5rem 1rem;
+        font-size: 1.25rem;
+        cursor: pointer;
+        color: #000;
+        transition: background 0.2s;
+      }
+      .pill-arrow:hover {
+        background: #f0f0f0;
+      }
+      .dev-pill-row {
+        flex: 1;
+        overflow-x: auto;
+        display: flex;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+      .dev-pill-row::-webkit-scrollbar {
+        display: none;
+      }
+      .dev-pill {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        border: 1px solid #ccc;
+        border-radius: 999px;
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        scroll-snap-align: start;
+      }
+      .dev-icon {
+        width: 32px;
+        height: 32px;
+        background: #ccc;
+        border-radius: 50%;
+      }
+      .dev-pill span {
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #000;
+      }
+    </style>
+  </section>
+</div>
+<div class="dev-pill-wrapper">
+  <button class="pill-arrow left">&larr;</button>
+  <div class="dev-pill-row">
+    <div class="dev-pill">
+      <div class="dev-icon"></div>
+      <span>Theme Development</span>
+    </div>
+    <div class="dev-pill">
+      <div class="dev-icon"></div>
+      <span>Liquid Logic</span>
+    </div>
+    <div class="dev-pill">
+      <div class="dev-icon"></div>
+      <span>Performance Optimisation</span>
+    </div>
+    <div class="dev-pill">
+      <div class="dev-icon"></div>
+      <span>Headless Frontends</span>
+    </div>
+    <div class="dev-pill">
+      <div class="dev-icon"></div>
+      <span>UI Components</span>
+    </div>
+    <div class="dev-pill">
+      <div class="dev-icon"></div>
+      <span>JavaScript Interactions</span>
+    </div>
+    <div class="dev-pill">
+      <div class="dev-icon"></div>
+      <span>Accessibility</span>
+    </div>
+    <div class="dev-pill">
+      <div class="dev-icon"></div>
+      <span>App Embeds</span>
+    </div>
+  </div>
+  <button class="pill-arrow right">&rarr;</button>
+</div>
+<script>
+  (function () {
+    const wrapper = document.querySelector(".scroll-reveal-slider-wrapper");
+    const cards = wrapper.querySelector(".scroll-reveal-slider-right");
+    const text = wrapper.querySelector(".scroll-reveal-slider-left");
+    if (!wrapper || !cards || !text) return;
+
+    function getMaxScroll() {
+      // The visible width is the wrapper (section) width minus left panel
+      const wrapperWidth = wrapper.offsetWidth;
+      const leftPanelWidth = text.offsetWidth;
+      const visibleWidth = wrapperWidth - leftPanelWidth;
+      // Allow cards to scroll farther so the last card can reach the far left
+      return cards.scrollWidth - visibleWidth + text.offsetWidth;
+    }
+
+    function onScroll() {
+      const rect = wrapper.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      // Only animate if the section is in viewport
+      const scrollable = wrapper.offsetHeight - windowHeight;
+      if (scrollable <= 0) return;
+      const scrolled = Math.min(Math.max(-rect.top, 0), scrollable);
+      const scrollPercent = scrolled / scrollable;
+      const maxScroll = getMaxScroll();
+      // Horizontal movement only; no vertical transform at any stage
+      const xTranslation = scrollPercent * maxScroll;
+      cards.style.transform = `translateX(-${xTranslation}px)`;
+      // Fade and scale text, fade out by the time cards have moved 150px
+      const textFadeTrigger = 150;
+      const fadeProgress = Math.min(xTranslation / textFadeTrigger, 1);
+      const scale = 1 - fadeProgress * 0.2;
+      const opacity = Math.max(1 - fadeProgress * 1.2, 0);
+      text.style.transform = `scale(${scale})`;
+      text.style.opacity = opacity;
+
+      // Replace scroll lock logic with sticky pinning effect only
+      if (rect.top <= 0 && rect.bottom > windowHeight) {
+        document.body.style.overflow = "";
+      }
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    // Initial call
+    setTimeout(onScroll, 10);
+  })();
+
+  const pillWrapper = document.querySelector(".dev-pill-wrapper");
+  if (pillWrapper) {
+    const row = pillWrapper.querySelector(".dev-pill-row");
+    pillWrapper
+      .querySelector(".pill-arrow.left")
+      .addEventListener("click", () => {
+        row.scrollBy({ left: -200, behavior: "smooth" });
+      });
+    pillWrapper
+      .querySelector(".pill-arrow.right")
+      .addEventListener("click", () => {
+        row.scrollBy({ left: 200, behavior: "smooth" });
+      });
+  }
+</script>

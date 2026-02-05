@@ -1,0 +1,40 @@
+{% comment %}
+  Optimized Image Include with WebP Support
+  Usage: {% include optimized-image.html src="/images/photo.jpg" alt="Description" loading="lazy" class="custom-class" %}
+  
+  This include will:
+  1. Use WebP version if it exists (e.g., photo.webp)
+  2. Fall back to original format (e.g., photo.jpg)
+  3. Support lazy loading and other attributes
+{% endcomment %}
+
+{% assign image_path = include.src | remove_first: "./" | remove_first: "/" %}
+{% assign image_name = image_path | split: "/" | last | split: "." | first %}
+{% assign image_ext = image_path | split: "." | last %}
+{% assign image_dir = image_path | remove: image_name | remove: image_ext | remove: "." %}
+{% assign webp_path = image_dir | append: image_name | append: ".webp" %}
+
+<picture>
+  {% if include.src contains "logos" %}
+    {% comment %} Logos are typically PNG/SVG, skip WebP {% endcomment %}
+    <img 
+      src="{{ include.src }}" 
+      alt="{{ include.alt | default: '' }}" 
+      {% if include.loading %}loading="{{ include.loading }}"{% endif %}
+      {% if include.class %}class="{{ include.class }}"{% endif %}
+      {% if include.width %}width="{{ include.width }}"{% endif %}
+      {% if include.height %}height="{{ include.height }}"{% endif %}
+    />
+  {% else %}
+    {% comment %} Try WebP first, fallback to original {% endcomment %}
+    <source srcset="{{ webp_path }}" type="image/webp">
+    <img 
+      src="{{ include.src }}" 
+      alt="{{ include.alt | default: '' }}" 
+      {% if include.loading %}loading="{{ include.loading }}"{% endif %}
+      {% if include.class %}class="{{ include.class }}"{% endif %}
+      {% if include.width %}width="{{ include.width }}"{% endif %}
+      {% if include.height %}height="{{ include.height }}"{% endif %}
+    />
+  {% endif %}
+</picture>

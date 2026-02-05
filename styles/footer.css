@@ -1,0 +1,28 @@
+.footer-contact {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.footer-contact a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.email-footer,
+.linkedin-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: filter var(--transition-normal), opacity var(--transition-normal);
+}
+
+.email-footer {
+  color: var(--text-black);
+}
+
+.linkedin-logo {
+  filter: brightness(0);
+}

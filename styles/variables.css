@@ -1,0 +1,55 @@
+/* CSS Custom Properties (Variables) */
+:root {
+  /* Colors */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray-light: #f4f4f4;
+  --color-gray-medium: #f0f0f0;
+  --color-gray-dark: #252525;
+  --color-gray-darker: #333333;
+  --color-gray-darkest: #444444;
+  
+  /* Background Colors */
+  --bg-black: var(--color-black);
+  --bg-white: var(--color-white);
+  --bg-gray-light: var(--color-gray-light);
+  --bg-gray-medium: var(--color-gray-medium);
+  
+  /* Text Colors */
+  --text-black: var(--color-black);
+  --text-white: var(--color-white);
+  --text-gray: #333333;
+
+  /* Accent */
+  --accent-black: var(--color-black);
+  
+  /* Spacing */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+  --spacing-lg: 40px;
+  --spacing-xl: 60px;
+  
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+  --radius-xl: 40px;
+  --radius-full: 999px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.4s ease;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 4px 10px rgba(0, 0, 0, 0.05);
+  
+  /* Z-index */
+  --z-header: 100;
+  --z-menu-backdrop: 999;
+  --z-menu-wrapper: 1000;
+  --z-popup: 999;
+}

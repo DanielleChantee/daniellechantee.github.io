@@ -1,0 +1,25 @@
+---
+layout: default
+title: Hover Gallery
+permalink: /hover-gallery.html
+---
+
+<section class="hover-gallery">
+  {% assign project1 = site.data.projects[0] %} {% include
+  hover-gallery-card.html title=project1.title subtitle=project1.subtitle
+  description=project1.description details=project1.details image=project1.image
+  link=project1.link %} {% assign project2 = site.data.projects[1] %} {% include
+  hover-gallery-card.html title=project2.title subtitle=project2.subtitle
+  description=project2.description details=project2.details image=project2.image
+  link=project2.link %} {% assign project3 = site.data.projects[2] %} {% include
+  hover-gallery-card.html title=project3.title subtitle=project3.subtitle
+  description=project3.description details=project3.details image=project3.image
+  link=project3.link %} {% assign project4 = site.data.projects[3] %} {% include
+  hover-gallery-card.html title=project4.title subtitle=project4.subtitle
+  description=project4.description details=project4.details image=project4.image
+  link=project4.link %}
+</section>
+
+<style>
+  {% include styles/hover-gallery-card.css %}
+</style>
