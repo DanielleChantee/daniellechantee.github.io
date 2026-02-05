@@ -1,7 +1,7 @@
 title: My Portfolio
 description: A collection of my work as a Shopify Developer
-url: "http://127.0.0.1:4000" # Local URL
-baseurl: "/portfolio" # Root directory
+url: "https://daniellechantee.github.io"
+baseurl: ""
 permalink: /:year/:month/:day/:title/ # URL structure for posts
 
 markdown: kramdown # Defines markdown processor
