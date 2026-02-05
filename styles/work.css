@@ -400,7 +400,10 @@ body {
 }
 
 .project-content .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   margin-top: 20px;
   padding: 10px 20px;
   background: var(--accent-black);
