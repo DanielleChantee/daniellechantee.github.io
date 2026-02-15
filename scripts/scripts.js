@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const mobileMenuWrapper = document.querySelector(".mobile-menu-wrapper");
   const mobileMenuBackdrop = document.querySelector(".mobile-menu-backdrop");
   const body = document.body;
-  const workMenuItem = document.querySelector(".has-mega-menu > a");
+  const megaMenuItems = document.querySelectorAll(".has-mega-menu > a");
 
   if (hamburger && closeButton && mobileMenuWrapper) {
     /**
@@ -297,27 +297,32 @@ document.addEventListener("DOMContentLoaded", function () {
    * Mega Menu ARIA State Management
    * Updates aria-expanded attribute based on hover/focus state
    */
-  if (workMenuItem) {
+  if (megaMenuItems.length > 0) {
     try {
-      const megaMenu = document.querySelector(".mega-menu");
+      megaMenuItems.forEach((menuItem) => {
+        const menuContainer = menuItem.closest(".has-mega-menu");
+        const megaMenu = menuContainer
+          ? menuContainer.querySelector(".mega-menu")
+          : null;
 
-      workMenuItem.addEventListener("mouseenter", () => {
-        workMenuItem.setAttribute("aria-expanded", "true");
-      });
+        menuItem.addEventListener("mouseenter", () => {
+          menuItem.setAttribute("aria-expanded", "true");
+        });
 
-      workMenuItem.addEventListener("mouseleave", () => {
-        workMenuItem.setAttribute("aria-expanded", "false");
-      });
+        menuItem.addEventListener("mouseleave", () => {
+          menuItem.setAttribute("aria-expanded", "false");
+        });
 
-      workMenuItem.addEventListener("focus", () => {
-        workMenuItem.setAttribute("aria-expanded", "true");
-      });
+        menuItem.addEventListener("focus", () => {
+          menuItem.setAttribute("aria-expanded", "true");
+        });
 
-      workMenuItem.addEventListener("blur", (e) => {
-        // Only collapse if focus moved outside the mega menu
-        if (!megaMenu.contains(e.relatedTarget)) {
-          workMenuItem.setAttribute("aria-expanded", "false");
-        }
+        menuItem.addEventListener("blur", (e) => {
+          // Only collapse if focus moved outside this mega menu
+          if (!megaMenu || !megaMenu.contains(e.relatedTarget)) {
+            menuItem.setAttribute("aria-expanded", "false");
+          }
+        });
       });
     } catch (error) {
       console.error("Error managing mega menu ARIA attributes:", error);
