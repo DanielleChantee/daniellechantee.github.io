@@ -8,7 +8,7 @@ layout: null
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 {% assign excluded = "/404.html,/sitemap.xml,/google1d7ad659e91554b5.html" | split: "," %}
-{% for page in site.pages %}
+{% for page in site.html_pages %}
   {% if page.url and excluded contains page.url %}
   {% else %}
   {% if page.url %}
@@ -17,6 +17,26 @@ layout: null
   <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
 </url>
   {% endif %}
+  {% endif %}
+{% endfor %}
+{% for post in site.posts %}
+  {% if post.url %}
+<url>
+  <loc>{{ site.url }}{{ site.baseurl }}{{ post.url | replace: 'index.html', '' }}</loc>
+  <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+</url>
+  {% endif %}
+{% endfor %}
+{% for file in site.static_files %}
+  {% if file.extname == '.html' %}
+    {% assign file_url = file.path %}
+    {% if excluded contains file_url %}
+    {% else %}
+<url>
+  <loc>{{ site.url }}{{ site.baseurl }}{{ file_url | replace: 'index.html', '' }}</loc>
+  <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+</url>
+    {% endif %}
   {% endif %}
 {% endfor %}
 </urlset>
