@@ -23,7 +23,7 @@
 }
 
 .hover-gallery-card-overlay h4 {
-  font-family: "DM Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 0.875rem;
   margin: 0;
   opacity: 0.8;
@@ -53,7 +53,7 @@
   opacity: 0;
   transition: opacity 0.3s ease;
   text-align: center;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .hover-gallery-card:hover .hover-gallery-card-hover {
@@ -66,7 +66,7 @@
   align-items: center;
   background: rgba(255, 255, 255, 0.95);
   padding: 0.75rem 1rem;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .hover-meta {
