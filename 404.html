@@ -8,9 +8,19 @@ permalink: /404.html
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="0;url={{ '/' | relative_url }}" />
     <title>Page Not Found | Danielle Adeyemo</title>
     <link rel="canonical" href="https://daniellechantee.github.io{{ site.baseurl }}/" />
+    <script>
+      (function () {
+        var path = window.location.pathname;
+        if (path && path !== "/404.html" && path.endsWith(".html")) {
+          var cleanPath = path.replace(/\.html$/, "/");
+          window.location.replace(cleanPath + window.location.search + window.location.hash);
+          return;
+        }
+        window.location.replace("{{ '/' | relative_url }}");
+      })();
+    </script>
   </head>
   <body>
     <p>Page not found. <a href="{{ '/' | relative_url }}">Go to homepage</a></p>
