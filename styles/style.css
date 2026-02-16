@@ -259,6 +259,49 @@ h4 {
   font-weight: 400;
 }
 
+.faq-page-content {
+  text-align: left;
+}
+
+.faq-accordion {
+  margin-top: 22px;
+}
+
+.faq-accordion details {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 0;
+  margin-bottom: 14px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.faq-accordion summary {
+  cursor: pointer;
+  padding: 16px 18px;
+  font-weight: 600;
+  list-style: none;
+}
+
+.faq-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-accordion summary::after {
+  content: "+";
+  float: right;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.faq-accordion details[open] summary::after {
+  content: "−";
+}
+
+.faq-accordion details p {
+  margin: 0;
+  padding: 0 18px 16px;
+}
+
 @media (max-width: 768px) {
   .content-section .button-row {
     flex-direction: column;
@@ -301,6 +344,49 @@ h4 {
 .content-section .content p {
   margin-left: auto;
   margin-right: auto;
+}
+
+.content-section .content a {
+  color: var(--text-white);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.9);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 2px;
+  transition: color var(--transition-normal), text-decoration-color var(--transition-normal), opacity var(--transition-normal);
+}
+
+.content-section .content a:visited {
+  color: var(--text-white);
+}
+
+.content-section .content a:hover,
+.content-section .content a:focus-visible {
+  color: #ffffff;
+  text-decoration-color: #ffffff;
+  opacity: 1;
+}
+
+.content-section .content a.btn,
+.content-section .content a.btn:visited,
+.content-section .content a.btn:hover,
+.content-section .content a.btn:focus-visible,
+.content-section .content a.popup-gallery-link-btn,
+.content-section .content a.popup-gallery-link-btn:visited,
+.content-section .content a.popup-gallery-link-btn:hover,
+.content-section .content a.popup-gallery-link-btn:focus-visible,
+.content-section .content a.hover-view-btn,
+.content-section .content a.hover-view-btn:visited,
+.content-section .content a.hover-view-btn:hover,
+.content-section .content a.hover-view-btn:focus-visible,
+.content-section .content a.cta-btn,
+.content-section .content a.cta-btn:visited,
+.content-section .content a.cta-btn:hover,
+.content-section .content a.cta-btn:focus-visible,
+.content-section .content a.card-btn,
+.content-section .content a.card-btn:visited,
+.content-section .content a.card-btn:hover,
+.content-section .content a.card-btn:focus-visible {
+  text-decoration: none !important;
 }
 
 /* Hero banners only - center for focal impact */
