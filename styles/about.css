@@ -32,6 +32,20 @@
   max-width: 100%;
 }
 
+.about .content a,
+.about .content a:visited {
+  color: var(--text-black);
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 0, 0, 0.85);
+  text-decoration-thickness: 1.5px;
+}
+
+.about .content a:hover,
+.about .content a:focus-visible {
+  color: #000000;
+  text-decoration-color: #000000;
+}
+
 .about h2 {
   text-align: center;
   line-height: 1.7;

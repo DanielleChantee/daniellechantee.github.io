@@ -258,6 +258,36 @@
     align-items: center;
   }
 }
+
+.homepage-service-overview {
+  background: var(--bg-white);
+}
+
+.homepage-service-overview .content {
+  border: none;
+  border-radius: 0;
+  padding: 30px 26px;
+  background: transparent;
+}
+
+.homepage-service-overview .content h2,
+.homepage-service-overview .content p {
+  color: var(--text-black);
+}
+
+.homepage-service-overview .content a,
+.homepage-service-overview .content a:visited {
+  color: var(--text-black);
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 0, 0, 0.9);
+  text-decoration-thickness: 1.5px;
+}
+
+.homepage-service-overview .content a:hover,
+.homepage-service-overview .content a:focus-visible {
+  color: var(--text-black);
+  text-decoration-color: #000000;
+}
 .main-image-banner p,
 .clients .content p {
   font-size: 16px;
