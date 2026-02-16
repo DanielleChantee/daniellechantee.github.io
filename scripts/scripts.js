@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // during local development and preview. Re-enable when done testing.
   // registerServiceWorker();
   /**
-   * Initialize Splide Carousel for Clients Section (Main Project Gallery)
-   * Shows loading state while carousel initializes
+   * Initialise Splide Carousel for Clients Section (Main Project Gallery)
+   * Shows loading state while carousel initialises
    * Scoped to .clients section to avoid conflicts
    */
   const clientsCarouselElement = document.querySelector(
@@ -93,8 +93,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /**
-   * Initialize Splide Carousel for Featured Clients
-   * Shows loading state while carousel initializes
+   * Initialise Splide Carousel for Featured Clients
+   * Shows loading state while carousel initialises
    * Scoped to avoid conflicts with other carousels
    */
   const featuredClientsElement = document.querySelector("#featured-clients");
