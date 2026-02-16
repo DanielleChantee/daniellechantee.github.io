@@ -156,6 +156,9 @@
                 <li role="none">
                   <a href="{{ '/contact/' | relative_url }}" role="menuitem">Contact</a>
                 </li>
+                <li role="none">
+                  <a href="{{ '/shopify-development-faqs/' | relative_url }}" role="menuitem">Shopify Development FAQs</a>
+                </li>
               </ul>
             </div>
             <div class="mega-menu-column">
@@ -172,6 +175,7 @@
               <h3>Additional Services</h3>
               <ul role="list">
                 <li role="none"><a href="{{ '/shopify-plus-developer/' | relative_url }}" role="menuitem">Shopify Plus Developer</a></li>
+                <li role="none"><a href="{{ '/shopify-developer-uk/' | relative_url }}" role="menuitem">Shopify Developer UK</a></li>
                 <li role="none"><a href="{{ '/shopify-theme-customisation/' | relative_url }}" role="menuitem">Shopify Theme Customisation</a></li>
                 <li role="none"><a href="{{ '/shopify-liquid-developer/' | relative_url }}" role="menuitem">Shopify Liquid Developer</a></li>
                 <li role="none"><a href="{{ '/shopify-developer-for-agencies/' | relative_url }}" role="menuitem">Shopify Developer for Agencies</a></li>
@@ -210,18 +214,55 @@
         <li role="none"><a href="{{ '/' | relative_url }}" role="menuitem">Home</a></li>
         <li role="none"><a href="{{ '/services/' | relative_url }}" role="menuitem">Services</a></li>
         <li role="none"><a href="{{ '/about/' | relative_url }}" role="menuitem">About</a></li>
-        <li role="none"><a href="{{ '/work/' | relative_url }}" role="menuitem">Work</a></li>
-        <li role="none"><a href="{{ '/working-with-me/' | relative_url }}" role="menuitem">Working With Me</a></li>
-        <li role="none"><a href="{{ '/shopify-contractor/' | relative_url }}" role="menuitem">Shopify Contractor</a></li>
-        <li role="none"><a href="{{ '/shopify-theme-developer/' | relative_url }}" role="menuitem">Shopify Theme Developer</a></li>
-        <li role="none"><a href="{{ '/shopify-speed-optimisation/' | relative_url }}" role="menuitem">Shopify Speed Optimisation</a></li>
-        <li role="none"><a href="{{ '/shopify-retainer/' | relative_url }}" role="menuitem">Shopify Retainer</a></li>
-        <li role="none"><a href="{{ '/shopify-developer-freelancer/' | relative_url }}" role="menuitem">Freelance Shopify Developer</a></li>
-        <li role="none"><a href="{{ '/shopify-plus-developer/' | relative_url }}" role="menuitem">Shopify Plus Developer</a></li>
-        <li role="none"><a href="{{ '/shopify-theme-customisation/' | relative_url }}" role="menuitem">Shopify Theme Customisation</a></li>
-        <li role="none"><a href="{{ '/shopify-liquid-developer/' | relative_url }}" role="menuitem">Shopify Liquid Developer</a></li>
-        <li role="none"><a href="{{ '/shopify-developer-for-agencies/' | relative_url }}" role="menuitem">Shopify Developer for Agencies</a></li>
-        <li role="none"><a href="{{ '/shopify-contract-developer/' | relative_url }}" role="menuitem">Shopify Contract Developer</a></li>
+        <li class="mobile-submenu-parent" role="none">
+          <div class="mobile-submenu-trigger">
+            <a href="{{ '/work/' | relative_url }}" role="menuitem">Work</a>
+            <button
+              type="button"
+              class="mobile-submenu-toggle"
+              aria-expanded="false"
+              aria-controls="mobile-submenu-work"
+              aria-label="Expand Work links"
+            >
+              <span aria-hidden="true">+</span>
+            </button>
+          </div>
+          <ul id="mobile-submenu-work" class="mobile-submenu" aria-hidden="true">
+            <li role="none"><a href="{{ '/work/' | relative_url }}" role="menuitem">All Work</a></li>
+            <li role="none"><a href="{{ '/work.html#theme-development' | relative_url }}" role="menuitem">Theme Development</a></li>
+            <li role="none"><a href="{{ '/work.html#ux-debugging' | relative_url }}" role="menuitem">UX Debugging</a></li>
+            <li role="none"><a href="{{ '/work.html#custom-sections' | relative_url }}" role="menuitem">Custom Sections</a></li>
+          </ul>
+        </li>
+        <li class="mobile-submenu-parent" role="none">
+          <div class="mobile-submenu-trigger">
+            <a href="{{ '/working-with-me/' | relative_url }}" role="menuitem">Working With Me</a>
+            <button
+              type="button"
+              class="mobile-submenu-toggle"
+              aria-expanded="false"
+              aria-controls="mobile-submenu-working-with-me"
+              aria-label="Expand Working With Me links"
+            >
+              <span aria-hidden="true">+</span>
+            </button>
+          </div>
+          <ul id="mobile-submenu-working-with-me" class="mobile-submenu" aria-hidden="true">
+            <li role="none"><a href="{{ '/working-with-me/' | relative_url }}" role="menuitem">Working With Me</a></li>
+            <li role="none"><a href="{{ '/shopify-contractor/' | relative_url }}" role="menuitem">Shopify Contractor</a></li>
+            <li role="none"><a href="{{ '/shopify-theme-developer/' | relative_url }}" role="menuitem">Shopify Theme Developer</a></li>
+            <li role="none"><a href="{{ '/shopify-speed-optimisation/' | relative_url }}" role="menuitem">Shopify Speed Optimisation</a></li>
+            <li role="none"><a href="{{ '/shopify-retainer/' | relative_url }}" role="menuitem">Shopify Retainer</a></li>
+            <li role="none"><a href="{{ '/shopify-developer-freelancer/' | relative_url }}" role="menuitem">Freelance Shopify Developer</a></li>
+            <li role="none"><a href="{{ '/shopify-plus-developer/' | relative_url }}" role="menuitem">Shopify Plus Developer</a></li>
+            <li role="none"><a href="{{ '/shopify-developer-uk/' | relative_url }}" role="menuitem">Shopify Developer UK</a></li>
+            <li role="none"><a href="{{ '/shopify-theme-customisation/' | relative_url }}" role="menuitem">Shopify Theme Customisation</a></li>
+            <li role="none"><a href="{{ '/shopify-liquid-developer/' | relative_url }}" role="menuitem">Shopify Liquid Developer</a></li>
+            <li role="none"><a href="{{ '/shopify-developer-for-agencies/' | relative_url }}" role="menuitem">Shopify Developer for Agencies</a></li>
+            <li role="none"><a href="{{ '/shopify-contract-developer/' | relative_url }}" role="menuitem">Shopify Contract Developer</a></li>
+            <li role="none"><a href="{{ '/shopify-development-faqs/' | relative_url }}" role="menuitem">Shopify Development FAQs</a></li>
+          </ul>
+        </li>
         <li role="none"><a href="{{ '/contact/' | relative_url }}" role="menuitem">Contact</a></li>
       </ul>
     </div>

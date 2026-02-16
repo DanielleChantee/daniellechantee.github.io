@@ -213,6 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeButton = document.querySelector(".mobile-menu-wrapper .close");
   const mobileMenuWrapper = document.querySelector(".mobile-menu-wrapper");
   const mobileMenuBackdrop = document.querySelector(".mobile-menu-backdrop");
+  const mobileSubmenuToggles = document.querySelectorAll(".mobile-submenu-toggle");
   const body = document.body;
   const megaMenuItems = document.querySelectorAll(".has-mega-menu > a");
 
@@ -255,6 +256,20 @@ document.addEventListener("DOMContentLoaded", function () {
         body.style.overflow = "";
         hamburger.setAttribute("aria-expanded", "false");
         hamburger.setAttribute("aria-label", "Open mobile menu");
+        mobileSubmenuToggles.forEach((toggle) => {
+          const submenuId = toggle.getAttribute("aria-controls");
+          const submenu = submenuId ? document.getElementById(submenuId) : null;
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.classList.remove("open");
+          const icon = toggle.querySelector("span");
+          if (icon) {
+            icon.textContent = "+";
+          }
+          if (submenu) {
+            submenu.classList.remove("open");
+            submenu.setAttribute("aria-hidden", "true");
+          }
+        });
       } catch (error) {
         console.error("Error closing mobile menu:", error);
       }
@@ -282,6 +297,29 @@ document.addEventListener("DOMContentLoaded", function () {
       mobileMenuWrapper.querySelectorAll(".mobile-menu a");
     mobileMenuLinks.forEach((link) => {
       link.addEventListener("click", closeMenu);
+    });
+
+    // Toggle nested mobile submenus
+    mobileSubmenuToggles.forEach((toggle) => {
+      toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        const submenuId = toggle.getAttribute("aria-controls");
+        const submenu = submenuId ? document.getElementById(submenuId) : null;
+        if (!submenu) {
+          return;
+        }
+
+        const isOpen = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", isOpen ? "false" : "true");
+        toggle.classList.toggle("open", !isOpen);
+        submenu.classList.toggle("open", !isOpen);
+        submenu.setAttribute("aria-hidden", isOpen ? "true" : "false");
+
+        const icon = toggle.querySelector("span");
+        if (icon) {
+          icon.textContent = isOpen ? "+" : "−";
+        }
+      });
     });
 
     // Close menu on Escape key

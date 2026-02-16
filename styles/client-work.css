@@ -62,6 +62,43 @@
   background-color: var(--color-gray-dark);
 }
 
+@media (max-width: 768px) {
+  .client-work-image-banner {
+    min-height: 440px;
+    height: auto;
+  }
+
+  .client-work-image-banner .image-banner-content {
+    justify-content: center;
+    gap: 10px;
+    padding: 40px 18px;
+  }
+
+  .client-work-image-banner h1 {
+    font-size: 34px;
+    margin-bottom: 4px;
+  }
+
+  .client-work-image-banner h2 {
+    font-size: 17px;
+    line-height: 1.45;
+    margin-bottom: 6px;
+  }
+
+  .client-work-image-banner p {
+    margin-bottom: 18px;
+    line-height: 1.6;
+  }
+
+  .client-work-image-banner .button-row {
+    margin-top: 10px;
+  }
+
+  .client-work-image-banner .button-row .btn {
+    margin: 4px;
+  }
+}
+
 /* Recent Clients */
 .recent-clients a {
   color: var(--text-black);
