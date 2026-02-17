@@ -1,15 +1,31 @@
-<footer>
-  <div class="footer-contact">
-    <a href="mailto:daniellechantee@gmail.com" target="_blank">
-      <img src="{{ '/images/mail.svg' | relative_url }}" class="email-footer" alt="email"
-    /></a>
-    <a href="https://www.linkedin.com/in/danielleadeyemo/" target="_blank">
-      <img
-        src="{{ '/images/logos/linkedin-logo.png' | relative_url }}"
-        class="linkedin-logo"
-        alt="LinkedIn logo"
-      />
-    </a>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p class="footer-tagline">Shopify development for product teams and agencies.</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="{{ '/services/' | relative_url }}">Services</a>
+      <a href="{{ '/working-with-me/' | relative_url }}">Working With Me</a>
+      <a href="{{ '/work/' | relative_url }}">Work</a>
+      <a href="{{ '/contact/' | relative_url }}">Contact</a>
+    </nav>
+    <div class="footer-contact">
+      <a href="mailto:daniellechantee@gmail.com" aria-label="Send an email to Danielle Adeyemo">
+        <img src="{{ '/images/mail.svg' | relative_url }}" class="email-footer" alt="" />
+        <span>Email</span>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/danielleadeyemo/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Danielle Adeyemo on LinkedIn (opens in a new tab)"
+      >
+        <img
+          src="{{ '/images/logos/linkedin-logo.png' | relative_url }}"
+          class="linkedin-logo"
+          alt=""
+        />
+        <span>LinkedIn</span>
+      </a>
+    </div>
+    <p class="footer-copyright">&copy; {{ "now" | date: "%Y" }} Danielle Adeyemo</p>
   </div>
-  <p>&copy; {{ "now" | date: "%Y" }} Danielle Adeyemo</p>
 </footer>
