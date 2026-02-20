@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Hire a Shopify Developer | Store Setup, Themes & Ecommerce Solutions
-description: Contact Danielle Adeyemo, a Shopify Developer. Reach out via email to discuss context and scope, including theme customisation.
+title: Contact | Full-Stack Shopify Plus Contractor Fit Check
+description: Contact Danielle Adeyemo for a technical fit check on Shopify Plus scope, including theme architecture, app integrations, checkout functions, and implementation delivery.
 permalink: /contact/
 image: /images/profile-picture.jpeg
 type: website
@@ -25,10 +25,10 @@ type: website
 
 <div class="contact content-section">
   <div class="content">
-    <h2>Or Get In Touch Through This Form</h2>
+    <h2>Technical Fit Check</h2>
     <p>
-      Available for contract and consultancy work with product teams,
-      agencies, and growing brands.
+      Share your Shopify context and delivery goals. If the scope is aligned,
+      I will reply with recommended next steps.
     </p>
   </div>
 </div>
@@ -47,6 +47,17 @@ type: website
       aria-live="polite"
       aria-atomic="true"
     ></div>
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        autocomplete="name"
+        placeholder="Your name"
+      />
+    </div>
 
     <div class="form-group">
       <label for="email">Email</label>
@@ -70,6 +81,49 @@ type: website
     </div>
 
     <div class="form-group">
+      <label for="store_url">Store URL</label>
+      <input
+        type="url"
+        name="store_url"
+        id="store_url"
+        inputmode="url"
+        placeholder="https://yourstore.com"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="platform">Platform</label>
+      <select name="platform" id="platform">
+        <option value="">Select platform</option>
+        <option value="Shopify">Shopify</option>
+        <option value="Shopify Plus">Shopify Plus</option>
+        <option value="Headless Shopify">Headless Shopify</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="timeline">Timeline</label>
+      <select name="timeline" id="timeline">
+        <option value="">Select timeline</option>
+        <option value="ASAP">ASAP</option>
+        <option value="2-4 weeks">2-4 weeks</option>
+        <option value="1-2 months">1-2 months</option>
+        <option value="2+ months">2+ months</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="scope">Primary Scope</label>
+      <textarea
+        name="scope"
+        id="scope"
+        rows="3"
+        placeholder="Theme architecture, app integrations, checkout functions, or specific backlog items"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
       <label for="message">Message</label>
       <textarea
         name="message"
@@ -79,7 +133,7 @@ type: website
         aria-invalid="false"
         aria-describedby="message-error"
         rows="5"
-        placeholder="How can I help?"
+        placeholder="Share context, constraints, and what success looks like."
       ></textarea>
       <span
         id="message-error"
