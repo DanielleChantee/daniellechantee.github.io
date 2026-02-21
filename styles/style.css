@@ -471,6 +471,7 @@ img {
   height: auto;
   display: block;
   object-fit: cover;
+  object-position: top center;
 }
 
 /* Prevent layout shift for lazy-loaded images */
