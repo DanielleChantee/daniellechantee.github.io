@@ -70,27 +70,45 @@ h3,
 h4 {
   font-family: "Poppins", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
-  text-transform: uppercase;
-  line-height: 1.1;
-  letter-spacing: 0.01em;
+  text-transform: none;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-heading);
+  margin-top: 0;
 }
 
 h1 {
-  font-size: clamp(2.2rem, 6vw, 4.6rem);
+  font-size: var(--fs-h1);
+  font-weight: 600;
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-display);
+  margin-bottom: var(--space-heading-after);
 }
 
 h2 {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  margin-bottom: var(--space-section-title-after);
 }
 
 h3 {
-  font-size: clamp(1.15rem, 2vw, 1.7rem);
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  margin-bottom: 0.65rem;
 }
 
 h4 {
-  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-size: var(--fs-h4);
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  margin-top: 0;
+  margin-bottom: var(--space-body-after);
 }
 
 /* Button */
@@ -415,15 +433,16 @@ h4 {
 /* Typography - center aligned site-wide */
 .content h1,
 .content h2 {
-  font-size: clamp(2rem, 4.1vw, 3.3rem);
+  font-size: var(--fs-h1);
   text-align: center;
 }
 
 .content h2 {
-  font-size: clamp(1.35rem, 2.3vw, 2rem);
+  font-size: var(--fs-h2);
 }
 
 .content p {
+  font-size: var(--fs-body-lg);
   text-align: center;
 }
 
@@ -488,17 +507,27 @@ h4 {
 
 /* Hero banners only - center for focal impact */
 .image-banner h1 {
-  font-size: 40px;
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-display);
   text-align: center;
+  max-width: 18ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .image-banner h2 {
-  font-size: 24px;
+  font-size: clamp(1.12rem, 1.7vw, 1.42rem);
+  line-height: var(--lh-subheading);
+  letter-spacing: 0.01em;
+  font-weight: 500;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
 }
 
 .image-banner p {
-  font-size: 16px;
+  font-size: var(--fs-body-lg);
   text-align: center;
 }
 
@@ -537,12 +566,12 @@ h4 {
 @media (max-width: 768px) {
   .content h1,
   .image-banner h1 {
-    font-size: clamp(2rem, 9vw, 2.7rem);
+    font-size: clamp(2rem, 8.5vw, 2.95rem);
   }
   
   .content h2,
   .image-banner h2 {
-    font-size: clamp(1.1rem, 4.8vw, 1.5rem);
+    font-size: clamp(1.08rem, 4.6vw, 1.42rem);
   }
   
   .content-section .content {
@@ -553,12 +582,12 @@ h4 {
 @media (max-width: 480px) {
   .content h1,
   .image-banner h1 {
-    font-size: 28px;
+    font-size: clamp(1.85rem, 9vw, 2.25rem);
   }
   
   .content h2,
   .image-banner h2 {
-    font-size: 16px;
+    font-size: clamp(1rem, 4.5vw, 1.18rem);
   }
 }
 

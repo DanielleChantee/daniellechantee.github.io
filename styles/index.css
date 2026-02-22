@@ -50,8 +50,7 @@
 
 .main-image-banner {
   background-image: url("../images/pexels-darina-belonogova-8003994.jpg");
-  height: 520px;
-  min-height: 400px;
+  min-height: 560px;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -65,63 +64,23 @@
 
 @media (max-width: 768px) {
   .main-image-banner {
-    height: 400px;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-image-banner {
-    height: auto;
-    min-height: 400px;
-  }
-
-  .main-image-banner .image-banner-content {
-    padding: 20px 12px;
-    min-height: 400px;
-    justify-content: flex-start;
-    padding-top: 40px;
-  }
-
-  .main-image-banner .image-banner-content h1 {
-    margin-bottom: 8px;
-  }
-
-  .main-image-banner .image-banner-content h2 {
-    margin-bottom: 12px;
-    font-size: 16px;
-  }
-
-  .main-image-banner .image-banner-content p {
-    font-size: 12px;
-    margin-bottom: 20px;
-    line-height: 1.5;
-  }
-
-  .main-image-banner .image-banner-content .button-row {
-    margin-top: 12px;
-    gap: 10px;
-  }
-
-  .main-image-banner .image-banner-content .button-row .btn {
-    max-width: 100%;
-    padding: 10px 20px;
-    font-size: 14px;
+    min-height: 520px;
   }
 }
 
 /* Scoped to index hero only - prevents overriding client-work banners on other pages */
 .main-image-banner .image-banner-content {
   color: var(--text-black);
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: clamp(0.55rem, 1.2vw, 1rem);
   background-color: rgba(255, 255, 255, 0.88);
-  padding: 32px 24px;
+  padding: clamp(92px, 11vw, 132px) clamp(24px, 4vw, 48px) clamp(56px, 8vw, 96px);
   box-sizing: border-box;
-  max-width: 100%;
   transition:
     color var(--transition-normal),
     background-color var(--transition-normal);
@@ -130,10 +89,47 @@
 /* Hero text - center-aligned, readable contrast */
 .main-image-banner .image-banner-content p {
   text-align: center;
-  max-width: 560px;
+  max-width: 780px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 0;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.main-image-banner .image-banner-content h1 {
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-display);
+  margin-bottom: 0.35rem;
+  max-width: 20ch;
+}
+
+.main-image-banner .image-banner-content h2 {
+  font-size: clamp(1.12rem, 1.75vw, 1.5rem);
+  line-height: var(--lh-subheading);
+  letter-spacing: var(--tracking-label);
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+  max-width: 34ch;
+}
+
+@media (min-width: 1100px) {
+  .main-image-banner .image-banner-content {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .main-image-banner .image-banner-content h1 {
+    max-width: 22ch;
+  }
+
+  .main-image-banner .image-banner-content h2 {
+    max-width: 40ch;
+  }
+
+  .main-image-banner .image-banner-content p {
+    max-width: 860px;
+  }
 }
 
 .main-image-banner .image-banner-content .button-row {
@@ -141,7 +137,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  margin-top: 20px;
+  margin-top: clamp(0.85rem, 2vw, 1.35rem);
   width: 100%;
 }
 
@@ -165,19 +161,20 @@
 
 @media (max-width: 768px) {
   .main-image-banner .image-banner-content {
-    padding: 20px 16px;
+    padding: clamp(88px, 18vw, 112px) 16px 44px;
   }
 
   .main-image-banner .image-banner-content p {
-    font-size: 13px;
-    margin-bottom: 24px;
+    font-size: 0.98rem;
+    max-width: 42ch;
+    margin-bottom: 0;
   }
 
   .main-image-banner .image-banner-content .button-row {
     flex-direction: column;
     align-items: center;
-    gap: 12px;
-    margin-top: 16px;
+    gap: 10px;
+    margin-top: 14px;
     width: 100%;
   }
 
@@ -190,31 +187,30 @@
 
 @media (max-width: 480px) {
   .main-image-banner {
-    height: auto;
-    min-height: 400px;
+    min-height: 540px;
   }
 
   .main-image-banner .image-banner-content {
-    padding: 20px 12px;
-    min-height: 400px;
+    padding: 96px 12px 38px;
+    min-height: 540px;
     justify-content: flex-start;
-    padding-top: 40px;
+    gap: 0.6rem;
   }
 
   .main-image-banner .image-banner-content h1 {
-    margin-bottom: 8px;
-    font-size: 36px;
+    margin-bottom: 0.3rem;
+    font-size: clamp(2rem, 8.4vw, 2.65rem);
   }
 
   .main-image-banner .image-banner-content h2 {
-    margin-bottom: 12px;
-    font-size: 16px;
+    margin-bottom: 0.15rem;
+    font-size: clamp(1rem, 4.5vw, 1.2rem);
   }
 
   .main-image-banner .image-banner-content p {
-    font-size: 12px;
-    margin-bottom: 20px;
-    line-height: 1.5;
+    font-size: 0.94rem;
+    margin-bottom: 0;
+    line-height: 1.58;
   }
 
   .main-image-banner .image-banner-content .button-row {
@@ -239,14 +235,21 @@
   text-align: center;
 }
 .clients .content h1 {
-  font-size: 50px;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-display);
   margin-bottom: 12px;
   text-align: center;
 }
 .clients .content h2 {
-  font-size: 20px;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-heading);
+  text-transform: none;
+  font-weight: 600;
   margin-bottom: 16px;
   text-align: center;
+  opacity: 1;
 }
 
 .clients .button-row {
@@ -290,8 +293,8 @@
 }
 .main-image-banner p,
 .clients .content p {
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-body);
   margin-bottom: 24px;
 }
 

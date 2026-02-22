@@ -201,24 +201,27 @@ body {
 
 .project-block-tag {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.76rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: var(--text-gray);
   margin-bottom: 12px;
 }
 
 .project-block-info h2 {
-  font-size: 2rem;
+  font-size: clamp(1.7rem, 2.4vw, 2.35rem);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-heading);
+  font-weight: 600;
   margin: 0 0 16px 0;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .project-block-info p {
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-body);
   color: var(--text-gray);
   margin: 0 0 24px 0;
   text-align: center;
@@ -253,7 +256,7 @@ body {
   }
 
   .project-block-info h2 {
-    font-size: 1.5rem;
+    font-size: clamp(1.45rem, 5.2vw, 1.9rem);
   }
 }
 
@@ -293,14 +296,15 @@ body {
 }
 
 .text-content h3 {
-  font-size: 1.8rem;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-subheading);
   margin-bottom: 10px;
   text-align: center;
 }
 
 .text-content p {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-body);
   text-align: center;
 }
 
@@ -372,24 +376,30 @@ body {
 }
 
 .project-hero h1 {
-  font-size: 3rem;
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-display);
   margin: 0;
+  max-width: 16ch;
 }
 
 .project-hero p {
-  font-size: 1.2rem;
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-body);
   margin: 10px 0 0;
 }
 
 .project-content h2 {
   margin-top: 40px;
-  font-size: 2rem;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-heading);
 }
 
 .project-content.case-study h2 {
   margin-top: 48px;
   margin-bottom: 16px;
-  font-size: 1.5rem;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
 }
 
 .project-content.case-study h2:first-of-type {
@@ -462,8 +472,10 @@ body {
 }
 
 .project-intro-banner h2 {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-heading);
   margin-bottom: 20px;
   color: var(--text-black);
   transition: color var(--transition-normal);
@@ -471,7 +483,8 @@ body {
 
 .project-intro-banner p {
   margin-bottom: 30px;
-  font-size: 1rem;
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-body);
   color: var(--text-gray);
   transition: color var(--transition-normal);
 }
@@ -489,8 +502,10 @@ body {
 }
 
 .project-intro-banner-item-right h2 {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-heading);
   margin-bottom: 20px;
   color: var(--text-black);
   transition: color var(--transition-normal);
@@ -498,7 +513,8 @@ body {
 
 .project-intro-banner-item-right p {
   margin-bottom: 30px;
-  font-size: 1rem;
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-body);
   color: var(--text-gray);
   transition: color var(--transition-normal);
 }
@@ -557,7 +573,8 @@ body {
 .quick-view-gallery-card-overlay h2 {
   font-weight: 700;
   color: var(--text-white);
-  font-size: 1.3rem;
+  font-size: clamp(1.15rem, 1.55vw, 1.42rem);
+  line-height: var(--lh-subheading);
   transition: color var(--transition-normal);
 }
 
@@ -733,7 +750,8 @@ body {
 .hover-gallery-card-overlay h2 {
   font-weight: 700;
   color: var(--text-white);
-  font-size: 1.3rem;
+  font-size: clamp(1.15rem, 1.55vw, 1.42rem);
+  line-height: var(--lh-subheading);
   transition: color var(--transition-normal);
 }
 
@@ -848,7 +866,8 @@ body {
 
 .services-page-features .service-heading {
   color: var(--text-white);
-  font-size: 1.2rem;
+  font-size: clamp(1.08rem, 1.5vw, 1.26rem);
+  line-height: var(--lh-subheading);
   margin-bottom: 12px;
   text-align: center;
 }
@@ -856,7 +875,8 @@ body {
 .services-page-features .service-paragraph {
   color: rgba(255, 255, 255, 0.9);
   max-width: 100%;
-  font-size: 0.95rem;
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-body);
   text-align: center;
 }
 
@@ -900,15 +920,17 @@ body {
 
 .process-step h3 {
   color: var(--text-white);
-  font-size: 1.2rem;
+  font-size: var(--fs-h4);
+  line-height: var(--lh-subheading);
+  letter-spacing: var(--tracking-label);
   margin-bottom: 12px;
   text-transform: uppercase;
 }
 
 .process-step p {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 0.95rem;
-  line-height: 1.75;
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-body);
   margin: 0;
   margin-top: 4px;
 }
