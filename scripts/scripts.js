@@ -5,6 +5,90 @@
  */
 
 document.addEventListener("DOMContentLoaded", function () {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const parseColorChannels = (colorValue) => {
+    if (!colorValue || colorValue === "transparent") {
+      return null;
+    }
+    const matches = colorValue.match(/[\d.]+/g);
+    if (!matches || matches.length < 3) {
+      return null;
+    }
+    return {
+      r: Number(matches[0]),
+      g: Number(matches[1]),
+      b: Number(matches[2]),
+      a: matches.length > 3 ? Number(matches[3]) : 1,
+    };
+  };
+
+  const isDarkBackground = (element) => {
+    let currentElement = element;
+    while (currentElement) {
+      const channels = parseColorChannels(window.getComputedStyle(currentElement).backgroundColor);
+      if (channels && channels.a > 0.05) {
+        const luminance = (0.299 * channels.r + 0.587 * channels.g + 0.114 * channels.b) / 255;
+        return luminance < 0.42;
+      }
+      currentElement = currentElement.parentElement;
+    }
+    return false;
+  };
+
+  /**
+   * Sitewide section reveal choreography and section style variation
+   */
+  try {
+    const revealTargets = document.querySelectorAll(
+      ".image-banner-content, .content-section, .project-block, .project-detail",
+    );
+    const revealChildSelector =
+      "h1, h2, h3, p, ul, ol, .btn, .service-item, .process-step, .project-block-info, .project-block-media";
+
+    let contentSectionIndex = 0;
+    revealTargets.forEach((section) => {
+      section.classList.add("reveal-section");
+      if (section.classList.contains("content-section")) {
+        const isDarkSection = isDarkBackground(section);
+
+        section.classList.remove("has-dark-gradient", "section-tone-1", "section-tone-2", "section-tone-3");
+        if (isDarkSection) {
+          contentSectionIndex += 1;
+          const tone = ((contentSectionIndex - 1) % 3) + 1;
+          section.classList.add("has-dark-gradient", `section-tone-${tone}`);
+        }
+      }
+
+      const revealItems = section.querySelectorAll(revealChildSelector);
+      revealItems.forEach((item, idx) => {
+        item.classList.add("reveal-item");
+        item.style.setProperty("--reveal-delay", `${Math.min(idx * 55, 320)}ms`);
+      });
+    });
+
+    if (prefersReducedMotion) {
+      revealTargets.forEach((section) => section.classList.add("is-visible"));
+    } else {
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              return;
+            }
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.16, rootMargin: "0px 0px -8% 0px" },
+      );
+
+      revealTargets.forEach((section) => revealObserver.observe(section));
+    }
+  } catch (error) {
+    console.error("Error initializing reveal choreography:", error);
+  }
+
   /**
    * On localhost: unregister any service worker to avoid stale cache during development
    */

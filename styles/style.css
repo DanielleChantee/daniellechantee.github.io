@@ -73,6 +73,24 @@ h4 {
   font-weight: 400;
   font-style: normal;
   text-transform: uppercase;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 6vw, 4.6rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.15rem, 2vw, 1.7rem);
+}
+
+h4 {
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
 }
 
 /* Button */
@@ -92,6 +110,27 @@ h4 {
   font-weight: 500;
   min-height: 44px;
   min-width: 120px;
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: -40%;
+  width: 34%;
+  height: 320%;
+  transform: rotate(22deg);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 255, 255, 0)
+  );
+  transition: transform 0.55s ease;
+  pointer-events: none;
 }
 
 /* Primary CTA - More prominent */
@@ -125,8 +164,12 @@ h4 {
 
 .btn:hover {
   background-color: var(--color-gray-dark);
-  transform: translateY(-1px);
+  transform: translateY(-1px) scale(1.01);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover::before {
+  transform: rotate(22deg) translateX(320%);
 }
 
 .btn:focus {
@@ -206,6 +249,60 @@ h4 {
   overflow-x: hidden;
   transition: background-color var(--transition-normal);
   padding: 48px 24px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.content-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+.content-section.has-dark-gradient::before,
+.content-section.has-dark-gradient::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 86px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.content-section.has-dark-gradient::before {
+  top: -1px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+}
+
+.content-section.has-dark-gradient::after {
+  bottom: -1px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+}
+
+.content-section.has-dark-gradient {
+  background-image:
+    radial-gradient(1200px 520px at 8% -15%, rgba(255, 255, 255, 0.06), transparent 65%),
+    radial-gradient(900px 420px at 92% 118%, rgba(255, 255, 255, 0.05), transparent 70%);
+}
+
+.content-section.has-dark-gradient.section-tone-1 {
+  background-image:
+    radial-gradient(980px 420px at 0% 0%, rgba(255, 255, 255, 0.08), transparent 65%),
+    radial-gradient(860px 360px at 100% 100%, rgba(255, 255, 255, 0.04), transparent 70%);
+}
+
+.content-section.has-dark-gradient.section-tone-2 {
+  background-image:
+    radial-gradient(920px 360px at 20% -10%, rgba(255, 255, 255, 0.05), transparent 70%),
+    linear-gradient(165deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01) 45%, rgba(255, 255, 255, 0.03));
+}
+
+.content-section.has-dark-gradient.section-tone-3 {
+  background-image:
+    radial-gradient(900px 420px at 88% -8%, rgba(255, 255, 255, 0.08), transparent 64%),
+    radial-gradient(1200px 400px at 10% 110%, rgba(255, 255, 255, 0.03), transparent 74%);
 }
 
 @media (max-width: 768px) {
@@ -318,12 +415,12 @@ h4 {
 /* Typography - center aligned site-wide */
 .content h1,
 .content h2 {
-  font-size: 40px;
+  font-size: clamp(2rem, 4.1vw, 3.3rem);
   text-align: center;
 }
 
 .content h2 {
-  font-size: 24px;
+  font-size: clamp(1.35rem, 2.3vw, 2rem);
 }
 
 .content p {
@@ -440,12 +537,12 @@ h4 {
 @media (max-width: 768px) {
   .content h1,
   .image-banner h1 {
-    font-size: 36px;
+    font-size: clamp(2rem, 9vw, 2.7rem);
   }
   
   .content h2,
   .image-banner h2 {
-    font-size: 18px;
+    font-size: clamp(1.1rem, 4.8vw, 1.5rem);
   }
   
   .content-section .content {
@@ -483,6 +580,25 @@ img[loading="lazy"] {
 picture {
   display: block;
   max-width: 100%;
+}
+
+/* Scroll-reveal choreography */
+.reveal-section {
+  --reveal-distance: 24px;
+}
+
+.reveal-item {
+  opacity: 0;
+  transform: translateY(var(--reveal-distance));
+  transition:
+    opacity 0.65s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-section.is-visible .reveal-item {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Footer */

@@ -93,6 +93,9 @@ nav {
   background: var(--bg-white);
   color: var(--text-black);
   border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 9px 18px;
   font-weight: 600;
   text-decoration: none;
@@ -100,6 +103,27 @@ nav {
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.34);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.desktop-menu li a.contact-cta::before {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: -42%;
+  width: 34%;
+  height: 320%;
+  transform: rotate(22deg);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.22),
+    rgba(255, 255, 255, 0)
+  );
+  transition: transform 0.55s ease;
+  pointer-events: none;
 }
 
 .desktop-menu li a.contact-cta:hover {
@@ -110,6 +134,10 @@ nav {
   border-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 9px 18px rgba(0, 0, 0, 0.34);
   opacity: 1;
+}
+
+.desktop-menu li a.contact-cta:hover::before {
+  transform: rotate(22deg) translateX(320%);
 }
 
 .desktop-menu li a.contact-cta:focus-visible {
