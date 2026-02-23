@@ -837,11 +837,17 @@ body {
 /* Services Page & Process Section */
 .service-features.services-page-features {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 24px 20px 0;
+}
+
+@media (max-width: 1024px) {
+  .service-features.services-page-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
