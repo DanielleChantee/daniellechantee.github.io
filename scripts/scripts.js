@@ -92,6 +92,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const revealItems = section.querySelectorAll(revealChildSelector);
       revealItems.forEach((item, idx) => {
+        if (item.closest(".project-content.case-study") && item.matches("h2, h3")) {
+          return;
+        }
         if (
           section.classList.contains("hero-intro") &&
           item.matches("h1, h2, p, .button-row, .btn")
@@ -243,6 +246,79 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   } catch (error) {
     console.error("Error initializing clients marquee interactions:", error);
+  }
+
+  /**
+   * Progressive case-study heading reveals
+   */
+  try {
+    const caseStudyHeadings = document.querySelectorAll(".project-content.case-study h2, .project-content.case-study h3");
+    caseStudyHeadings.forEach((heading) => {
+      heading.classList.add("heading-reveal");
+      if (!heading.querySelector(".heading-reveal-text")) {
+        const textWrapper = document.createElement("span");
+        textWrapper.className = "heading-reveal-text";
+        textWrapper.innerHTML = heading.innerHTML;
+        heading.innerHTML = "";
+        heading.appendChild(textWrapper);
+      }
+    });
+
+    if (prefersReducedMotion) {
+      caseStudyHeadings.forEach((heading) => heading.classList.add("is-visible"));
+    } else if (caseStudyHeadings.length) {
+      const headingObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              return;
+            }
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.45, rootMargin: "0px 0px -6% 0px" },
+      );
+      caseStudyHeadings.forEach((heading) => headingObserver.observe(heading));
+    }
+  } catch (error) {
+    console.error("Error initializing case-study heading reveals:", error);
+  }
+
+  /**
+   * Magnetic CTA interactions (desktop only)
+   */
+  try {
+    const supportsFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    if (!prefersReducedMotion && supportsFinePointer) {
+      const magneticButtons = document.querySelectorAll(
+        ".btn.btn-primary, .btn.btn-secondary, .contact-cta",
+      );
+
+      magneticButtons.forEach((button) => {
+        button.classList.add("magnetic-enabled");
+
+        button.addEventListener("pointermove", (event) => {
+          const rect = button.getBoundingClientRect();
+          const x = event.clientX - rect.left - rect.width / 2;
+          const y = event.clientY - rect.top - rect.height / 2;
+          const moveX = Math.max(Math.min(x * 0.14, 8), -8);
+          const moveY = Math.max(Math.min(y * 0.14, 7), -7);
+
+          button.style.setProperty("--magnetic-x", `${moveX}px`);
+          button.style.setProperty("--magnetic-y", `${moveY}px`);
+          button.classList.add("is-magnetic-active");
+        });
+
+        button.addEventListener("pointerleave", () => {
+          button.style.setProperty("--magnetic-x", "0px");
+          button.style.setProperty("--magnetic-y", "0px");
+          button.classList.remove("is-magnetic-active");
+        });
+      });
+    }
+  } catch (error) {
+    console.error("Error initializing magnetic CTA interactions:", error);
   }
 
   /**

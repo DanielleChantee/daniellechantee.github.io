@@ -113,6 +113,8 @@ p {
 
 /* Button */
 .btn {
+  --magnetic-x: 0px;
+  --magnetic-y: 0px;
   text-decoration: none;
   background-color: var(--bg-black);
   border: none;
@@ -162,7 +164,7 @@ p {
 
 .btn-primary:hover {
   background-color: var(--color-gray-dark);
-  transform: translateY(-2px);
+  transform: translate(var(--magnetic-x), var(--magnetic-y)) translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
@@ -176,13 +178,13 @@ p {
 
 .btn-secondary:hover {
   background-color: rgba(0, 0, 0, 0.85);
-  transform: translateY(-1px);
+  transform: translate(var(--magnetic-x), var(--magnetic-y)) translateY(-1px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover {
   background-color: var(--color-gray-dark);
-  transform: translateY(-1px) scale(1.01);
+  transform: translate(var(--magnetic-x), var(--magnetic-y)) translateY(-1px) scale(1.01);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -206,7 +208,11 @@ p {
 }
 
 .btn:active {
-  transform: scale(0.98);
+  transform: translate(var(--magnetic-x), var(--magnetic-y)) scale(0.98);
+}
+
+.btn.magnetic-enabled.is-magnetic-active:not(:hover) {
+  transform: translate(var(--magnetic-x), var(--magnetic-y));
 }
 
 /* Loading state for buttons */
