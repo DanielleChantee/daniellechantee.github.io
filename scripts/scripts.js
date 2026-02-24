@@ -70,6 +70,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (prefersReducedMotion) {
       revealTargets.forEach((section) => section.classList.add("is-visible"));
     } else {
+      const isInInitialViewport = (element) => {
+        const rect = element.getBoundingClientRect();
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+        const elementHeight = Math.max(rect.height, 1);
+        return visibleHeight / elementHeight >= 0.16;
+      };
+
       const revealObserver = new IntersectionObserver(
         (entries, observer) => {
           entries.forEach((entry) => {
@@ -83,7 +91,22 @@ document.addEventListener("DOMContentLoaded", function () {
         { threshold: 0.16, rootMargin: "0px 0px -8% 0px" },
       );
 
-      revealTargets.forEach((section) => revealObserver.observe(section));
+      let initialVisibleIndex = 0;
+      revealTargets.forEach((section) => {
+        if (isInInitialViewport(section)) {
+          // Defer visibility long enough for first paint so above-the-fold
+          // sections animate instead of snapping to final state.
+          const delay = 90 + initialVisibleIndex * 55;
+          initialVisibleIndex += 1;
+          requestAnimationFrame(() => {
+            setTimeout(() => {
+              section.classList.add("is-visible");
+            }, delay);
+          });
+          return;
+        }
+        revealObserver.observe(section);
+      });
     }
   } catch (error) {
     console.error("Error initializing reveal choreography:", error);
