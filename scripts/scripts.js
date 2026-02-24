@@ -141,23 +141,31 @@ document.addEventListener("DOMContentLoaded", function () {
       clientsCarouselElement.classList.add("loading");
 
       const clientsCarousel = new Splide(clientsCarouselElement, {
-        perPage: 4,
-        rewind: true,
+        type: "loop",
+        perPage: 3,
+        focus: "center",
+        gap: "1.6rem",
+        padding: { left: "8%", right: "8%" },
         autoplay: true,
-        interval: 3000,
-        pauseOnHover: false,
+        interval: 3400,
+        speed: 900,
+        pauseOnHover: true,
         pauseOnFocus: false,
-        pagination: false,
+        pagination: true,
         arrows: true,
+        keyboard: true,
         breakpoints: {
-          1410: {
-            perPage: 3,
-          },
-          1100: {
+          1400: {
             perPage: 2,
+            padding: { left: "6%", right: "6%" },
           },
-          800: {
+          1024: {
+            perPage: 2,
+            padding: { left: "4%", right: "4%" },
+          },
+          860: {
             perPage: 1,
+            padding: { left: "6%", right: "6%" },
           },
         },
       });
@@ -174,6 +182,27 @@ document.addEventListener("DOMContentLoaded", function () {
       clientsCarouselElement.classList.remove("loading");
       clientsCarouselElement.classList.add("error");
     }
+  }
+
+  /**
+   * FAQ accordion UX: keep one item open at a time for clearer scanning
+   */
+  try {
+    const faqItems = document.querySelectorAll(".faq-accordion .faq-item");
+    faqItems.forEach((item) => {
+      item.addEventListener("toggle", () => {
+        if (!item.open) {
+          return;
+        }
+        faqItems.forEach((otherItem) => {
+          if (otherItem !== item) {
+            otherItem.open = false;
+          }
+        });
+      });
+    });
+  } catch (error) {
+    console.error("Error initializing FAQ accordion:", error);
   }
 
   /**

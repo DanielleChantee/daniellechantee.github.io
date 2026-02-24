@@ -419,7 +419,7 @@ img[loading="lazy"] {
   margin: 0 auto 0 auto;
   text-align: center;
   max-width: 800px;
-  padding: 40px 20px 0 20px;
+  padding: 40px 20px;
 }
 
 .clients .content {
@@ -436,165 +436,111 @@ img[loading="lazy"] {
   background-color: var(--bg-black);
   color: var(--text-white);
 }
-/* Clients carousel */
-.clients #carousel,
-.clients .clients-carousel {
-  padding: 80px 0 !important;
-  overflow: visible;
+/* Clients marquee */
+.clients-marquee {
   position: relative;
-  margin: 0 auto;
-  max-width: 1410px;
-  width: 100%;
-  box-sizing: border-box;
-  margin-top: 0;
+  margin: 28px auto 0;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 0;
+  overflow: hidden;
 }
 
-/* Clients carousel - Track and Slide Styles */
-.clients #carousel .splide__track,
-.clients .clients-carousel .splide__track {
-  padding: 0 20px;
-  overflow: visible;
-}
-
-.clients #carousel .splide__slide,
-.clients .clients-carousel .splide__slide {
-  flex: 0 0 300px;
-  margin-right: 70px;
-}
-
-.clients #carousel .splide__slide:last-child,
-.clients .clients-carousel .splide__slide:last-child {
-  margin-right: 0;
-}
-
-.clients #carousel .splide__slide img,
-.clients .clients-carousel .splide__slide img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-@media (max-width: 1410px) {
-  .clients #carousel,
-  .clients .clients-carousel {
-    max-width: calc(100% - 40px);
-  }
-
-  .clients #carousel .splide__track,
-  .clients .clients-carousel .splide__track {
-    padding: 0 20px;
-  }
-
-  .clients #carousel .splide__slide,
-  .clients .clients-carousel .splide__slide {
-    flex: 0 0 auto;
-    width: calc(100% / 3 - 20px);
-    margin-right: 20px;
-  }
-
-  .clients #carousel .splide__slide:last-child,
-  .clients .clients-carousel .splide__slide:last-child {
-    margin-right: 0;
-  }
-
-  .clients #carousel .splide__slide img,
-  .clients .clients-carousel .splide__slide img {
-    width: 100%;
-    height: auto;
-  }
-}
-
-@media (max-width: 1100px) {
-  .clients #carousel .splide__slide,
-  .clients .clients-carousel .splide__slide {
-    width: calc(100% / 2 - 20px);
-  }
-}
-
-@media (max-width: 800px) {
-  .clients #carousel .splide__slide,
-  .clients .clients-carousel .splide__slide {
-    width: 100%;
-  }
-}
-
-.clients #carousel .splide__arrows,
-.clients .clients-carousel .splide__arrows {
+.clients-marquee::before,
+.clients-marquee::after {
+  content: "";
   position: absolute;
-  width: 100%;
-  top: 55%;
-  left: 0;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
+  top: 0;
+  bottom: 0;
+  width: clamp(22px, 4vw, 56px);
   pointer-events: none;
-  z-index: 1000;
+  z-index: 2;
 }
 
-.clients #carousel .splide__arrow,
-.clients .clients-carousel .splide__arrow {
-  background: var(--bg-black);
-  height: 50px;
-  width: 50px;
-  opacity: 1;
-  transition: background-color var(--transition-normal);
-  position: absolute;
-  pointer-events: all;
-  margin: 0;
+.clients-marquee::before {
+  left: 0;
+  background: linear-gradient(to right, #fff 10%, rgba(255, 255, 255, 0));
 }
 
-.clients #carousel .splide__arrow--prev,
-.clients .clients-carousel .splide__arrow--prev {
-  left: -80px;
-  right: auto;
+.clients-marquee::after {
+  right: 0;
+  background: linear-gradient(to left, #fff 10%, rgba(255, 255, 255, 0));
 }
 
-.clients #carousel .splide__arrow--next,
-.clients .clients-carousel .splide__arrow--next {
-  right: -80px;
-  left: auto;
+.clients-marquee-row {
+  overflow: hidden;
+  margin-bottom: 18px;
 }
 
-@media (max-width: 1600px) {
-  .clients.content-section {
-    padding: 40px 60px;
+.clients-marquee-row:last-child {
+  margin-bottom: 0;
+}
+
+.clients-marquee-track {
+  display: flex;
+  width: max-content;
+}
+
+.clients-marquee-set {
+  display: flex;
+  gap: clamp(10px, 1.5vw, 22px);
+  padding-right: clamp(10px, 1.5vw, 22px);
+}
+
+.clients-marquee-row--forward .clients-marquee-track {
+  animation: clientsMarqueeForward 92s linear infinite;
+}
+
+.clients-marquee-row--reverse .clients-marquee-track {
+  animation: clientsMarqueeReverse 92s linear infinite;
+}
+
+.clients-marquee:hover .clients-marquee-track {
+  animation-play-state: paused;
+}
+
+.client-card {
+  display: block;
+  flex: 0 0 clamp(210px, 23vw, 340px);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+  box-shadow: 0 10px 26px rgba(10, 10, 10, 0.08);
+  text-decoration: none;
+  color: inherit;
+}
+
+.client-card img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: top center;
+}
+
+@keyframes clientsMarqueeForward {
+  from {
+    transform: translateX(0);
   }
-
-  .clients #carousel,
-  .clients .clients-carousel {
-    padding: 80px 0 !important;
+  to {
+    transform: translateX(-50%);
   }
+}
 
-  .clients #carousel .splide__arrow--prev,
-  .clients .clients-carousel .splide__arrow--prev {
-    left: -60px;
+@keyframes clientsMarqueeReverse {
+  from {
+    transform: translateX(-50%);
   }
-
-  .clients #carousel .splide__arrow--next,
-  .clients .clients-carousel .splide__arrow--next {
-    right: -60px;
+  to {
+    transform: translateX(0);
   }
 }
 
 @media (max-width: 1200px) {
   .clients.content-section {
-    padding: 40px 50px;
-  }
-
-  .clients #carousel,
-  .clients .clients-carousel {
-    padding: 80px 0 !important;
-  }
-
-  .clients #carousel .splide__arrow--prev,
-  .clients .clients-carousel .splide__arrow--prev {
-    left: -50px;
-  }
-
-  .clients #carousel .splide__arrow--next,
-  .clients .clients-carousel .splide__arrow--next {
-    right: -50px;
+    padding: 40px 42px;
   }
 }
 
@@ -603,39 +549,30 @@ img[loading="lazy"] {
     padding: 40px 0;
   }
 
-  .clients #carousel,
-  .clients .clients-carousel {
-    padding: 40px 20px;
+  .clients-marquee {
+    margin-top: 18px;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
   }
 
-  .clients #carousel .splide__arrow--prev,
-  .clients .clients-carousel .splide__arrow--prev {
-    left: 10px;
+  .clients-marquee-row {
+    margin-bottom: 12px;
   }
 
-  .clients #carousel .splide__arrow--next,
-  .clients .clients-carousel .splide__arrow--next {
-    right: 10px;
+  .client-card {
+    flex-basis: clamp(150px, 44vw, 220px);
+    border-radius: 12px;
   }
 }
 
-.clients #carousel .splide__arrow svg,
-.clients .clients-carousel .splide__arrow svg {
-  fill: var(--text-white);
-  transition: fill var(--transition-normal);
+@media (prefers-reduced-motion: reduce) {
+  .clients-marquee-row--forward .clients-marquee-track,
+  .clients-marquee-row--reverse .clients-marquee-track {
+    animation: none;
+    transform: translateX(0);
+  }
 }
-
-/* .clients #carousel .splide__slide {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  animation: glowblack 2s infinite alternate;
-  overflow-y: visible;
-  padding: 10px 0 !important;
-}
-
-.clients #carousel .splide__track {
-  overflow-y: visible;
-  padding: 40px 0 !important;
-} */
 
 /* SERVICES */
 .services.content-section {

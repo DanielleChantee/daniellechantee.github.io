@@ -379,22 +379,33 @@ p {
 }
 
 .faq-accordion {
-  margin-top: 22px;
+  margin-top: 24px;
+  display: grid;
+  gap: 12px;
 }
 
-.faq-accordion details {
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
+.faq-accordion .faq-item {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 14px;
   padding: 0;
-  margin-bottom: 14px;
-  background: rgba(255, 255, 255, 0.03);
+  margin: 0;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.03)
+  );
+  overflow: hidden;
+  transition: border-color var(--transition-normal), background-color var(--transition-normal), transform var(--transition-fast);
 }
 
 .faq-accordion summary {
   cursor: pointer;
-  padding: 16px 18px;
+  padding: 18px 56px 18px 20px;
   font-weight: 600;
   list-style: none;
+  position: relative;
+  line-height: 1.45;
+  transition: color var(--transition-normal);
 }
 
 .faq-accordion summary::-webkit-details-marker {
@@ -402,19 +413,50 @@ p {
 }
 
 .faq-accordion summary::after {
-  content: "+";
-  float: right;
-  font-size: 22px;
-  line-height: 1;
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-60%) rotate(45deg);
+  transition: transform 0.25s ease;
 }
 
-.faq-accordion details[open] summary::after {
-  content: "−";
+.faq-accordion .faq-item[open] {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.04)
+  );
 }
 
-.faq-accordion details p {
+.faq-accordion .faq-item[open] summary::after {
+  transform: translateY(-40%) rotate(225deg);
+}
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.32s ease;
+}
+
+.faq-accordion .faq-item[open] .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer p {
+  overflow: hidden;
   margin: 0;
-  padding: 0 18px 16px;
+  padding: 0 20px 18px;
+  opacity: 0.88;
+}
+
+.faq-accordion .faq-item:focus-within {
+  transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {
