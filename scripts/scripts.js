@@ -128,60 +128,40 @@ document.addEventListener("DOMContentLoaded", function () {
   // during local development and preview. Re-enable when done testing.
   // registerServiceWorker();
   /**
-   * Initialise Splide Carousel for Clients Section (Main Project Gallery)
-   * Shows loading state while carousel initialises
-   * Scoped to .clients section to avoid conflicts
+   * Homepage clients marquee interaction polish
+   * Pause on focus/hover/touch for better readability and accessibility
    */
-  const clientsCarouselElement = document.querySelector(
-    ".clients #carousel, .clients .clients-carousel",
-  );
-  if (clientsCarouselElement) {
-    try {
-      // Show loading state
-      clientsCarouselElement.classList.add("loading");
+  try {
+    const clientsMarquee = document.querySelector(".clients-marquee");
+    if (clientsMarquee) {
+      let resumeTimer;
+      const setPaused = (paused) => {
+        clientsMarquee.classList.toggle("is-paused", paused);
+      };
 
-      const clientsCarousel = new Splide(clientsCarouselElement, {
-        type: "loop",
-        perPage: 3,
-        focus: "center",
-        gap: "1.6rem",
-        padding: { left: "8%", right: "8%" },
-        autoplay: true,
-        interval: 3400,
-        speed: 900,
-        pauseOnHover: true,
-        pauseOnFocus: false,
-        pagination: true,
-        arrows: true,
-        keyboard: true,
-        breakpoints: {
-          1400: {
-            perPage: 2,
-            padding: { left: "6%", right: "6%" },
-          },
-          1024: {
-            perPage: 2,
-            padding: { left: "4%", right: "4%" },
-          },
-          860: {
-            perPage: 1,
-            padding: { left: "6%", right: "6%" },
-          },
+      clientsMarquee.addEventListener("focusin", () => setPaused(true));
+      clientsMarquee.addEventListener("focusout", () => setPaused(false));
+      clientsMarquee.addEventListener("pointerenter", () => setPaused(true));
+      clientsMarquee.addEventListener("pointerleave", () => setPaused(false));
+      clientsMarquee.addEventListener(
+        "touchstart",
+        () => {
+          clearTimeout(resumeTimer);
+          setPaused(true);
         },
-      });
-
-      // Remove loading state when carousel is ready
-      clientsCarousel.on("mounted", () => {
-        clientsCarouselElement.classList.remove("loading");
-        clientsCarouselElement.classList.add("is-initialized");
-      });
-
-      clientsCarousel.mount();
-    } catch (error) {
-      console.error("Error initializing clients carousel:", error);
-      clientsCarouselElement.classList.remove("loading");
-      clientsCarouselElement.classList.add("error");
+        { passive: true },
+      );
+      clientsMarquee.addEventListener(
+        "touchend",
+        () => {
+          clearTimeout(resumeTimer);
+          resumeTimer = setTimeout(() => setPaused(false), 1600);
+        },
+        { passive: true },
+      );
     }
+  } catch (error) {
+    console.error("Error initializing clients marquee interactions:", error);
   }
 
   /**

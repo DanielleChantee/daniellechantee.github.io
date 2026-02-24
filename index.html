@@ -157,7 +157,9 @@ type: website
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     {% include header.html %}
+    <main id="main-content">
     <!-- IMAGE BANNER -->
     <div class="main-image-banner image-banner">
       <div class="image-banner-content">
@@ -458,7 +460,7 @@ type: website
 
       <div class="service-features">
         <div class="service-item">
-          <h2 class="service-heading">Scalable Architecture</h2>
+          <h3 class="service-heading">Scalable Architecture</h3>
           <p class="service-paragraph">
             Building systems designed for growth. Architecture decisions that
             support long-term extensibility and maintainability, not short-term
@@ -467,7 +469,7 @@ type: website
         </div>
 
         <div class="service-item">
-          <h2 class="service-heading">Performance-Led Development</h2>
+          <h3 class="service-heading">Performance-Led Development</h3>
           <p class="service-paragraph">
             Frontend development focused on performance optimisation, Core Web
             Vitals, and delivering fast, responsive experiences that convert.
@@ -475,7 +477,7 @@ type: website
         </div>
 
         <div class="service-item">
-          <h2 class="service-heading">Shopify Plus Implementation</h2>
+          <h3 class="service-heading">Shopify Plus Implementation</h3>
           <p class="service-paragraph">
             Shopify implementation for complex storefront
             requirements, including app integrations, metafields/metaobjects,
@@ -484,7 +486,7 @@ type: website
         </div>
 
         <div class="service-item">
-          <h2 class="service-heading">Commerce Platform Solutions</h2>
+          <h3 class="service-heading">Commerce Platform Solutions</h3>
           <p class="service-paragraph">
             Focused on Shopify web development and commerce platforms. Custom
             integrations, theme development, and system design for established
@@ -504,6 +506,7 @@ type: website
         {% endfor %}
       </ul> -->
     </div>
+    </main>
 
     {% include footer.html %}
 
