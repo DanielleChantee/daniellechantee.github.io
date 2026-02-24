@@ -672,6 +672,87 @@ picture {
   transform: translateY(0);
 }
 
+/* Hero intro animation (Webflow-style: mask headline + soft-rise support copy) */
+.hero-intro h1,
+.hero-intro .hero-subtitle,
+.hero-intro .hero-copy,
+.hero-intro .hero-cta-row {
+  opacity: 0;
+}
+
+.hero-intro h1 {
+  overflow: hidden;
+  font-weight: 600;
+  /* Give mask room for ascenders/descenders across page font-size variants. */
+  padding-top: 0.06em;
+  padding-bottom: 0.18em;
+}
+
+.hero-intro .hero-mask-text {
+  display: block;
+  font: inherit;
+  font-size: 1em;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  text-rendering: inherit;
+  transform: translateY(102%);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.hero-intro .hero-subtitle,
+.hero-intro .hero-copy,
+.hero-intro .hero-cta-row {
+  transform: translateY(18px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.hero-intro.hero-intro-active h1,
+.hero-intro.hero-intro-active .hero-subtitle,
+.hero-intro.hero-intro-active .hero-copy,
+.hero-intro.hero-intro-active .hero-cta-row {
+  opacity: 1;
+}
+
+.hero-intro.hero-intro-active .hero-mask-text {
+  transform: translateY(0);
+}
+
+.hero-intro.hero-intro-active .hero-subtitle {
+  transition-delay: 120ms;
+  transform: translateY(0);
+}
+
+.hero-intro.hero-intro-active .hero-copy {
+  transition-delay: 220ms;
+  transform: translateY(0);
+}
+
+.hero-intro.hero-intro-active .hero-cta-row {
+  transition-delay: 320ms;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-intro h1,
+  .hero-intro .hero-subtitle,
+  .hero-intro .hero-copy,
+  .hero-intro .hero-cta-row {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero-intro .hero-mask-text {
+    transform: none;
+    transition: none;
+  }
+}
+
 /* Footer */
 footer {
   background-color: var(--bg-gray-light);

@@ -36,6 +36,36 @@ document.addEventListener("DOMContentLoaded", function () {
     return false;
   };
 
+  // Normalize all top banners to use the same intro choreography.
+  const heroIntros = document.querySelectorAll(".image-banner .image-banner-content");
+  heroIntros.forEach((hero) => {
+    hero.classList.add("hero-intro");
+
+    const h1 = hero.querySelector("h1");
+    if (h1 && !h1.querySelector(".hero-mask-text")) {
+      const mask = document.createElement("span");
+      mask.className = "hero-mask-text";
+      mask.innerHTML = h1.innerHTML;
+      h1.innerHTML = "";
+      h1.appendChild(mask);
+    }
+
+    const subtitle = hero.querySelector("h2");
+    if (subtitle) {
+      subtitle.classList.add("hero-subtitle");
+    }
+
+    const copy = hero.querySelector("p");
+    if (copy) {
+      copy.classList.add("hero-copy");
+    }
+
+    const ctaRow = hero.querySelector(".button-row");
+    if (ctaRow) {
+      ctaRow.classList.add("hero-cta-row");
+    }
+  });
+
   /**
    * Sitewide section reveal choreography and section style variation
    */
@@ -62,6 +92,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const revealItems = section.querySelectorAll(revealChildSelector);
       revealItems.forEach((item, idx) => {
+        if (
+          section.classList.contains("hero-intro") &&
+          item.matches("h1, h2, p, .button-row, .btn")
+        ) {
+          return;
+        }
         item.classList.add("reveal-item");
         item.style.setProperty("--reveal-delay", `${Math.min(idx * 55, 320)}ms`);
       });
@@ -110,6 +146,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   } catch (error) {
     console.error("Error initializing reveal choreography:", error);
+  }
+
+  /**
+   * Hero intro choreography for above-the-fold banners
+   */
+  try {
+    if (prefersReducedMotion) {
+      heroIntros.forEach((hero) => hero.classList.add("hero-intro-active"));
+    } else {
+      heroIntros.forEach((hero, index) => {
+        requestAnimationFrame(() => {
+          setTimeout(
+            () => {
+              hero.classList.add("hero-intro-active");
+            },
+            90 + index * 70,
+          );
+        });
+      });
+    }
+  } catch (error) {
+    console.error("Error initializing hero intro choreography:", error);
   }
 
   /**
