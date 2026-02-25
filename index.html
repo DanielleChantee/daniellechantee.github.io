@@ -16,6 +16,24 @@ type: website
       content="Specialist Shopify Plus engineering across theme architecture, app integrations, metafield systems, checkout functions, and performance-aware frontend delivery for established ecommerce brands."
     />
     <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/" />
+    <meta property="og:title" content="{{ page.title | escape }}" />
+    <meta
+      property="og:description"
+      content="Specialist Shopify Plus engineering across theme architecture, app integrations, metafield systems, checkout functions, and performance-aware frontend delivery for established ecommerce brands."
+    />
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/images/profile-picture.jpeg" />
+    <meta property="og:site_name" content="Danielle Adeyemo | Shopify Plus Engineering" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="{{ site.url }}{{ site.baseurl }}/" />
+    <meta name="twitter:title" content="{{ page.title | escape }}" />
+    <meta
+      name="twitter:description"
+      content="Specialist Shopify Plus engineering across theme architecture, app integrations, metafield systems, checkout functions, and performance-aware frontend delivery for established ecommerce brands."
+    />
+    <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/images/profile-picture.jpeg" />
     <title>{{ page.title }}</title>
     <link rel="shortcut icon" href="{{ '/images/logos/logo-white-small.jpg' | relative_url }}" type="image/x-icon" />
     <!-- Person Schema  -->
@@ -85,8 +103,8 @@ type: website
           "Commerce platform implementation"
         ],
         "areaServed": {
-          "@type": "Country",
-          "name": "United Kingdom"
+          "@type": "Place",
+          "name": "Remote"
         },
         "availableChannel": {
           "@type": "VirtualLocation",
@@ -111,24 +129,7 @@ type: website
         "primaryImageOfPage": {
           "@type": "ImageObject",
           "url": "{{ site.url }}{{ site.baseurl }}/images/profile-picture.jpeg",
-          "caption": "Custom Shopify Development Services"
-        },
-        "breadcrumb": {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "{{ site.url }}{{ site.baseurl }}/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Services",
-              "item": "{{ site.url }}{{ site.baseurl }}/services/"
-            }
-          ]
+          "caption": "Shopify Plus Engineering"
         },
         "about": {
           "@type": "Thing",
@@ -136,7 +137,7 @@ type: website
         },
         "isPartOf": {
           "@type": "WebSite",
-          "name": "Danielle Adeyemo Portfolio",
+          "name": "Danielle Adeyemo | Shopify Plus Engineering",
           "url": "{{ site.url }}{{ site.baseurl }}/"
         }
       }
