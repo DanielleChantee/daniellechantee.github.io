@@ -6,6 +6,17 @@ body {
   transition: background-color var(--transition-normal);
 }
 
+/* Work page: tighten intro spacing before first featured project */
+.work-featured-intro.content-section {
+  padding-bottom: 18px;
+}
+
+@media (max-width: 768px) {
+  .work-featured-intro.content-section {
+    padding-bottom: 14px;
+  }
+}
+
 /* Section divider morphs (Work page intro only) */
 .section-morph {
   position: relative;
