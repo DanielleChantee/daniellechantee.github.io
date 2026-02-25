@@ -7,7 +7,7 @@
     <!-- Dynamic Meta Description -->
     <meta
       name="description"
-      content="{% if page.description %}{{ page.description | escape }}{% else %}Danielle Adeyemo, full-stack Shopify Plus contractor delivering theme architecture, app integrations, checkout functions, and conversion-aware frontend implementation.{% endif %}"
+      content="{% if page.description %}{{ page.description | escape }}{% else %}Danielle Adeyemo, Shopify Plus engineer delivering theme architecture, app integrations, checkout functions, and conversion-aware storefront implementation for high-growth ecommerce brands.{% endif %}"
     />
 
     <!-- Canonical URL -->
@@ -23,8 +23,8 @@
     <link rel="canonical" href="{{ canonical_url }}" />
 
     <!-- Open Graph / Facebook -->
-    {% assign og_title = page.title | default: "Danielle Adeyemo - Full-Stack Shopify Plus Contractor" %}
-    {% assign og_description = page.description | default: "Full-stack Shopify Plus contractor for theme architecture, app integrations, checkout functions, and conversion-aware frontend delivery." %}
+    {% assign og_title = page.title | default: "Danielle Adeyemo | Shopify Plus Engineer for High-Growth Ecommerce" %}
+    {% assign og_description = page.description | default: "Shopify Plus engineering across theme architecture, app integrations, checkout functions, and conversion-aware storefront implementation." %}
     {% if page.image %}
       {% if page.image contains "http" %}
         {% assign og_image = page.image %}
@@ -45,7 +45,7 @@
     <meta property="og:title" content="{{ og_title | escape }}" />
     <meta property="og:description" content="{{ og_description | escape }}" />
     <meta property="og:image" content="{{ og_image }}" />
-    <meta property="og:site_name" content="Danielle Adeyemo - Full-Stack Shopify Plus Contractor" />
+    <meta property="og:site_name" content="Danielle Adeyemo | Shopify Plus Engineering" />
     <meta property="og:locale" content="en_GB" />
 
     <!-- Twitter / X Card -->
