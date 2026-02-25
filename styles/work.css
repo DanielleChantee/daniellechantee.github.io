@@ -1,5 +1,5 @@
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-body);
   background-color: var(--bg-white);
   margin: 0;
   padding: 0;
@@ -762,7 +762,7 @@ body {
 
 .quick-view-gallery-card-overlay h4,
 .quick-view-gallery-card-overlay h2 {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-body);
   margin: 0 0 0.5rem 0;
 }
 
@@ -939,7 +939,7 @@ body {
 
 .hover-gallery-card-overlay h4,
 .hover-gallery-card-overlay h2 {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-body);
   margin: 0 0 0.5rem 0;
 }
 

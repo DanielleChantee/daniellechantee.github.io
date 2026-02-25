@@ -53,6 +53,10 @@
   --z-menu-wrapper: 1000;
   --z-popup: 999;
 
+  /* Font families */
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Manrope", sans-serif;
+
   /* Typography scale */
   --fs-display: clamp(2.4rem, 6.2vw, 5rem);
   --fs-h1: clamp(2rem, 4.4vw, 3.4rem);

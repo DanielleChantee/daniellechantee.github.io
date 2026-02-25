@@ -219,7 +219,7 @@ nav {
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   display: block;
   width: 100%;
   min-width: 220px;
@@ -580,7 +580,7 @@ nav {
 .mobile-submenu a {
   padding: 10px 24px 10px 42px;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.3px;
   text-transform: none;
   color: rgba(255, 255, 255, 0.92);

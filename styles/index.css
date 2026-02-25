@@ -611,7 +611,8 @@ img[loading="lazy"] {
   background-color: var(--bg-white);
   border: solid;
   border-color: var(--text-black);
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-heading);
+  font-weight: 600;
   font-size: clamp(20px, 3.5vw, 40px);
   color: var(--text-black);
   white-space: nowrap;

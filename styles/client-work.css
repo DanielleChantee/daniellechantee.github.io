@@ -122,7 +122,8 @@
 
 .client-heading,
 .client-subheading {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-heading);
+  font-weight: 700;
   text-align: center;
   text-transform: uppercase;
 }
@@ -169,12 +170,12 @@ a .client-image,
 
 .client-text-heading {
   display: flex;
-  font-family: "Poppins", sans-serif;
-  font-weight: bold;
+  font-family: var(--font-heading);
+  font-weight: 700;
 }
 
 .client-text {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-body);
   margin: 0;
   width: 100%;
 }
