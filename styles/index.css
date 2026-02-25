@@ -401,8 +401,8 @@ img[loading="lazy"] {
   background-color: var(--bg-black);
   color: var(--text-white);
 }
-/* Clients marquee */
-.clients-marquee {
+/* Brands image carousel */
+.brands-carousel {
   position: relative;
   margin: 28px auto 0;
   width: 100vw;
@@ -412,111 +412,123 @@ img[loading="lazy"] {
   overflow: hidden;
 }
 
-.clients-marquee::before,
-.clients-marquee::after {
+.brands-carousel::before {
   content: "";
   position: absolute;
-  top: 0;
-  bottom: 0;
-  width: clamp(22px, 4vw, 56px);
+  inset: 0;
   pointer-events: none;
+  background:
+    linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 7%) left,
+    linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 7%) right;
+  background-repeat: no-repeat;
+  background-size: 120px 100%, 120px 100%;
   z-index: 2;
 }
 
-.clients-marquee::before {
-  left: 0;
-  background: linear-gradient(to right, #fff 10%, rgba(255, 255, 255, 0));
-}
-
-.clients-marquee::after {
-  right: 0;
-  background: linear-gradient(to left, #fff 10%, rgba(255, 255, 255, 0));
-}
-
-.clients-marquee-row {
-  overflow: hidden;
-  margin-bottom: 18px;
-}
-
-.clients-marquee-row:last-child {
-  margin-bottom: 0;
-}
-
-.clients-marquee-track {
+.brands-carousel-controls {
   display: flex;
-  width: max-content;
+  justify-content: flex-end;
+  gap: 8px;
+  max-width: 1420px;
+  margin: 0 auto 10px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 3;
 }
 
-.clients-marquee-set {
-  display: flex;
-  gap: clamp(10px, 1.5vw, 22px);
-  padding-right: clamp(10px, 1.5vw, 22px);
+.brands-carousel-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.clients-marquee-row--forward .clients-marquee-track {
-  animation: clientsMarqueeForward 92s linear infinite;
+.brands-carousel-btn:hover {
+  transform: translateY(-1px);
+  border-color: #000;
+  background: #1a1a1a;
 }
 
-.clients-marquee-row--reverse .clients-marquee-track {
-  animation: clientsMarqueeReverse 92s linear infinite;
+.brands-carousel-btn:focus-visible {
+  outline: 3px solid rgba(0, 0, 0, 0.9);
+  outline-offset: 2px;
 }
 
-.clients-marquee:hover .clients-marquee-track {
-  animation-play-state: paused;
+.brands-carousel-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(360px, 36vw);
+  gap: clamp(12px, 1.25vw, 18px);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 2px clamp(20px, 2.8vw, 42px) 10px;
+  margin: 0;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-.clients-marquee.is-paused .clients-marquee-track {
-  animation-play-state: paused;
+.brands-carousel-track.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
 }
 
-.client-card {
+.brands-carousel-track::-webkit-scrollbar {
+  height: 0;
+}
+
+.brands-slide {
   display: block;
-  flex: 0 0 clamp(210px, 23vw, 340px);
-  border-radius: 14px;
+  scroll-snap-align: start;
+  border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   background: #fff;
-  box-shadow: 0 10px 26px rgba(10, 10, 10, 0.08);
+  box-shadow: none;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease,
+    border-color 0.24s ease;
 }
 
-.client-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(10, 10, 10, 0.12);
+.brands-slide:hover {
+  transform: translateY(-3px);
+  box-shadow: none;
+  border-color: rgba(0, 0, 0, 0.18);
 }
 
-.client-card:focus-visible {
-  outline: 3px solid rgba(0, 0, 0, 0.82);
+.brands-slide:focus-visible {
+  outline: 3px solid rgba(0, 0, 0, 0.9);
   outline-offset: 2px;
-  border-color: rgba(0, 0, 0, 0.5);
 }
 
-.client-card img {
+.brands-slide img {
   width: 100%;
   display: block;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: top center;
+  transform: scale(1.001);
+  transition: transform 0.35s ease;
 }
 
-@keyframes clientsMarqueeForward {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes clientsMarqueeReverse {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
-  }
+.brands-slide:hover img {
+  transform: scale(1.02);
 }
 
 @media (max-width: 1200px) {
@@ -543,28 +555,37 @@ img[loading="lazy"] {
     padding: 40px 0;
   }
 
-  .clients-marquee {
+  .brands-carousel {
     margin-top: 18px;
     width: 100%;
     max-width: 100%;
     margin-left: 0;
   }
 
-  .clients-marquee-row {
-    margin-bottom: 12px;
+  .brands-carousel::before {
+    display: none;
   }
 
-  .client-card {
-    flex-basis: clamp(150px, 44vw, 220px);
+  .brands-carousel-controls {
+    padding: 0 14px;
+    margin-bottom: 8px;
+  }
+
+  .brands-carousel-track {
+    grid-auto-columns: minmax(250px, 70vw);
+    gap: 12px;
+    padding: 0 12px 6px;
+    cursor: auto;
+  }
+
+  .brands-slide {
     border-radius: 12px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .clients-marquee-row--forward .clients-marquee-track,
-  .clients-marquee-row--reverse .clients-marquee-track {
-    animation: none;
-    transform: translateX(0);
+  .brands-carousel-track {
+    scroll-behavior: auto;
   }
 }
 

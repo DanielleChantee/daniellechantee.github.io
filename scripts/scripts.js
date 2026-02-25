@@ -212,40 +212,98 @@ document.addEventListener("DOMContentLoaded", function () {
   // during local development and preview. Re-enable when done testing.
   // registerServiceWorker();
   /**
-   * Homepage clients marquee interaction polish
-   * Pause on focus/hover/touch for better readability and accessibility
+   * Homepage brands carousel controls
    */
   try {
-    const clientsMarquee = document.querySelector(".clients-marquee");
-    if (clientsMarquee) {
-      let resumeTimer;
-      const setPaused = (paused) => {
-        clientsMarquee.classList.toggle("is-paused", paused);
+    const brandsCarousel = document.querySelector("[data-brands-carousel]");
+    const brandsTrack = document.querySelector("[data-brands-track]");
+    const brandsPrev = document.querySelector("[data-brands-prev]");
+    const brandsNext = document.querySelector("[data-brands-next]");
+
+    if (brandsCarousel && brandsTrack && brandsPrev && brandsNext) {
+      const getScrollAmount = () => {
+        const firstSlide = brandsTrack.querySelector(".brands-slide");
+        if (!firstSlide) {
+          return 340;
+        }
+        const slideRect = firstSlide.getBoundingClientRect();
+        const trackStyle = window.getComputedStyle(brandsTrack);
+        const gap = Number.parseFloat(trackStyle.columnGap || trackStyle.gap || "0") || 0;
+        return slideRect.width + gap;
       };
 
-      clientsMarquee.addEventListener("focusin", () => setPaused(true));
-      clientsMarquee.addEventListener("focusout", () => setPaused(false));
-      clientsMarquee.addEventListener("pointerenter", () => setPaused(true));
-      clientsMarquee.addEventListener("pointerleave", () => setPaused(false));
-      clientsMarquee.addEventListener(
-        "touchstart",
-        () => {
-          clearTimeout(resumeTimer);
-          setPaused(true);
-        },
-        { passive: true },
-      );
-      clientsMarquee.addEventListener(
-        "touchend",
-        () => {
-          clearTimeout(resumeTimer);
-          resumeTimer = setTimeout(() => setPaused(false), 1600);
-        },
-        { passive: true },
-      );
+      brandsPrev.addEventListener("click", () => {
+        brandsTrack.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
+      });
+
+      brandsNext.addEventListener("click", () => {
+        brandsTrack.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+      });
+
+      const supportsFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+      if (supportsFinePointer) {
+        let isPointerDown = false;
+        let isDragging = false;
+        let startX = 0;
+        let startScrollLeft = 0;
+
+        brandsTrack.addEventListener("pointerdown", (event) => {
+          if (event.button !== 0) {
+            return;
+          }
+          isPointerDown = true;
+          isDragging = false;
+          startX = event.clientX;
+          startScrollLeft = brandsTrack.scrollLeft;
+          brandsTrack.classList.add("is-dragging");
+          brandsTrack.setPointerCapture(event.pointerId);
+        });
+
+        brandsTrack.addEventListener("pointermove", (event) => {
+          if (!isPointerDown) {
+            return;
+          }
+          const deltaX = event.clientX - startX;
+          if (Math.abs(deltaX) > 4) {
+            isDragging = true;
+          }
+          brandsTrack.scrollLeft = startScrollLeft - deltaX;
+        });
+
+        const endDrag = (event) => {
+          if (!isPointerDown) {
+            return;
+          }
+          isPointerDown = false;
+          brandsTrack.classList.remove("is-dragging");
+          if (brandsTrack.hasPointerCapture(event.pointerId)) {
+            brandsTrack.releasePointerCapture(event.pointerId);
+          }
+          if (isDragging) {
+            requestAnimationFrame(() => {
+              isDragging = false;
+            });
+          }
+        };
+
+        brandsTrack.addEventListener("pointerup", endDrag);
+        brandsTrack.addEventListener("pointercancel", endDrag);
+        brandsTrack.addEventListener("pointerleave", endDrag);
+
+        brandsTrack.addEventListener(
+          "click",
+          (event) => {
+            if (isDragging) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+          },
+          true,
+        );
+      }
     }
   } catch (error) {
-    console.error("Error initializing clients marquee interactions:", error);
+    console.error("Error initializing brands carousel:", error);
   }
 
   /**
