@@ -72,10 +72,11 @@
     <link rel="stylesheet" href="{{ "/styles/footer.css" | relative_url }}">
     <!-- Page-specific styles last so they can override base -->
     {% include styles.html %}
-    <!-- SPLIDE -->
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    {% assign current_path = page.permalink | default: page.url | default: "" %}
+    {% if current_path == "/work/" or current_path contains "/projects/" %}
     <!-- AOS - Animate On Scroll -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    {% endif %}
   </head>
   <body>
     <!-- Skip Navigation Link -->
@@ -92,11 +93,13 @@
     <!-- Scripts -->
     <script src="{{ '/scripts/scripts.js' | relative_url }}"></script>
     <script>
-      // Initialise AOS (Animate On Scroll)
-      AOS.init({
-        duration: 800,
-        once: true
-      });
+      // Initialise AOS (Animate On Scroll) where loaded.
+      if (window.AOS) {
+        AOS.init({
+          duration: 800,
+          once: true
+        });
+      }
 
       // Initialise Carousels on Page Load
       document.addEventListener('DOMContentLoaded', function() {
