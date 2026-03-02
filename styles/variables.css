@@ -54,8 +54,8 @@
   --z-popup: 999;
 
   /* Font families */
-  --font-body: "Inter", sans-serif;
-  --font-heading: "Manrope", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-heading: "DM Sans", sans-serif;
 
   /* Typography scale */
   --fs-display: clamp(2.4rem, 6.2vw, 5rem);

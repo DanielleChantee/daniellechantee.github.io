@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="{% if page.description %}{{ page.description | escape }}{% else %}Homepage visual direction preview.{% endif %}"
+    />
+
+    {% assign site_url = "https://daniellechantee.github.io" %}
+    {% assign base_url = site_url | append: site.baseurl %}
+    {% if page.permalink %}
+      {% assign canonical_url = base_url | append: page.permalink %}
+    {% elsif page.url %}
+      {% assign canonical_url = base_url | append: page.url %}
+    {% else %}
+      {% assign canonical_url = base_url %}
+    {% endif %}
+    <link rel="canonical" href="{{ canonical_url }}" />
+
+    <meta property="og:type" content="{{ page.type | default: 'website' }}" />
+    <meta property="og:url" content="{{ canonical_url }}" />
+    <meta property="og:title" content="{{ page.title | escape }}" />
+    <meta property="og:description" content="{{ page.description | escape }}" />
+    <meta property="og:site_name" content="Danielle Adeyemo | Shopify Plus Engineering" />
+    <meta property="og:locale" content="en_GB" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="{{ canonical_url }}" />
+    <meta name="twitter:title" content="{{ page.title | escape }}" />
+    <meta name="twitter:description" content="{{ page.description | escape }}" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="{{ '/images/logos/logo-white-small.jpg' | relative_url }}"
+      type="image/x-icon"
+    />
+    <title>{{ page.title }}</title>
+
+    <link rel="stylesheet" href="{{ '/styles/variables.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/styles/style.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/styles/header.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/styles/footer.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/styles/homepage-v2.css' | relative_url }}" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    {% include header.html %}
+    <main id="main-content">{{ content }}</main>
+    {% include footer.html %}
+    <script src="{{ '/scripts/scripts.js' | relative_url }}"></script>
+  </body>
+</html>
