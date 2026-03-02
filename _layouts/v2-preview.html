@@ -57,5 +57,157 @@
     <main id="main-content">{{ content }}</main>
     {% include footer.html %}
     <script src="{{ '/scripts/scripts.js' | relative_url }}"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const v2Root = document.querySelector(".homepage-v2");
+        if (!v2Root) {
+          return;
+        }
+
+        // Scroll-triggered reveal with stagger for section children.
+        const observedSections = v2Root.querySelectorAll(".v2-observe");
+        observedSections.forEach((section) => {
+          const children = section.querySelectorAll(".v2-reveal-child");
+          children.forEach((child, index) => {
+            child.style.setProperty("--v2-delay", `${Math.min(index * 90, 420)}ms`);
+          });
+        });
+
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (prefersReducedMotion) {
+          observedSections.forEach((section) => section.classList.add("is-visible"));
+        } else {
+          const observer = new IntersectionObserver(
+            (entries, obs) => {
+              entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("is-visible");
+                obs.unobserve(entry.target);
+              });
+            },
+            { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
+          );
+          observedSections.forEach((section) => observer.observe(section));
+        }
+
+        // V2 brands slider: centred active slide with side previews, drag, and controlled autoplay.
+        const slider = v2Root.querySelector("[data-v2-brands-slider]");
+        const track = v2Root.querySelector("[data-v2-brands-track]");
+        const slides = track ? Array.from(track.querySelectorAll("[data-v2-brand-slide]")) : [];
+        const prevBtn = v2Root.querySelector("[data-v2-brands-prev]");
+        const nextBtn = v2Root.querySelector("[data-v2-brands-next]");
+
+        if (!slider || !track || slides.length < 2 || !prevBtn || !nextBtn) {
+          return;
+        }
+
+        let currentIndex = 0;
+        let autoplayId = null;
+        let pointerStartX = 0;
+        let pointerActive = false;
+
+        const modulo = (value, size) => ((value % size) + size) % size;
+        const getDelta = (from, to, size) => {
+          const forward = modulo(to - from, size);
+          const backward = forward - size;
+          return Math.abs(forward) <= Math.abs(backward) ? forward : backward;
+        };
+
+        const paint = () => {
+          slides.forEach((slide, idx) => {
+            const delta = getDelta(currentIndex, idx, slides.length);
+            slide.classList.remove("is-active", "is-prev", "is-next", "is-hidden");
+
+            if (delta === 0) {
+              slide.classList.add("is-active");
+              slide.setAttribute("aria-current", "true");
+              return;
+            }
+
+            slide.removeAttribute("aria-current");
+            if (delta === -1) {
+              slide.classList.add("is-prev");
+              return;
+            }
+            if (delta === 1) {
+              slide.classList.add("is-next");
+              return;
+            }
+            slide.classList.add("is-hidden");
+          });
+        };
+
+        const go = (direction) => {
+          currentIndex = modulo(currentIndex + direction, slides.length);
+          paint();
+        };
+
+        const stopAutoplay = () => {
+          if (!autoplayId) {
+            return;
+          }
+          clearInterval(autoplayId);
+          autoplayId = null;
+        };
+
+        const startAutoplay = () => {
+          if (prefersReducedMotion) {
+            return;
+          }
+          stopAutoplay();
+          autoplayId = setInterval(() => {
+            go(1);
+          }, 3600);
+        };
+
+        prevBtn.addEventListener("click", () => {
+          go(-1);
+          startAutoplay();
+        });
+
+        nextBtn.addEventListener("click", () => {
+          go(1);
+          startAutoplay();
+        });
+
+        track.addEventListener("pointerdown", (event) => {
+          if (event.button !== 0) {
+            return;
+          }
+          pointerStartX = event.clientX;
+          pointerActive = true;
+          stopAutoplay();
+          track.setPointerCapture(event.pointerId);
+        });
+
+        track.addEventListener("pointerup", (event) => {
+          if (!pointerActive) {
+            return;
+          }
+          pointerActive = false;
+          const deltaX = event.clientX - pointerStartX;
+          if (Math.abs(deltaX) > 42) {
+            go(deltaX > 0 ? -1 : 1);
+          }
+          if (track.hasPointerCapture(event.pointerId)) {
+            track.releasePointerCapture(event.pointerId);
+          }
+          startAutoplay();
+        });
+
+        track.addEventListener("pointercancel", () => {
+          pointerActive = false;
+          startAutoplay();
+        });
+
+        slider.addEventListener("pointerenter", stopAutoplay);
+        slider.addEventListener("pointerleave", startAutoplay);
+        slider.addEventListener("focusin", stopAutoplay);
+        slider.addEventListener("focusout", startAutoplay);
+
+        paint();
+        startAutoplay();
+      });
+    </script>
   </body>
 </html>

@@ -678,7 +678,7 @@ picture {
   transform: translateY(0);
 }
 
-/* Hero intro animation (Webflow-style: mask headline + soft-rise support copy) */
+/* Hero intro animation (mask headline + soft-rise support copy) */
 .hero-intro h1,
 .hero-intro .hero-subtitle,
 .hero-intro .hero-copy,
