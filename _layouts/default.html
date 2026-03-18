@@ -79,13 +79,16 @@
     <link rel="stylesheet" href="{{ "/styles/footer.css" | relative_url }}">
     <!-- Page-specific styles last so they can override base -->
     {% include styles.html %}
+    {% if page.url contains '/projects/' %}
+    <link rel="stylesheet" href="{{ '/styles/case-study-hero.css' | relative_url }}">
+    {% endif %}
     {% assign current_path = page.permalink | default: page.url | default: "" %}
     {% if current_path == "/work/" or current_path contains "/projects/" %}
     <!-- AOS - Animate On Scroll -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     {% endif %}
   </head>
-  <body>
+  <body {% if page.url contains '/projects/' %}class="case-study-page"{% endif %}>
     <!-- Skip Navigation Link -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     

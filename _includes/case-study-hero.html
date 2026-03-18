@@ -1,0 +1,25 @@
+{% comment %}
+  Case study intro hero (same style as Arne v2).
+  Required: page.hero_image or page.image, page.title
+  Optional: page.hero_subtitle, page.hero_pills (array of strings)
+{% endcomment %}
+{% assign hero_img = page.hero_image | default: page.image %}
+{% assign hero_subtitle = page.hero_subtitle | default: page.description | default: "Shopify Plus Engineering Case Study" %}
+<section class="case-intro-hero{% if page.hero_image_vertical == 'center' %} case-intro-hero--image-center{% endif %}" aria-label="Project introduction">
+  <div class="case-intro-media">
+    <img src="{{ hero_img | relative_url }}" alt="{{ page.title }} storefront" loading="eager" />
+  </div>
+  <div class="case-intro-shell">
+    <div class="case-intro-overlay">
+      {% if page.hero_pills and page.hero_pills.size > 0 %}
+        <div class="case-intro-pills">
+          {% for pill in page.hero_pills %}
+            <span class="case-intro-pill">{{ pill }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+      <h1>{{ page.title | split: ' |' | first }}</h1>
+      <p>{{ hero_subtitle }}</p>
+    </div>
+  </div>
+</section>

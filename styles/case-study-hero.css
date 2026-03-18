@@ -1,0 +1,230 @@
+/* Case study intro hero – same style as Arne v2, for use on all case study pages */
+
+/* Page background (same as Arne v2) when case-study-hero.css is loaded (project pages) */
+body.case-study-page {
+  --case-bg: #050505;
+  --case-ink: #f5f4ef;
+  --case-muted: rgba(245, 244, 239, 0.72);
+  --case-accent: #d8d0c3;
+  --case-shell: min(1180px, calc(100vw - 48px));
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.05), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(216, 208, 195, 0.08), transparent 28%),
+    var(--case-bg);
+  color: var(--case-ink);
+}
+
+body.case-study-page main {
+  background: transparent;
+}
+
+body.case-study-page .project-detail {
+  color: var(--case-ink);
+}
+
+body.case-study-page .project-content.case-study h2,
+body.case-study-page .project-content.case-study p,
+body.case-study-page .project-content.case-study a,
+body.case-study-page .project-content.case-study li {
+  color: inherit;
+}
+
+body.case-study-page .project-content.case-study p {
+  color: var(--case-muted);
+}
+
+body.case-study-page .project-content.case-study a {
+  color: var(--case-accent);
+}
+
+/* Buttons: same as header contact-cta – bright white pill, black text; hover = dark bg, white text */
+body.case-study-page .project-content .btn,
+body.case-study-page .project-detail .btn {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 9px 18px;
+  font-weight: 600;
+  min-width: 108px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+body.case-study-page .project-content .btn:hover,
+body.case-study-page .project-detail .btn:hover {
+  background-color: #111111 !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 9px 18px rgba(0, 0, 0, 0.34);
+}
+
+body.case-study-page .project-content .btn.btn-primary,
+body.case-study-page .project-detail .btn.btn-primary {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 9px 18px;
+  font-weight: 600;
+}
+
+body.case-study-page .project-content .btn.btn-primary:hover,
+body.case-study-page .project-detail .btn.btn-primary:hover {
+  background-color: #111111 !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 9px 18px rgba(0, 0, 0, 0.34);
+}
+
+body.case-study-page .project-content .btn.btn-secondary,
+body.case-study-page .project-detail .btn.btn-secondary {
+  background-color: transparent !important;
+  color: #f5f4ef;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+}
+
+body.case-study-page .project-content .btn.btn-secondary:hover,
+body.case-study-page .project-detail .btn.btn-secondary:hover {
+  background-color: #111111 !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 9px 18px rgba(0, 0, 0, 0.34);
+}
+
+body.case-study-page .project-content .btn:focus,
+body.case-study-page .project-detail .btn:focus {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+body.case-study-page .project-content .btn:focus-visible,
+body.case-study-page .project-detail .btn:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.case-intro-hero {
+  --case-hero-bg: #050505;
+  padding: 0 0 clamp(40px, 6vw, 68px);
+  background: var(--case-hero-bg);
+}
+
+/* Shell matches v2: no horizontal padding so overlay positioning aligns with v2 */
+.case-intro-hero .case-intro-shell {
+  width: var(--case-shell, min(1180px, calc(100vw - 48px)));
+  margin: 0 auto;
+}
+
+.case-intro-hero .case-intro-media {
+  position: relative;
+  width: 100%;
+  height: clamp(320px, 38vw, 520px);
+  border-radius: 0;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.case-intro-hero .case-intro-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.14) 56%, rgba(0, 0, 0, 0.48) 100%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.27) 0%, rgba(0, 0, 0, 0.09) 42%, rgba(0, 0, 0, 0.18) 100%);
+}
+
+.case-intro-hero .case-intro-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.case-intro-hero--image-center .case-intro-media img {
+  object-position: center center;
+}
+
+.case-intro-hero .case-intro-overlay {
+  position: relative;
+  z-index: 2;
+  margin-top: calc(clamp(320px, 38vw, 520px) * -0.22);
+  max-width: 720px;
+  padding: 24px 28px 18px;
+  background: var(--case-hero-bg);
+  border: none;
+  border-radius: var(--radius-lg);
+  display: inline-block;
+  box-shadow: none;
+}
+
+.case-intro-hero .case-intro-overlay h1 {
+  margin: 16px 0 8px;
+  font-size: clamp(3.4rem, 8vw, 7rem);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  color: #ffffff;
+}
+
+.case-intro-hero .case-intro-overlay p {
+  margin: 0;
+  max-width: 28ch;
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  line-height: 1.45;
+  color: rgba(245, 244, 239, 0.86);
+}
+
+.case-intro-hero .case-intro-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.case-intro-hero .case-intro-pill {
+  padding: 9px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  color: rgba(245, 244, 239, 0.82);
+  background: rgba(255, 255, 255, 0.02);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .case-intro-hero .case-intro-overlay {
+    margin-top: calc(clamp(320px, 38vw, 520px) * -0.22);
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 720px) {
+  .case-intro-hero .case-intro-shell {
+    width: min(100%, calc(100vw - 32px));
+  }
+
+  .case-intro-hero .case-intro-overlay {
+    margin-top: -74px;
+    max-width: 100%;
+    padding: 18px 18px 12px;
+  }
+
+  .case-intro-hero .case-intro-overlay h1 {
+    max-width: none;
+    font-size: clamp(2.2rem, 11vw, 3.4rem);
+  }
+
+  .case-intro-hero .case-intro-overlay p {
+    max-width: 22ch;
+    font-size: 1rem;
+  }
+
+  .case-intro-hero .case-intro-media,
+  .case-intro-hero .case-intro-media img {
+    height: 280px;
+  }
+}
