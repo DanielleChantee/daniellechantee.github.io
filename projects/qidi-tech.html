@@ -3,18 +3,16 @@ layout: default
 title: QIDI Tech | Custom Shopify Article Template
 description: Built a custom Shopify article template for QIDI Tech using Liquid section architecture, schema settings, and editor-friendly content controls.
 image: /images/qidi-image.jpg
+hero_image: /images/content/Qidi-main-banner-image.webp
+hero_image_vertical: center
+hero_subtitle: Shopify Content System Case Study
 type: website
 permalink: /projects/qidi-tech/
 ---
 
+{% include case-study-hero.html %}
+
 <div class="project-detail">
-  <div
-    class="project-hero"
-    style="background-image: url('{{ '/images/qidi-image.jpg' | relative_url }}');"
-  >
-    <h1>QIDI Tech</h1>
-    <p>Shopify Content System Case Study</p>
-  </div>
   <div class="project-content case-study">
     <h2>The Challenge</h2>
     <p>
