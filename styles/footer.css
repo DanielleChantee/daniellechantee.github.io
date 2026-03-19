@@ -28,7 +28,7 @@
 }
 
 .footer-brand-logo {
-  width: clamp(180px, 18vw, 240px);
+  width: clamp(120px, 12vw, 160px);
   height: auto;
   display: block;
 }

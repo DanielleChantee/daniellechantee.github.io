@@ -13,12 +13,12 @@ header {
 }
 
 .logo {
-  height: 50px;
+  height: 58px;
 }
 .logo img {
-  height: 50px;
+  height: 58px;
   width: auto;
-  max-width: 120px;
+  max-width: 160px;
   object-fit: contain;
   object-position: left center;
 }
@@ -643,7 +643,7 @@ nav {
 
 @media (max-width: 480px) {
   .logo img {
-    max-width: 104px;
+    max-width: 140px;
   }
 
   .mobile-menu-wrapper {
