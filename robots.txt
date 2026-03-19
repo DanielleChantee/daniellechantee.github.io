@@ -1,4 +1,7 @@
+---
+layout: null
+---
 User-agent: *
 Allow: /
 
-Sitemap: https://daniellechantee.github.io/sitemap.xml
+Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml

@@ -8,7 +8,7 @@
       content="{% if page.description %}{{ page.description | escape }}{% else %}Homepage visual direction preview.{% endif %}"
     />
 
-    {% assign site_url = "https://daniellechantee.github.io" %}
+    {% assign site_url = site.url %}
     {% assign base_url = site_url | append: site.baseurl %}
     {% if page.permalink %}
       {% assign canonical_url = base_url | append: page.permalink %}
@@ -40,8 +40,8 @@
 
     <link
       rel="shortcut icon"
-      href="{{ '/images/logos/logo-white-small.jpg' | relative_url }}"
-      type="image/x-icon"
+      href="{{ '/images/branding/black-logo-favicon.png' | relative_url }}"
+      type="image/png"
     />
     <title>{{ page.title }}</title>
 

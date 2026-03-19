@@ -11,8 +11,7 @@
     />
 
     <!-- Canonical URL -->
-    {% assign site_url = "https://daniellechantee.github.io" %}
-    {% assign base_url = site_url | append: site.baseurl %}
+    {% assign base_url = site.url | append: site.baseurl %}
     {% if page.permalink %}
       {% assign canonical_url = base_url | append: page.permalink %}
     {% elsif page.url %}
@@ -65,8 +64,8 @@
 
     <link
       rel="shortcut icon"
-      href="{{ '/images/logos/logo-white-small.jpg' | relative_url }}"
-      type="image/x-icon"
+      href="{{ '/images/branding/black-logo-favicon.png' | relative_url }}"
+      type="image/png"
     />
     <link rel="manifest" href="{{ "/manifest.json" | relative_url }}">
     <meta name="theme-color" content="#000000">

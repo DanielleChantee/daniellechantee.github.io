@@ -1,16 +1,19 @@
+---
+layout: null
+---
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Redirecting...</title>
-  <meta http-equiv="refresh" content="0; url=https://daniellechantee.github.io/">
-  <link rel="canonical" href="https://daniellechantee.github.io/">
+  <meta http-equiv="refresh" content="0; url={{ site.url }}{{ site.baseurl }}/">
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/">
   <meta name="robots" content="noindex">
   <script>
-    location.replace("https://daniellechantee.github.io/");
+    location.replace("{{ site.url }}{{ site.baseurl }}/");
   </script>
 </head>
 <body>
-  Redirecting to <a href="https://daniellechantee.github.io/">daniellechantee.github.io</a>.
+  Redirecting to <a href="{{ site.url }}{{ site.baseurl }}/">home</a>.
 </body>
 </html>
