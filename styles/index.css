@@ -293,6 +293,82 @@
   color: var(--text-black);
   text-decoration-color: #000000;
 }
+
+.homepage-focus-tags {
+  margin-top: 16px;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  letter-spacing: 0.02em;
+}
+
+.select-clients-section {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background: var(--bg-gray-light);
+}
+
+.select-clients-section .content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.select-clients-heading {
+  margin: 0 0 12px;
+  font-size: var(--fs-h3);
+  font-weight: 600;
+}
+
+.select-clients-links {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+}
+
+.select-clients-links a {
+  color: var(--text-black);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+
+.select-clients-links a:hover,
+.select-clients-links a:focus-visible {
+  text-decoration-color: var(--text-black);
+}
+
+.testimonial-section {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.testimonial-quote {
+  margin: 0;
+  padding: 0;
+  border: none;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.testimonial-quote p {
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-body);
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+.testimonial-quote cite {
+  font-size: 0.95rem;
+  font-style: normal;
+  color: var(--text-gray);
+}
+
 .main-image-banner p,
 .clients .content p {
   font-size: var(--fs-body-lg);
