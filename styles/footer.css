@@ -19,8 +19,21 @@
   align-items: start;
 }
 
-.footer-tagline {
+.footer-brand {
   grid-area: tagline;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.footer-brand-logo {
+  width: clamp(180px, 18vw, 240px);
+  height: auto;
+  display: block;
+}
+
+.footer-tagline {
   margin: 0;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.78);
@@ -129,6 +142,10 @@
   .footer-tagline,
   .footer-copyright {
     text-align: center;
+  }
+
+  .footer-brand {
+    align-items: center;
   }
 
   .footer-nav {
