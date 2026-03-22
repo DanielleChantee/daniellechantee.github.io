@@ -1,0 +1,20 @@
+/* Homepage v3 — Newsreader headings, Public Sans for body and UI (scoped to this page). */
+
+body.homepage-v3 {
+  --font-body: "Public Sans", system-ui, -apple-system, sans-serif;
+  --font-heading: "Newsreader", Georgia, "Times New Roman", serif;
+}
+
+/* Marquee reads as a label strip; keep Public Sans per v3 type spec. */
+body.homepage-v3 #services-marquee {
+  font-family: var(--font-body);
+  letter-spacing: 0.06em;
+}
+
+body.homepage-v3 h1 em,
+body.homepage-v3 h2 em,
+body.homepage-v3 h3 em {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: inherit;
+}
