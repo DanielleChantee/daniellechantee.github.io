@@ -660,3 +660,11 @@ nav {
     padding: 14px 16px;
   }
 }
+
+/* Homepage v2/v3 previews use a solid black hero. The default header gradient
+   plus hairline border sit on pure #000 and read as an extra band vs the index
+   photo hero. Flatten the bar to match how the header feels on the home page. */
+body.page-home-dark-hero header {
+  background: #111111;
+  border-bottom: none;
+}
