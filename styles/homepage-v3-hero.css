@@ -101,20 +101,18 @@
 
 .homepage-v3-hero-wrap .v2-hero h1 {
   margin: 0;
-  max-width: 14ch;
+  max-width: min(100%, 14rem);
   color: #fff;
   font-family: var(--font-heading);
   font-size: clamp(2.6rem, 5.5vw, 5rem);
   font-weight: 600;
-  line-height: 0.98;
+  line-height: 1.06;
   letter-spacing: -0.02em;
   font-optical-sizing: auto;
 }
 
-.homepage-v3-hero-wrap .v2-hero h1 em {
-  font-family: var(--font-heading);
-  font-style: italic;
-  font-weight: 500;
+.homepage-v3-hero-wrap .v2-hero h1 .v3-headline-line + .v3-headline-line {
+  margin-top: 0.04em;
 }
 
 .homepage-v3-hero-wrap .v2-lead {

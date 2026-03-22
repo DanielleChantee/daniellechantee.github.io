@@ -11,10 +11,32 @@ body.homepage-v3 #services-marquee {
   letter-spacing: 0.06em;
 }
 
-body.homepage-v3 h1 em,
-body.homepage-v3 h2 em,
-body.homepage-v3 h3 em {
+/* Editorial headings: italic and roman on separate lines (not mixed mid-line). */
+body.homepage-v3 .v3-headline-line {
+  display: block;
   font-family: var(--font-heading);
+}
+
+body.homepage-v3 .v3-headline-line + .v3-headline-line {
+  margin-top: 0.06em;
+}
+
+body.homepage-v3 .v3-headline-line--roman {
+  font-style: normal;
+  font-weight: 600;
+}
+
+body.homepage-v3 .v3-headline-line--italic {
   font-style: italic;
-  font-weight: inherit;
+  font-weight: 500;
+}
+
+body.homepage-v3 .homepage-service-overview .content h2,
+body.homepage-v3 .clients .content h3,
+body.homepage-v3 .services .content h3 {
+  line-height: 1.12;
+}
+
+body.homepage-v3 .services .service-heading {
+  line-height: 1.15;
 }
