@@ -174,6 +174,156 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /**
+   * Homepage v4 scroll-scrubbed hero imagery
+   */
+  try {
+    const scrollHero = document.querySelector("[data-homepage-v4-hero]");
+    const scrollHeroContainer = document.querySelector("[data-homepage-v4-container]");
+    const scrollHeroSection = scrollHero ? scrollHero.closest(".homepage-v4-hero") : null;
+    const scrollHeroHeading = scrollHeroSection
+      ? scrollHeroSection.querySelector(".homepage-v4-hero-heading")
+      : null;
+    const scrollHeroSlides = scrollHero ? Array.from(scrollHero.querySelectorAll("[data-homepage-v4-slide]")) : [];
+    const scrollHeroDesktopMediaQuery = window.matchMedia("(min-width: 1220px)");
+    const scrollHeroTabletMediaQuery = window.matchMedia("(max-width: 1219px)");
+
+    if (scrollHero && scrollHeroContainer && scrollHeroSection && scrollHeroHeading && scrollHeroSlides.length) {
+      let activeSlideIndex = 0;
+      let rafId = 0;
+      let previousStep = 0;
+      let isReleased = false;
+
+      const getStepPercentage = () => {
+        const propertyName = scrollHeroDesktopMediaQuery.matches
+          ? "--homepage-v4-step-percent"
+          : "--homepage-v4-step-percent-mobile";
+        const percentage = Number.parseFloat(
+          window.getComputedStyle(document.body).getPropertyValue(propertyName),
+        );
+        return Number.isFinite(percentage) && percentage > 0 ? percentage : 7;
+      };
+
+      const getMobileCycleDensity = () => {
+        const density = Number.parseFloat(
+          window.getComputedStyle(document.body).getPropertyValue("--homepage-v4-mobile-cycle-density"),
+        );
+        return Number.isFinite(density) && density > 0 ? density : 1.45;
+      };
+
+      const setActiveSlide = (nextIndex) => {
+        scrollHeroSlides.forEach((slide, index) => {
+          const isActive = index === nextIndex;
+          slide.style.opacity = isActive ? "1" : "0";
+          slide.classList.toggle("is-active", isActive);
+        });
+        activeSlideIndex = nextIndex;
+        scrollHero.dataset.activeSlide = String(nextIndex);
+      };
+
+      const updateScrollHero = () => {
+        rafId = 0;
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        const headerElement = document.querySelector("header");
+        const headerBottom = headerElement ? headerElement.getBoundingClientRect().bottom : 0;
+        const heroRect = scrollHeroSection.getBoundingClientRect();
+
+        if (prefersReducedMotion) {
+          scrollHeroSection.classList.remove("homepage-v4-hero-is-active", "homepage-v4-hero-is-released");
+          setActiveSlide(0);
+          previousStep = 0;
+          isReleased = false;
+          return;
+        }
+
+        const containerRect = scrollHeroContainer.getBoundingClientRect();
+
+        if (window.innerWidth <= 820) {
+          const mobileStart = viewportHeight;
+          const mobileEnd = -containerRect.height;
+          const mobileRange = Math.max(mobileStart - mobileEnd, 1);
+          const mobileTraveled = Math.min(Math.max(mobileStart - containerRect.top, 0), mobileRange);
+          const mobileProgress = mobileTraveled / mobileRange;
+          const mobileRawValue = Math.round(mobileProgress * 100 * getMobileCycleDensity());
+          const mobileStep = Math.floor(mobileRawValue / getStepPercentage());
+
+          scrollHeroSection.classList.remove("homepage-v4-hero-is-active", "homepage-v4-hero-is-released");
+          isReleased = false;
+
+          if (mobileStep !== previousStep) {
+            const direction = mobileStep > previousStep ? 1 : -1;
+            previousStep = mobileStep;
+
+            if (direction !== 0) {
+              const nextIndex =
+                (activeSlideIndex + direction + scrollHeroSlides.length) % scrollHeroSlides.length;
+              setActiveSlide(nextIndex);
+            }
+          }
+
+          return;
+        }
+
+        const start = viewportHeight * 0.75;
+        const end = -containerRect.height;
+        const totalDistance = Math.max(start - end, 1);
+        const traveled = Math.min(Math.max(start - containerRect.top, 0), totalDistance);
+        const progress = traveled / totalDistance;
+        const rawValue = Math.round(progress * 100);
+        const step = Math.floor(rawValue / getStepPercentage());
+        const isHeroActive = heroRect.top < viewportHeight && heroRect.bottom > headerBottom;
+        const shouldRelease = containerRect.top <= headerBottom;
+
+        scrollHeroSection.classList.toggle("homepage-v4-hero-is-active", isHeroActive);
+
+        if (shouldRelease && !isReleased) {
+          const headingRect = scrollHeroHeading.getBoundingClientRect();
+          const releaseTop = Math.max(0, headingRect.top - heroRect.top);
+          scrollHeroSection.style.setProperty("--homepage-v4-heading-release-top", `${releaseTop}px`);
+          isReleased = true;
+        } else if (!shouldRelease && isReleased) {
+          scrollHeroSection.style.setProperty("--homepage-v4-heading-release-top", "0px");
+          isReleased = false;
+        }
+
+        scrollHeroSection.classList.toggle("homepage-v4-hero-is-released", shouldRelease);
+
+        if (step !== previousStep) {
+          const direction = step > previousStep ? 1 : -1;
+          previousStep = step;
+
+          if (direction !== 0) {
+            const nextIndex =
+              (activeSlideIndex + direction + scrollHeroSlides.length) % scrollHeroSlides.length;
+            setActiveSlide(nextIndex);
+          }
+        }
+      };
+
+      const requestScrollHeroUpdate = () => {
+        if (rafId) {
+          return;
+        }
+        rafId = window.requestAnimationFrame(updateScrollHero);
+      };
+
+      setActiveSlide(0);
+      updateScrollHero();
+      window.addEventListener("scroll", requestScrollHeroUpdate, { passive: true });
+      window.addEventListener("resize", requestScrollHeroUpdate);
+
+      [scrollHeroDesktopMediaQuery, scrollHeroTabletMediaQuery].forEach((mediaQuery) => {
+        if (typeof mediaQuery.addEventListener === "function") {
+          mediaQuery.addEventListener("change", requestScrollHeroUpdate);
+        } else if (typeof mediaQuery.addListener === "function") {
+          mediaQuery.addListener(requestScrollHeroUpdate);
+        }
+      });
+    }
+  } catch (error) {
+    console.error("Error initializing homepage v4 scroll hero:", error);
+  }
+
+  /**
    * On localhost: unregister any service worker to avoid stale cache during development
    */
   if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
