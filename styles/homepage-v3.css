@@ -8,13 +8,15 @@ body.homepage-v3 {
 /* Marquee reads as a label strip; keep Public Sans per v3 type spec. */
 body.homepage-v3 #services-marquee {
   font-family: var(--font-body);
-  letter-spacing: 0.06em;
+  letter-spacing: 0;
 }
 
-/* Editorial headings: italic and roman on separate lines (not mixed mid-line). */
+/* Editorial headings: Newsreader, regular weight, non-italic across v3. */
 body.homepage-v3 .v3-headline-line {
   display: block;
   font-family: var(--font-heading);
+  font-style: normal;
+  font-weight: 400;
 }
 
 body.homepage-v3 .v3-headline-line + .v3-headline-line {
@@ -23,20 +25,241 @@ body.homepage-v3 .v3-headline-line + .v3-headline-line {
 
 body.homepage-v3 .v3-headline-line--roman {
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 body.homepage-v3 .v3-headline-line--italic {
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
+}
+
+body.homepage-v3 .homepage-service-overview .content h2,
+body.homepage-v3 .clients .content h3,
+body.homepage-v3 .services .content h3,
+body.homepage-v3 .services .service-heading {
+  font-family: var(--font-heading);
+  font-style: normal;
+  font-weight: 400;
+}
+
+body.homepage-v3 .services .service-heading .v3-headline-line--italic {
+  font-style: italic;
+}
+
+body.homepage-v3 .homepage-focus-tags {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+}
+
+body.homepage-v3 .clients .content h2,
+body.homepage-v3 .services .content h2 {
+  font-family: var(--font-heading);
+  font-style: normal;
+  font-weight: 400;
+}
+
+body.homepage-v3 .clients .content h3,
+body.homepage-v3 .services .content h3 {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+body.homepage-v3 .clients .content h3 .v3-headline-line,
+body.homepage-v3 .services .content h3 .v3-headline-line {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+}
+
+body.homepage-v3 .clients .content p {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.25;
 }
 
 body.homepage-v3 .homepage-service-overview .content h2,
 body.homepage-v3 .clients .content h3,
 body.homepage-v3 .services .content h3 {
-  line-height: 1.12;
+  line-height: 1.05;
 }
 
 body.homepage-v3 .services .service-heading {
-  line-height: 1.15;
+  line-height: 1.05;
+}
+
+body.homepage-v3 .homepage-service-overview {
+  background: #050505;
+  padding: clamp(34px, 6vw, 58px) clamp(44px, 5.6vw, 96px);
+}
+
+body.homepage-v3 .homepage-service-overview-layout {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) minmax(520px, 1fr) minmax(220px, 300px);
+  gap: clamp(32px, 4.5vw, 72px);
+  align-items: center;
+}
+
+body.homepage-v3 .homepage-service-overview .content {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  width: 550px;
+  min-width: 550px;
+  max-width: 100%;
+  text-align: left;
+  justify-self: stretch;
+  align-self: center;
+}
+
+body.homepage-v3 .homepage-service-overview .content h2,
+body.homepage-v3 .homepage-service-overview .content p,
+body.homepage-v3 .homepage-service-overview .content a,
+body.homepage-v3 .homepage-service-overview .content a:visited {
+  color: #f6f1ea;
+  text-align: left;
+}
+
+body.homepage-v3 .homepage-service-overview .content h2 {
+  margin: 0;
+  font-size: var(--fs-h2);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+body.homepage-v3 .homepage-service-overview .content p {
+  margin-bottom: 0;
+}
+
+body.homepage-v3 .homepage-service-overview .content > p {
+  margin-top: 34px;
+  max-width: none;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.45;
+  color: rgba(246, 241, 234, 0.92);
+}
+
+body.homepage-v3 .homepage-focus-tags {
+  margin-top: 46px;
+  margin-bottom: 0;
+  font-size: 18px;
+  color: #f6f1ea;
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+
+body.homepage-v3 .homepage-service-overview .homepage-focus-tags {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 1.25;
+  text-transform: none;
+  color: #f6f1ea;
+}
+
+body.homepage-v3 .homepage-service-overview .homepage-focus-tags p + p {
+  margin-top: 4px;
+}
+
+body.homepage-v3 .homepage-service-overview .homepage-focus-tags p {
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-transform: inherit;
+  color: inherit;
+  margin-bottom: 0;
+}
+
+body.homepage-v3 .homepage-service-overview-media {
+  margin: 0;
+  width: 100%;
+  max-width: 304px;
+  justify-self: center;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #cfc6bb;
+}
+
+body.homepage-v3 .homepage-service-overview-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 0.66;
+  object-fit: cover;
+}
+
+body.homepage-v3 .homepage-service-overview-media--left img {
+  object-position: center 24%;
+}
+
+body.homepage-v3 .homepage-service-overview-media--right img {
+  object-position: center 18%;
+}
+
+@media (max-width: 900px) {
+  body.homepage-v3 .homepage-service-overview-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  body.homepage-v3 .homepage-service-overview .content {
+    order: 1;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    text-align: left;
+    justify-self: center;
+  }
+
+  body.homepage-v3 .homepage-service-overview .content h2 {
+    white-space: normal;
+  }
+
+  body.homepage-v3 .homepage-service-overview .content > p {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  body.homepage-v3 .homepage-service-overview .homepage-focus-tags {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+  }
+
+  body.homepage-v3 .homepage-service-overview-media {
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  body.homepage-v3 .homepage-service-overview {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 680px) {
+  body.homepage-v3 .homepage-service-overview {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
