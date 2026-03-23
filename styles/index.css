@@ -392,18 +392,18 @@
   color: var(--text-black);
 }
 
-body.homepage-index.homepage-v3 .homepage-service-overview {
+body.homepage-index .homepage-service-overview {
   background: var(--bg-white);
 }
 
-body.homepage-index.homepage-v3 .homepage-service-overview .content {
+body.homepage-index .homepage-service-overview .content {
   width: 550px;
   max-width: 100%;
   padding: 0;
   text-align: left;
 }
 
-body.homepage-index.homepage-v3 .homepage-service-overview .content h2 {
+body.homepage-index .homepage-service-overview .content h2 {
   margin: 0;
   font-family: var(--font-heading);
   font-style: italic;
@@ -415,7 +415,7 @@ body.homepage-index.homepage-v3 .homepage-service-overview .content h2 {
   text-align: center;
 }
 
-body.homepage-index.homepage-v3 .homepage-service-overview .content > p {
+body.homepage-index .homepage-service-overview .content > p {
   margin-top: 34px;
   margin-bottom: 0;
   font-family: var(--font-body);
@@ -452,7 +452,7 @@ body.homepage-index.homepage-v3 .homepage-service-overview .content > p {
   line-height: 1.25;
 }
 
-body.homepage-index.homepage-v3 .homepage-service-overview .homepage-focus-tags {
+body.homepage-index .homepage-service-overview .homepage-focus-tags {
   margin-top: 46px;
   width: fit-content;
   max-width: 100%;
@@ -466,12 +466,12 @@ body.homepage-index.homepage-v3 .homepage-service-overview .homepage-focus-tags 
   color: var(--text-black);
 }
 
-body.homepage-index.homepage-v3 .homepage-service-overview .homepage-focus-tags p {
+body.homepage-index .homepage-service-overview .homepage-focus-tags p {
   margin-bottom: 0;
   text-align: left;
 }
 
-body.homepage-index.homepage-v3 .homepage-service-overview .homepage-focus-tags p + p {
+body.homepage-index .homepage-service-overview .homepage-focus-tags p + p {
   margin-top: 4px;
 }
 
