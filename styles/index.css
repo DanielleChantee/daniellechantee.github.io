@@ -413,6 +413,16 @@ body.homepage-index .homepage-service-overview .content h2 {
   letter-spacing: -0.03em;
   color: var(--text-black);
   text-align: center;
+  white-space: nowrap;
+}
+
+body.homepage-index .homepage-service-overview .content h2 .v3-headline-line {
+  display: block;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
 }
 
 body.homepage-index .homepage-service-overview .content > p {
