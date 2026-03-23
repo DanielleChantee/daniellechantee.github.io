@@ -156,45 +156,71 @@ type: website
     <link rel="stylesheet" href="{{ '/styles/header.css' | relative_url }}" />
     <link rel="stylesheet" href="{{ '/styles/client-work.css' | relative_url }}" />
     <link rel="stylesheet" href="{{ '/styles/index.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/styles/homepage-v3.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/styles/homepage-v4.css' | relative_url }}" />
     <link rel="stylesheet" href="{{ '/styles/footer.css' | relative_url }}" />
   </head>
-  <body>
+  <body class="homepage-index homepage-v3 homepage-v4">
     <a href="#main-content" class="skip-link">Skip to main content</a>
     {% include header.html %}
     <main id="main-content">
-    <!-- IMAGE BANNER -->
-    <div class="main-image-banner image-banner">
-      <div class="image-banner-content hero-intro">
-        <h1><span class="hero-mask-text">Shopify Plus Engineering for High-Growth Ecommerce</span></h1>
-        <h2 class="hero-subtitle">Danielle, Shopify Plus Engineer</h2>
-        <p class="hero-copy">
-          I design and implement revenue-critical Shopify systems across theme
-          architecture, app integrations, metafield systems, checkout
-          functions, and performance-aware frontend delivery for brands
-          operating at scale.
-        </p>
-        <div class="button-row hero-cta-row">
-          <a href="{{ '/work/' | relative_url }}" class="btn btn-primary glow-black">View Work</a>
-          <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary glow-black">Get in Touch</a>
-          <a href="{{ '/about/' | relative_url }}" class="btn btn-secondary glow-black"
-            >Learn More</a
-          >
+    <section class="homepage-v4-hero" aria-label="Introduction">
+      <div class="homepage-v4-hero-heading">
+        <div class="homepage-v4-hero-heading-inner">
+          <h1>Shopify Plus Engineering for High-Growth Ecommerce</h1>
+          <p class="homepage-v4-hero-kicker accent-text">Danielle, Shopify Plus Engineer</p>
+          <p class="homepage-v4-hero-lead">
+            I design and implement revenue-critical Shopify systems across theme
+            architecture, app integrations, metafield systems, checkout
+            functions, and performance-aware frontend delivery for brands
+            operating at scale.
+          </p>
+          <div class="homepage-v4-hero-actions button-row hero-cta-row">
+            <a href="{{ '/work/' | relative_url }}" class="btn btn-primary glow-black">View Work</a>
+            <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary glow-black">Get in Touch</a>
+            <a href="{{ '/about/' | relative_url }}" class="btn btn-secondary glow-black">Learn More</a>
+          </div>
         </div>
       </div>
-    </div>
+      <div class="homepage-v4-hero-media" data-homepage-v4-hero>
+        <div class="homepage-v4-hero-slider" aria-hidden="true" data-homepage-v4-container>
+          <div class="homepage-v4-slide is-active" data-homepage-v4-slide>
+            <img src="{{ '/images/Banners/1.jpg' | relative_url }}" alt="" loading="eager" />
+          </div>
+          <div class="homepage-v4-slide" data-homepage-v4-slide>
+            <img src="{{ '/images/Banners/2.jpg' | relative_url }}" alt="" loading="lazy" />
+          </div>
+          <div class="homepage-v4-slide" data-homepage-v4-slide>
+            <img src="{{ '/images/Banners/3.jpg' | relative_url }}" alt="" loading="lazy" />
+          </div>
+          <div class="homepage-v4-slide" data-homepage-v4-slide>
+            <img src="{{ '/images/Banners/4.jpg' | relative_url }}" alt="" loading="lazy" />
+          </div>
+          <div class="homepage-v4-slide" data-homepage-v4-slide>
+            <img src="{{ '/images/Banners/5.jpg' | relative_url }}" alt="" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="about content-section homepage-service-overview">
       <div class="content">
-        <h2>Shopify Plus Engineering</h2>
+        <h2>
+          <span class="v3-headline-line v3-headline-line--roman">Shopify Plus Engineering</span>
+        </h2>
         <p>
           I work with ecommerce teams that need engineering ownership across
           conversion-critical storefront systems. Engagements focus on durable
           implementation, release safety, and long-term maintainability under
           live commercial pressure.
         </p>
-        <p class="homepage-focus-tags" aria-label="Focus areas">
-          Theme architecture · Checkout &amp; functions · Metafields · App integrations · Performance
-        </p>
+        <div class="homepage-focus-tags" aria-label="Focus areas">
+          <p>· Theme architecture</p>
+          <p>· Checkout &amp; functions</p>
+          <p>· Metafields</p>
+          <p>· App integrations</p>
+          <p>· Performance</p>
+        </div>
       </div>
     </div>
 
@@ -370,7 +396,7 @@ type: website
       <div class="content">
         <h2>Brands</h2>
         <h3>Commerce systems built for scale</h3>
-        <p>View featured projects.</p>
+        <p class="accent-text">View featured projects.</p>
         <div class="button-row">
           <a href="{{ '/work/' | relative_url }}" class="btn btn-primary glow-black">View Work</a>
         </div>
@@ -442,7 +468,10 @@ type: website
       <!-- CONTENT -->
       <div class="content">
         <h2>Expertise</h2>
-        <h3>Building scalable systems</h3>
+        <h3>
+          <span class="v3-headline-line v3-headline-line--roman">Building scalable</span>
+          <span class="v3-headline-line v3-headline-line--roman">systems</span>
+        </h3>
         <!-- <p>View Services</p> -->
         <div class="button-row">
           <!-- <a href="./services.html" class="btn glow-white">View Services</a> -->
@@ -451,7 +480,10 @@ type: website
 
       <div class="service-features">
         <div class="service-item">
-          <h3 class="service-heading">Scalable Architecture</h3>
+          <h3 class="service-heading">
+            <span class="v3-headline-line v3-headline-line--roman">Scalable</span>
+            <span class="v3-headline-line v3-headline-line--italic">Architecture</span>
+          </h3>
           <p class="service-paragraph">
             Building systems designed for growth. Architecture decisions that
             support long-term extensibility and maintainability, not short-term
@@ -460,7 +492,10 @@ type: website
         </div>
 
         <div class="service-item">
-          <h3 class="service-heading">Performance-Led Development</h3>
+          <h3 class="service-heading">
+            <span class="v3-headline-line v3-headline-line--roman">Performance-Led</span>
+            <span class="v3-headline-line v3-headline-line--italic">Development</span>
+          </h3>
           <p class="service-paragraph">
             Frontend development focused on performance optimisation, Core Web
             Vitals, and delivering fast, responsive experiences that convert.
@@ -468,7 +503,10 @@ type: website
         </div>
 
         <div class="service-item">
-          <h3 class="service-heading">Shopify Plus Implementation</h3>
+          <h3 class="service-heading">
+            <span class="v3-headline-line v3-headline-line--roman">Shopify Plus</span>
+            <span class="v3-headline-line v3-headline-line--italic">Implementation</span>
+          </h3>
           <p class="service-paragraph">
             Shopify implementation for complex storefront
             requirements, including app integrations, metafields/metaobjects,
@@ -477,7 +515,10 @@ type: website
         </div>
 
         <div class="service-item">
-          <h3 class="service-heading">Commerce Platform Solutions</h3>
+          <h3 class="service-heading">
+            <span class="v3-headline-line v3-headline-line--roman">Commerce Platform</span>
+            <span class="v3-headline-line v3-headline-line--italic">Solutions</span>
+          </h3>
           <p class="service-paragraph">
             Focused on Shopify web development and commerce platforms. Custom
             integrations, theme development, and system design for established

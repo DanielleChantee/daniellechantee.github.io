@@ -70,7 +70,7 @@ h3,
 h4 {
   font-family: var(--font-heading);
   font-optical-sizing: auto;
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   text-transform: none;
   line-height: var(--lh-heading);
@@ -80,7 +80,7 @@ h4 {
 
 h1 {
   font-size: var(--fs-h1);
-  font-weight: 700;
+  font-weight: 400;
   line-height: var(--lh-display);
   letter-spacing: var(--tracking-display);
   margin-bottom: var(--space-heading-after);
@@ -88,27 +88,90 @@ h1 {
 
 h2 {
   font-size: var(--fs-h2);
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: var(--space-section-title-after);
 }
 
 h3 {
   font-size: var(--fs-h3);
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: 0.65rem;
 }
 
 h4 {
   font-size: var(--fs-h4);
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: 0.6rem;
 }
 
 p {
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
+  font-size: 16px;
+  line-height: 1.5;
   margin-top: 0;
   margin-bottom: var(--space-body-after);
+}
+
+.homepage-focus-tags,
+.v2-kicker,
+.testimonial-quote p,
+.select-clients-links a,
+.client-work-image-banner .project-subtitle {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.accent-text {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.25;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* Global editorial heading system: keep headings at regular weight across legacy page CSS. */
+h1,
+h2,
+h3,
+h4,
+.content-section h1,
+.content-section h2,
+.content-section h3,
+.content-section h4,
+.content h1,
+.content h2,
+.content h3,
+.content h4 {
+  font-family: var(--font-heading);
+  font-style: normal;
+  font-weight: 400 !important;
+}
+
+/* Non-v2 site direction: Public Sans h1s at the index hero scale. */
+body h1 {
+  font-family: var(--font-heading);
+  font-weight: 500 !important;
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-display);
+}
+
+/* Bring legacy section/component headings in line with the index typography. */
+.client-heading,
+.client-subheading,
+.client-text-heading,
+.project-block-info h2,
+.work-story-sticky h2,
+.work-story-card h3,
+.project-content h2,
+.project-detail h2,
+.contact-form-wrapper h2,
+.contact-information h2 {
+  font-family: var(--font-heading);
+  font-style: normal;
+  font-weight: 400 !important;
 }
 
 /* Button */

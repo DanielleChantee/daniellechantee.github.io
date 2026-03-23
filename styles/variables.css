@@ -54,8 +54,8 @@
   --z-popup: 999;
 
   /* Font families */
-  --font-body: "DM Sans", sans-serif;
-  --font-heading: "DM Sans", sans-serif;
+  --font-body: "Public Sans", system-ui, -apple-system, sans-serif;
+  --font-heading: "Newsreader", Georgia, "Times New Roman", serif;
 
   /* Typography scale */
   --fs-display: clamp(2.4rem, 6.2vw, 5rem);
@@ -63,14 +63,14 @@
   --fs-h2: clamp(1.5rem, 2.8vw, 2.3rem);
   --fs-h3: clamp(1.15rem, 1.9vw, 1.55rem);
   --fs-h4: clamp(1rem, 1.35vw, 1.2rem);
-  --fs-body-lg: clamp(1.03rem, 1.2vw, 1.18rem);
+  --fs-body-lg: 1rem;
   --fs-body: 1rem;
-  --fs-body-sm: 0.95rem;
+  --fs-body-sm: 1rem;
 
   --lh-display: 1.02;
   --lh-heading: 1.12;
   --lh-subheading: 1.2;
-  --lh-body: 1.68;
+  --lh-body: 1.5;
 
   --tracking-display: -0.01em;
   --tracking-heading: -0.008em;

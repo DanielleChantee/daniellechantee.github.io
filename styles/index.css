@@ -1,4 +1,9 @@
 /* NAVIGATION */
+.homepage-index {
+  --font-body: "Public Sans", system-ui, -apple-system, sans-serif;
+  --font-heading: "Newsreader", Georgia, "Times New Roman", serif;
+}
+
 .main-nav {
   position: fixed;
   top: 0;
@@ -97,20 +102,31 @@
 }
 
 .main-image-banner .image-banner-content h1 {
-  font-size: var(--fs-display);
-  line-height: var(--lh-display);
-  letter-spacing: var(--tracking-display);
+  font-family: var(--font-heading);
+  font-size: clamp(2.85rem, 4.9vw, 4.45rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.038em;
   margin-bottom: 0.35rem;
   max-width: 20ch;
 }
 
 .main-image-banner .image-banner-content h2 {
-  font-size: clamp(1.12rem, 1.75vw, 1.5rem);
-  line-height: var(--lh-subheading);
-  letter-spacing: var(--tracking-label);
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
   margin-bottom: 0.2rem;
-  text-transform: uppercase;
+  text-transform: none;
   max-width: 34ch;
+}
+
+.main-image-banner .image-banner-content .hero-copy {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 @media (min-width: 1100px) {
@@ -243,13 +259,109 @@
 }
 .clients .content h2 {
   font-size: var(--fs-h2);
-  line-height: var(--lh-heading);
+  font-family: var(--font-heading);
+  font-style: normal;
+  line-height: 1.05;
   letter-spacing: var(--tracking-heading);
   text-transform: none;
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: 16px;
   text-align: center;
   opacity: 1;
+}
+
+.homepage-index .clients .content h2,
+.homepage-index .services .content h2 {
+  font-family: var(--font-heading);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.homepage-index .clients .content h3,
+.homepage-index .services .content h3 {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.homepage-index .v3-headline-line {
+  display: block;
+}
+
+.homepage-index .v3-headline-line + .v3-headline-line {
+  margin-top: 0.06em;
+}
+
+.homepage-index .v3-headline-line--roman {
+  font-style: normal;
+  font-weight: 400;
+}
+
+.homepage-index .v3-headline-line--italic {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.homepage-index .services .content h2,
+.homepage-index .services .content h3,
+.homepage-index .services .service-heading {
+  font-family: var(--font-heading);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.homepage-index .services .content h2 {
+  font-family: var(--font-heading);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.homepage-index .services .content h3 {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.homepage-index .services .content h3 .v3-headline-line {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.homepage-index .services .service-heading .v3-headline-line--italic {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.homepage-index .services .service-heading {
+  font-family: var(--font-heading);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.homepage-index .clients .content p {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.homepage-index .services .service-heading .v3-headline-line {
+  font-family: inherit;
+}
+
+.homepage-index .services .service-paragraph {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .clients .button-row {
@@ -280,6 +392,40 @@
   color: var(--text-black);
 }
 
+body.homepage-index.homepage-v3 .homepage-service-overview {
+  background: var(--bg-white);
+}
+
+body.homepage-index.homepage-v3 .homepage-service-overview .content {
+  width: 550px;
+  max-width: 100%;
+  padding: 0;
+  text-align: left;
+}
+
+body.homepage-index.homepage-v3 .homepage-service-overview .content h2 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--fs-h2);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--text-black);
+  text-align: center;
+}
+
+body.homepage-index.homepage-v3 .homepage-service-overview .content > p {
+  margin-top: 34px;
+  margin-bottom: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.45;
+  max-width: none;
+  color: var(--text-black);
+  text-align: center;
+}
+
 .homepage-service-overview .content a,
 .homepage-service-overview .content a:visited {
   color: var(--text-black);
@@ -297,9 +443,36 @@
 .homepage-focus-tags {
   margin-top: 16px;
   margin-bottom: 0;
-  font-size: 0.9rem;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
   color: var(--text-gray);
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+
+body.homepage-index.homepage-v3 .homepage-service-overview .homepage-focus-tags {
+  margin-top: 46px;
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.25;
+  color: var(--text-black);
+}
+
+body.homepage-index.homepage-v3 .homepage-service-overview .homepage-focus-tags p {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+body.homepage-index.homepage-v3 .homepage-service-overview .homepage-focus-tags p + p {
+  margin-top: 4px;
 }
 
 .select-clients-section {
@@ -751,21 +924,23 @@ img[loading="lazy"] {
 }
 
 .services .service-heading {
+  font-family: var(--font-heading);
   color: var(--text-white);
   text-align: center;
   margin-bottom: 12px;
   font-size: clamp(1.08rem, 1.5vw, 1.26rem);
-  line-height: var(--lh-subheading);
+  font-weight: 400;
+  line-height: 1.05;
   transition: color var(--transition-normal);
 }
 
 .services .service-paragraph {
   color: rgba(255, 255, 255, 0.9);
   text-align: center;
-  line-height: var(--lh-body);
+  line-height: 1.5;
   max-width: 100%;
   margin: 0;
-  font-size: var(--fs-body-sm);
+  font-size: 16px;
   transition: color var(--transition-normal);
 }
 
