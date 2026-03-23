@@ -30,12 +30,6 @@
   inset: auto 0 23vh;
   z-index: 1;
   pointer-events: auto;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 180ms linear;
-}
-
-.homepage-v4 .homepage-v4-hero.homepage-v4-hero-is-active .homepage-v4-hero-heading {
   opacity: 1;
   visibility: visible;
 }
