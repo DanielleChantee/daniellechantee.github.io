@@ -394,7 +394,8 @@
 
 body.homepage-index .homepage-service-overview {
   background: var(--bg-white);
-  padding-top: 28px;
+  padding-top: 52px;
+  padding-bottom: 56px;
 }
 
 body.homepage-index .homepage-service-overview .content {
