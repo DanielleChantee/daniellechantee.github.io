@@ -16,7 +16,7 @@
   </nav>
 </header> -->
 <header>
-  <nav role="navigation" aria-label="Main navigation">
+  <nav aria-label="Main navigation">
     <a href="{{ '/' | relative_url }}" aria-label="Home - Flourish Engineering">
       <div class="logo">
         <img
@@ -26,28 +26,26 @@
       </div>
     </a>
     <!-- Desktop Menu -->
-    <ul class="desktop-menu" role="menubar">
-      <li role="none"><a href="{{ '/' | relative_url }}" role="menuitem">Home</a></li>
-      <li role="none"><a href="{{ '/services/' | relative_url }}" role="menuitem">Services</a></li>
-      <li role="none"><a href="{{ '/about/' | relative_url }}" role="menuitem">About</a></li>
-      <li class="has-mega-menu" role="none">
+    <ul class="desktop-menu">
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/services/' | relative_url }}">Services</a></li>
+      <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+      <li class="has-mega-menu">
         <a
           href="{{ '/work/' | relative_url }}"
-          role="menuitem"
           aria-haspopup="true"
           aria-expanded="false"
           >Work</a
         >
-        <div class="mega-menu" role="menu" aria-label="Work submenu">
+        <div class="mega-menu" aria-label="Work submenu">
           <div class="mega-menu-content">
             <div class="mega-menu-column">
               <h3>Featured Projects</h3>
               <ul role="list">
-                <li role="none">
+                <li>
                   <a
                     href="{{ '/work/#arne' | relative_url }}"
                     class="mega-menu-item"
-                    role="menuitem"
                   >
                     <img
                       src="{{ '/images/Arne-Image.jpg' | relative_url }}"
@@ -57,11 +55,10 @@
                     <span>Arne</span>
                   </a>
                 </li>
-                <li role="none">
+                <li>
                   <a
                     href="{{ '/work/#pets' | relative_url }}"
                     class="mega-menu-item"
-                    role="menuitem"
                   >
                     <img
                       src="{{ '/images/pets-purest-image-square.jpg' | relative_url }}"
@@ -71,11 +68,10 @@
                     <span>Pets Purest</span>
                   </a>
                 </li>
-                <li role="none">
+                <li>
                   <a
                     href="{{ '/work/#esl' | relative_url }}"
                     class="mega-menu-item"
-                    role="menuitem"
                   >
                     <img
                       src="{{ '/images/esl-image-square.jpg' | relative_url }}"
@@ -85,11 +81,10 @@
                     <span>ESL</span>
                   </a>
                 </li>
-                <li role="none">
+                <li>
                   <a
                     href="{{ '/work/#fudge' | relative_url }}"
                     class="mega-menu-item"
-                    role="menuitem"
                   >
                     <img
                       src="{{ '/images/fudge-kitchen-image-square.jpg' | relative_url }}"
@@ -104,26 +99,26 @@
             <div class="mega-menu-column">
               <h3>Project Types</h3>
               <ul role="list">
-                <li role="none">
-                  <a href="{{ '/work/' | relative_url }}" role="menuitem">All Work</a>
+                <li>
+                  <a href="{{ '/work/' | relative_url }}">All Work</a>
                 </li>
-                <li role="none">
-                  <a href="{{ '/work/#pets' | relative_url }}" role="menuitem"
+                <li>
+                  <a href="{{ '/work/#pets' | relative_url }}"
                     >Health and Wellness Stores</a
                   >
                 </li>
-                <li role="none">
-                  <a href="{{ '/work/#fudge' | relative_url }}" role="menuitem"
+                <li>
+                  <a href="{{ '/work/#fudge' | relative_url }}"
                     >Food and Beverage Ecommerce</a
                   >
                 </li>
-                <li role="none">
-                  <a href="{{ '/work/#qidi' | relative_url }}" role="menuitem"
+                <li>
+                  <a href="{{ '/work/#qidi' | relative_url }}"
                     >Consumer Tech and Electronics</a
                   >
                 </li>
-                <li role="none">
-                  <a href="{{ '/work/#adios' | relative_url }}" role="menuitem"
+                <li>
+                  <a href="{{ '/work/#adios' | relative_url }}"
                     >Sustainability-focused Brands</a
                   >
                 </li>
@@ -132,8 +127,8 @@
             <div class="mega-menu-column">
               <h3>View All</h3>
               <ul role="list">
-                <li role="none">
-                  <a href="{{ '/work/' | relative_url }}" class="mega-menu-cta" role="menuitem"
+                <li>
+                  <a href="{{ '/work/' | relative_url }}" class="mega-menu-cta"
                     >Browse Portfolio</a
                   >
                 </li>
@@ -142,46 +137,45 @@
           </div>
         </div>
       </li>
-      <li class="has-mega-menu" role="none">
+      <li class="has-mega-menu">
         <a
           href="{{ '/working-with-me/' | relative_url }}"
-          role="menuitem"
           aria-haspopup="true"
           aria-expanded="false"
           >Working With Me</a
         >
-        <div class="mega-menu" role="menu" aria-label="Working With Me submenu">
+        <div class="mega-menu" aria-label="Working With Me submenu">
           <div class="mega-menu-content">
             <div class="mega-menu-column">
               <h3>Overview</h3>
               <ul role="list">
-                <li role="none">
-                  <a href="{{ '/working-with-me/' | relative_url }}" role="menuitem">Working With Me</a>
+                <li>
+                  <a href="{{ '/working-with-me/' | relative_url }}">Working With Me</a>
                 </li>
               </ul>
             </div>
             <div class="mega-menu-column">
               <h3>Specialist Services</h3>
               <ul role="list">
-                <li role="none"><a href="{{ '/shopify-contractor/' | relative_url }}" role="menuitem">Shopify Contractor</a></li>
-                <li role="none"><a href="{{ '/shopify-theme-developer/' | relative_url }}" role="menuitem">Shopify Theme Developer</a></li>
-                <li role="none"><a href="{{ '/shopify-speed-optimisation/' | relative_url }}" role="menuitem">Shopify Speed Optimisation</a></li>
-                <li role="none"><a href="{{ '/shopify-retainer/' | relative_url }}" role="menuitem">Shopify Retainer</a></li>
+                <li><a href="{{ '/shopify-contractor/' | relative_url }}">Shopify Contractor</a></li>
+                <li><a href="{{ '/shopify-theme-developer/' | relative_url }}">Shopify Theme Developer</a></li>
+                <li><a href="{{ '/shopify-speed-optimisation/' | relative_url }}">Shopify Speed Optimisation</a></li>
+                <li><a href="{{ '/shopify-retainer/' | relative_url }}">Shopify Retainer</a></li>
               </ul>
             </div>
             <div class="mega-menu-column">
               <h3>Additional Services</h3>
               <ul role="list">
-                <li role="none"><a href="{{ '/shopify-plus-developer/' | relative_url }}" role="menuitem">Shopify Plus Developer</a></li>
-                <li role="none"><a href="{{ '/shopify-theme-customisation/' | relative_url }}" role="menuitem">Shopify Theme Customisation</a></li>
-                <li role="none"><a href="{{ '/shopify-development-faqs/' | relative_url }}" role="menuitem">Shopify Development FAQs</a></li>
+                <li><a href="{{ '/shopify-plus-developer/' | relative_url }}">Shopify Plus Developer</a></li>
+                <li><a href="{{ '/shopify-theme-customisation/' | relative_url }}">Shopify Theme Customisation</a></li>
+                <li><a href="{{ '/shopify-development-faqs/' | relative_url }}">Shopify Development FAQs</a></li>
               </ul>
             </div>
           </div>
         </div>
       </li>
-      <li class="nav-contact" role="none">
-        <a href="{{ '/contact/' | relative_url }}" class="contact-cta" role="menuitem">Contact</a>
+      <li class="nav-contact">
+        <a href="{{ '/contact/' | relative_url }}" class="contact-cta">Contact</a>
       </li>
     </ul>
     <!-- Hamburger Menu Button -->
@@ -207,13 +201,13 @@
       <div class="menu-header">
         <button class="close" aria-label="Close menu">&times;</button>
       </div>
-      <ul class="mobile-menu" role="menubar">
-        <li role="none"><a href="{{ '/' | relative_url }}" role="menuitem">Home</a></li>
-        <li role="none"><a href="{{ '/services/' | relative_url }}" role="menuitem">Services</a></li>
-        <li role="none"><a href="{{ '/about/' | relative_url }}" role="menuitem">About</a></li>
-        <li class="mobile-submenu-parent" role="none">
+      <ul class="mobile-menu">
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/services/' | relative_url }}">Services</a></li>
+        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+        <li class="mobile-submenu-parent">
           <div class="mobile-submenu-trigger">
-            <a href="{{ '/work/' | relative_url }}" role="menuitem">Work</a>
+            <a href="{{ '/work/' | relative_url }}">Work</a>
             <button
               type="button"
               class="mobile-submenu-toggle"
@@ -225,16 +219,16 @@
             </button>
           </div>
           <ul id="mobile-submenu-work" class="mobile-submenu" aria-hidden="true">
-            <li role="none"><a href="{{ '/work/' | relative_url }}" role="menuitem">All Work</a></li>
-            <li role="none"><a href="{{ '/work/#pets' | relative_url }}" role="menuitem">Health and Wellness Stores</a></li>
-            <li role="none"><a href="{{ '/work/#fudge' | relative_url }}" role="menuitem">Food and Beverage Ecommerce</a></li>
-            <li role="none"><a href="{{ '/work/#qidi' | relative_url }}" role="menuitem">Consumer Tech and Electronics</a></li>
-            <li role="none"><a href="{{ '/work/#adios' | relative_url }}" role="menuitem">Sustainability-focused Brands</a></li>
+            <li><a href="{{ '/work/' | relative_url }}">All Work</a></li>
+            <li><a href="{{ '/work/#pets' | relative_url }}">Health and Wellness Stores</a></li>
+            <li><a href="{{ '/work/#fudge' | relative_url }}">Food and Beverage Ecommerce</a></li>
+            <li><a href="{{ '/work/#qidi' | relative_url }}">Consumer Tech and Electronics</a></li>
+            <li><a href="{{ '/work/#adios' | relative_url }}">Sustainability-focused Brands</a></li>
           </ul>
         </li>
-        <li class="mobile-submenu-parent" role="none">
+        <li class="mobile-submenu-parent">
           <div class="mobile-submenu-trigger">
-            <a href="{{ '/working-with-me/' | relative_url }}" role="menuitem">Working With Me</a>
+            <a href="{{ '/working-with-me/' | relative_url }}">Working With Me</a>
             <button
               type="button"
               class="mobile-submenu-toggle"
@@ -246,18 +240,18 @@
             </button>
           </div>
           <ul id="mobile-submenu-working-with-me" class="mobile-submenu" aria-hidden="true">
-            <li role="none"><a href="{{ '/working-with-me/' | relative_url }}" role="menuitem">Working With Me</a></li>
-            <li role="none"><a href="{{ '/shopify-contractor/' | relative_url }}" role="menuitem">Shopify Contractor</a></li>
-            <li role="none"><a href="{{ '/shopify-theme-developer/' | relative_url }}" role="menuitem">Shopify Theme Developer</a></li>
-            <li role="none"><a href="{{ '/shopify-speed-optimisation/' | relative_url }}" role="menuitem">Shopify Speed Optimisation</a></li>
-            <li role="none"><a href="{{ '/shopify-retainer/' | relative_url }}" role="menuitem">Shopify Retainer</a></li>
-            <li role="none"><a href="{{ '/shopify-plus-developer/' | relative_url }}" role="menuitem">Shopify Plus Developer</a></li>
-            <li role="none"><a href="{{ '/shopify-theme-customisation/' | relative_url }}" role="menuitem">Shopify Theme Customisation</a></li>
-            <li role="none"><a href="{{ '/shopify-development-faqs/' | relative_url }}" role="menuitem">Shopify Development FAQs</a></li>
+            <li><a href="{{ '/working-with-me/' | relative_url }}">Working With Me</a></li>
+            <li><a href="{{ '/shopify-contractor/' | relative_url }}">Shopify Contractor</a></li>
+            <li><a href="{{ '/shopify-theme-developer/' | relative_url }}">Shopify Theme Developer</a></li>
+            <li><a href="{{ '/shopify-speed-optimisation/' | relative_url }}">Shopify Speed Optimisation</a></li>
+            <li><a href="{{ '/shopify-retainer/' | relative_url }}">Shopify Retainer</a></li>
+            <li><a href="{{ '/shopify-plus-developer/' | relative_url }}">Shopify Plus Developer</a></li>
+            <li><a href="{{ '/shopify-theme-customisation/' | relative_url }}">Shopify Theme Customisation</a></li>
+            <li><a href="{{ '/shopify-development-faqs/' | relative_url }}">Shopify Development FAQs</a></li>
           </ul>
         </li>
-        <li role="none">
-          <a href="{{ '/contact/' | relative_url }}" class="mobile-contact-cta" role="menuitem">Contact</a>
+        <li>
+          <a href="{{ '/contact/' | relative_url }}" class="mobile-contact-cta">Contact</a>
         </li>
       </ul>
     </div>
