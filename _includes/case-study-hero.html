@@ -5,6 +5,7 @@
 {% endcomment %}
 {% assign hero_img = page.hero_image | default: page.image %}
 {% assign hero_subtitle = page.hero_subtitle | default: page.description | default: "Shopify Plus Engineering Case Study" %}
+{% assign hero_title = page.title | split: ' |' | first | replace: ' Store', '' %}
 <section class="case-intro-hero{% if page.hero_image_vertical == 'center' %} case-intro-hero--image-center{% endif %}{% if page.hero_image_vertical_offset == 'lower' %} case-intro-hero--image-lower{% endif %}" aria-label="Project introduction">
   <div class="case-intro-media">
     <img src="{{ hero_img | relative_url }}" alt="{{ page.title }} storefront" loading="eager" />
@@ -18,7 +19,7 @@
           {% endfor %}
         </div>
       {% endif %}
-      <h1>{{ page.title | split: ' |' | first }}</h1>
+      <h1>{{ hero_title }}</h1>
       <p>{{ hero_subtitle }}</p>
     </div>
   </div>
