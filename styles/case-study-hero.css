@@ -147,8 +147,16 @@ body.case-study-page .project-detail .btn:focus-visible {
   object-position: center center;
 }
 
+.case-intro-hero--image-slight-lower .case-intro-media img {
+  object-position: center 36%;
+}
+
 .case-intro-hero--image-lower .case-intro-media img {
   object-position: center 58%;
+}
+
+.case-intro-hero--image-bottom .case-intro-media img {
+  object-position: center bottom;
 }
 
 .case-intro-hero .case-intro-overlay {
