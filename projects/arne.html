@@ -1,110 +1,316 @@
 ---
-layout: default
-title: Arne | Shopify Plus Engineering for High-Volume Commerce
-description: Shopify Plus engineering for Arne focused on revenue-critical delivery, integration-aware architecture, conversion stability, and release-safe execution.
+layout: case-study-v2
+title: Arne | Shopify Plus Case Study
+description: Shopify Plus engineering for Arne—revenue-critical delivery, integration-aware architecture, conversion stability, and release-safe execution on a high-volume storefront.
 image: /images/Arne-Image.jpg
-hero_image: /images/content/arne-main-banner-image.webp
-hero_subtitle: Shopify Plus Engineering for High-Volume Commerce
-hero_pills:
-  - Shopify Plus
-  - Fashion
-  - UK
 type: website
 permalink: /projects/arne/
 ---
 
-{% include case-study-hero.html %}
+<div class="case-study-v2 case-study-v2--arne">
+  <section class="case-v2-intro-hero" data-v2-reveal>
+    <div class="case-v2-intro-media">
+      <img src="{{ '/images/content/arne-main-banner-image.webp' | relative_url }}" alt="Arne storefront introduction" loading="eager" />
+    </div>
+    <div class="case-v2-shell">
+      <div class="case-v2-intro-overlay">
+        <div class="case-v2-pills">
+          <span class="case-v2-pill">Shopify Plus</span>
+          <span class="case-v2-pill">Fashion</span>
+          <span class="case-v2-pill">UK</span>
+        </div>
+        <h1>Arne</h1>
+        <p>Shopify Plus Engineering for High-Volume Commerce</p>
+      </div>
+    </div>
+  </section>
 
-<div class="project-detail">
-  <div class="project-content case-study">
-    <h2>Executive Overview</h2>
-    <p>
-      Arne is a UK multi-8-figure fashion brand operating a high-volume Shopify
-      storefront processing continuous merchandising updates and campaign launches.
-      The engagement focused on strengthening core commerce infrastructure so
-      new features, campaigns, and merchandising updates could ship at pace
-      without destabilising conversion-critical journeys.
-    </p>
+  <section class="case-v2-hero">
+    <div class="case-v2-shell">
+      <div class="case-v2-hero-grid">
+        <div class="case-v2-hero-copy" data-v2-reveal>
+          <h2>Executive Overview</h2>
+          <p>
+            Arne is a UK multi-8-figure fashion brand operating a high-volume Shopify
+            storefront processing continuous merchandising updates and campaign launches.
+            The engagement focused on strengthening core commerce infrastructure so
+            new features, campaigns, and merchandising updates could ship at pace
+            without destabilising conversion-critical journeys.
+          </p>
+        </div>
 
-    <h2>Core Challenge</h2>
-    <p>
-      The environment was integration-heavy and live-trading: theme logic, app
-      behaviour, merchandising rules, bundle logic, and checkout-adjacent flows
-      were tightly coupled, creating high regression risk with every release.
-      The challenge was to deliver change safely under commercial constraints
-      while protecting variant reliability, offer logic, and conversion-path
-      continuity across PLP, PDP, cart, and purchase journeys.
-    </p>
+        <div class="case-v2-hero-media" data-v2-reveal>
+          <div class="case-v2-hero-stack">
+            <div class="case-v2-frame case-v2-frame--hero-main">
+              <img src="{{ '/images/Arne-Image.jpg' | relative_url }}" alt="Arne storefront detail" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <h2>My Role and Ownership</h2>
-    <p>
-      I acted as the lead Shopify implementation owner across theme and
-      platform-facing development. Ownership covered technical scoping,
-      architectural decision-making, implementation, QA hardening, and
-      production readiness across Liquid, frontend interaction logic, app/CMS
-      integrations, and checkout function behaviour.
-    </p>
+      <div class="case-v2-hero-meta" data-v2-reveal>
+        <div class="case-v2-summary">
+          I led Shopify implementation ownership across architecture, scoped delivery,
+          QA hardening, and production readiness, with a focus on preserving revenue
+          paths while enabling faster iteration.
+        </div>
+        <div class="case-v2-meta-grid">
+          <div class="case-v2-meta-item">
+            <span class="case-v2-meta-label">Role</span>
+            <span class="case-v2-meta-value">Lead Shopify implementation owner</span>
+          </div>
+          <div class="case-v2-meta-item">
+            <span class="case-v2-meta-label">Focus</span>
+            <span class="case-v2-meta-value">Theme systems, conversion safety, integration-aware delivery</span>
+          </div>
+          <div class="case-v2-meta-item">
+            <span class="case-v2-meta-label">Outcome</span>
+            <span class="case-v2-meta-value">Safer releases and stronger delivery velocity during live trading</span>
+          </div>
+          <div class="case-v2-meta-item">
+            <span class="case-v2-meta-label">Operating Context</span>
+            <span class="case-v2-meta-value">Multi-8-figure live trading: theme architecture, app/CMS workflows, checkout-adjacent behaviour</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h2>Operating Context</h2>
-    <p>
-      This engagement was delivered inside a multi-8-figure live-trading
-      environment with continuous release pressure. Ownership covered
-      conversion-critical storefront systems across theme architecture,
-      app/CMS-connected workflows, and checkout function behaviour.
-    </p>
+  <section>
+    <div class="case-v2-shell">
+      <div class="case-v2-lean-proof-grid">
+        <div class="case-v2-lean-proof-copy" data-v2-reveal>
+          <p class="case-v2-meta-label">Core Challenge</p>
+          <h2>Deliver change safely in an integration-heavy, always-on storefront.</h2>
+          <p>
+            The environment was integration-heavy and live-trading: theme logic, app
+            behaviour, merchandising rules, bundle logic, and checkout-adjacent flows
+            were tightly coupled, creating high regression risk with every release.
+            The challenge was to deliver change safely under commercial constraints
+            while protecting variant reliability, offer logic, and conversion-path
+            continuity across PLP, PDP, cart, and purchase journeys.
+          </p>
+          <ul>
+            <li>Every release had to protect browse-to-buy reliability when theme, app, and merchandising layers moved together.</li>
+            <li>Variant and offer-state behaviour had to stay predictable across collection, product, cart, and checkout-adjacent flows.</li>
+            <li>Campaign and merchandising velocity could not depend on brittle, one-off theme logic.</li>
+            <li>Work had to stay coherent across theme, app, CMS, and experimentation surfaces without trading away conversion stability.</li>
+          </ul>
+        </div>
+        <div class="case-v2-lean-proof-media" data-v2-reveal>
+          <div class="case-v2-frame case-v2-frame--proof">
+            <img
+              src="{{ '/images/content/Arne-product-page.png' | relative_url }}"
+              alt="Arne product detail page"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h2>Architectural Contributions</h2>
-    <h3>Commerce Journey Reliability</h3>
-    <ul>
-      <li>Hardened browse-to-buy behaviour across PLP, PDP, offer flows, and cart interactions, resolving variant-state inconsistencies and modal instability that previously introduced friction.</li>
-      <li>Stabilised back-in-stock and promotional offer logic so behaviour remained predictable under real customer journeys and merchandising updates.</li>
-    </ul>
+  <section>
+    <div class="case-v2-shell">
+      <div class="case-v2-lean-gallery" data-v2-reveal>
+        <div class="case-v2-frame case-v2-frame--gallery-primary">
+          <img
+            src="{{ '/images/content/Arne-Circuit-Trainer-collection-page-mini-cart.png' | relative_url }}"
+            alt="Arne Circuit Trainer collection page with mini cart open"
+            loading="lazy"
+          />
+        </div>
+        <div class="case-v2-frame case-v2-frame--gallery-secondary">
+          <img
+            src="{{ '/images/content/arne-app-cms-countdown-timer.png' | relative_url }}"
+            alt="Arne app and CMS implementation detail"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h3>Merchandising and Content Infrastructure</h3>
-    <ul>
-      <li>Expanded reusable section/template capability for faster campaign and product storytelling updates.</li>
-      <li>Delivered high-fidelity design-to-code implementation without compromising editor usability.</li>
-      <li>Improved merchandising autonomy through more robust, maintainable theme structures.</li>
-    </ul>
+  <section>
+    <div class="case-v2-shell">
+      <div class="case-v2-role-context" data-v2-reveal>
+        <h2 class="case-v2-role-context__title">My role and operating context</h2>
+        <div class="case-v2-role-context__body">
+          <div class="case-v2-role-context__block">
+            <h3>My role and ownership</h3>
+            <p>
+              I acted as the lead Shopify implementation owner across theme and
+              platform-facing development. Ownership covered technical scoping,
+              architectural decision-making, implementation, QA hardening, and
+              production readiness across Liquid, frontend interaction logic, app/CMS
+              integrations, and checkout function behaviour.
+            </p>
+          </div>
+          <div class="case-v2-role-context__block">
+            <h3>Operating context</h3>
+            <p>
+              This engagement was delivered inside a multi-8-figure live-trading
+              environment with continuous release pressure. Ownership covered
+              conversion-critical storefront systems across theme architecture,
+              app/CMS-connected workflows, and checkout function behaviour.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h3>Integration-Aware Delivery</h3>
-    <ul>
-      <li>Delivered Shopify app and CMS integration work aligned with mobile-app commerce workflows, ensuring cross-surface behavioural consistency.</li>
-      <li>Implemented checkout function logic to support evolving commercial rules without introducing theme-layer fragility.</li>
-      <li>Maintained system coherence across theme, app, and experimentation layers in a live trading context.</li>
-    </ul>
+  <section>
+    <div class="case-v2-shell">
+      <div class="case-v2-lean-gallery" data-v2-reveal>
+        <div class="case-v2-frame case-v2-frame--gallery-primary">
+          <img
+            src="{{ '/images/content/Arne-trainers-banner.webp' | relative_url }}"
+            alt="Arne trainers campaign banner"
+            loading="lazy"
+          />
+        </div>
+        <div class="case-v2-frame case-v2-frame--gallery-secondary">
+          <img
+            src="{{ '/images/content/Arne-mens-activewear-banner.webp' | relative_url }}"
+            alt="Arne mens activewear campaign banner"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h3>Performance and Release Safety</h3>
-    <ul>
-      <li>Delivered targeted asset and template-level optimisations across key commerce surfaces.</li>
-      <li>Prioritised release-safe implementation decisions to preserve conversion stability during rapid iteration.</li>
-      <li>Maintained architectural discipline to support long-term roadmap velocity rather than short-term patching.</li>
-    </ul>
+  <section>
+    <div class="case-v2-shell">
+      <div class="case-v2-text-split">
+        <div class="case-v2-section-heading" data-v2-reveal>
+          <p class="case-v2-meta-label">Architectural contributions</p>
+          <h2>What the work covered</h2>
+        </div>
+        <div data-v2-reveal>
+          <p>
+            Delivery spanned theme architecture, integration-aware frontend work,
+            checkout and conversion-path hardening, and performance-aware decisions
+            aimed at roadmap velocity rather than short-term patching.
+          </p>
+        </div>
+      </div>
 
-    <h2>Business and Commercial Outcomes</h2>
-    <p>
-      The outcome was a more resilient commerce system: stable conversion paths
-      under continuous iteration, safer releases during high-volume
-      merchandising cycles, and improved internal delivery velocity. The
-      engagement strengthened revenue-critical infrastructure rather than
-      introducing isolated features.
-    </p>
+      <div class="case-v2-lean-card-grid case-v2-lean-card-grid--arne-four" data-v2-reveal>
+        <article class="case-v2-lean-card">
+          <p class="case-v2-meta-label">01</p>
+          <h3>Commerce journey reliability</h3>
+          <ul class="case-v2-lean-card-list">
+            <li>Hardened browse-to-buy behaviour across PLP, PDP, offer flows, and cart; addressed variant-state inconsistencies and modal instability that had introduced friction.</li>
+            <li>Stabilised back-in-stock and promotional offer logic so behaviour stayed predictable under real customer journeys and merchandising updates.</li>
+          </ul>
+        </article>
+        <article class="case-v2-lean-card">
+          <p class="case-v2-meta-label">02</p>
+          <h3>Merchandising and content infrastructure</h3>
+          <ul class="case-v2-lean-card-list">
+            <li>Expanded reusable section and template capability for faster campaign and product storytelling.</li>
+            <li>Delivered high-fidelity design-to-code work without compromising editor usability or maintainability.</li>
+          </ul>
+        </article>
+        <article class="case-v2-lean-card">
+          <p class="case-v2-meta-label">03</p>
+          <h3>Integration-aware delivery</h3>
+          <ul class="case-v2-lean-card-list">
+            <li>Shopify app and CMS integration work aligned with mobile-app commerce workflows and cross-surface behavioural consistency.</li>
+            <li>Checkout function logic to support evolving commercial rules without introducing theme-layer fragility.</li>
+          </ul>
+        </article>
+        <article class="case-v2-lean-card">
+          <p class="case-v2-meta-label">04</p>
+          <h3>Performance and release safety</h3>
+          <ul class="case-v2-lean-card-list">
+            <li>Targeted asset and template-level optimisations across key commerce surfaces.</li>
+            <li>Release-safe implementation choices and architectural discipline to protect conversion stability during rapid iteration.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
 
-    <h2>Why This Matters</h2>
-    <p>
-      High-growth Shopify brands require engineering ownership that protects
-      revenue-critical journeys while enabling speed. This engagement reflects
-      Shopify Plus-level engineering: systems thinking, integration awareness,
-      checkout and variant reliability, experimentation readiness, and disciplined
-      execution in live commercial environments.
-    </p>
+  <section>
+    <div class="case-v2-shell">
+      <div class="case-v2-wide-image case-v2-wide-image--arne" data-v2-reveal>
+        <img
+          src="{{ '/images/content/mens-jeans-collection-page.png' | relative_url }}"
+          alt="Arne mens jeans collection page"
+          loading="lazy"
+          style="object-position: center 22%;"
+        />
+      </div>
+    </div>
+  </section>
 
-    <a
-      href="https://arneclo.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="btn"
-      >Visit Site</a
-    >
-  </div>
+  <section>
+    <div class="case-v2-shell">
+      <div class="case-v2-wide-image case-v2-wide-image--arne" data-v2-reveal>
+        <img
+          src="{{ '/images/Banners/arne-mobile-app-overview.jpg' | relative_url }}"
+          alt="Arne mobile app: home, collection, product, and ARNE Bites screens"
+          loading="lazy"
+          style="object-position: center 18%;"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="case-v2-shell">
+      <div class="case-v2-lean-closing" data-v2-reveal>
+        <div class="case-v2-text-split">
+          <div class="case-v2-section-heading">
+            <p class="case-v2-meta-label">Business outcome</p>
+            <h2>A more resilient commerce system built for continued growth.</h2>
+          </div>
+          <div>
+            <p>
+              The outcome was a more resilient commerce system: stable conversion paths
+              under continuous iteration, safer releases during high-volume
+              merchandising cycles, and improved internal delivery velocity. The
+              engagement strengthened revenue-critical infrastructure rather than
+              introducing isolated features.
+            </p>
+            <p class="case-v2-meta-label case-v2-lean-closing__why-label">Why this matters</p>
+            <p class="case-v2-lean-closing__why">
+              High-growth Shopify brands need engineering ownership that protects
+              revenue-critical journeys while enabling speed. This engagement reflects
+              Shopify Plus–level work: systems thinking, integration awareness,
+              checkout and variant reliability, experimentation readiness, and disciplined
+              execution in live commercial environments.
+            </p>
+          </div>
+        </div>
+
+        <div class="case-v2-lean-card-grid">
+          <article class="case-v2-lean-card">
+            <p class="case-v2-meta-label">01</p>
+            <h3>Faster iteration</h3>
+            <p>Better structure for campaign, merchandising, and product-storytelling delivery.</p>
+          </article>
+          <article class="case-v2-lean-card">
+            <p class="case-v2-meta-label">02</p>
+            <h3>Safer releases</h3>
+            <p>Reduced risk around offer logic, variant state, and integrated storefront behaviour.</p>
+          </article>
+          <article class="case-v2-lean-card">
+            <p class="case-v2-meta-label">03</p>
+            <h3>Longer-term maintainability</h3>
+            <p>Implementation decisions designed to support scaling rather than create future cleanup work.</p>
+          </article>
+        </div>
+
+        <div class="case-v2-footer-cta">
+          <a href="https://arneclo.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Site</a>
+          <a href="{{ '/work/' | relative_url }}" class="btn btn-secondary">View Work</a>
+          <a href="{{ '/contact/' | relative_url }}" class="btn btn-secondary">Start a Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
