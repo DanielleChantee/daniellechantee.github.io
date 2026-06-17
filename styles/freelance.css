@@ -1,0 +1,58 @@
+/* Styles specific to the /freelance/ section */
+.contact-cta, .mobile-contact-cta {
+  background: #0b6b5b;
+  color: #fff;
+  border-radius: 6px;
+  padding: 10px 14px;
+}
+
+.freelance-profile {
+  padding: 3rem 0;
+}
+
+.freelance-profile-inner {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.freelance-profile-image {
+  width: min(240px, 100%);
+}
+
+.freelance-profile-image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  border: 4px solid #ffffff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.freelance-profile-copy .profile-label {
+  margin: 0 0 0.75rem;
+  color: #0b6b5b;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.85rem;
+}
+
+.freelance-profile-copy h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .freelance-profile-inner {
+    grid-template-columns: 1fr;
+  }
+  .freelance-profile-image {
+    margin: 0 auto;
+  }
+}
+
+/* Small tweak to ensure freelance header spacing */
+header nav .logo img {
+  max-height: 36px;
+}

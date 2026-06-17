@@ -69,13 +69,20 @@
     />
     <link rel="manifest" href="{{ "/manifest.json" | relative_url }}">
     <meta name="theme-color" content="#000000">
-    <title>{{ page.title }}</title>
+    {% if current_path contains '/freelance/' %}
+      <title>{{ page.title }} | UK freelance Shopify developer</title>
+    {% else %}
+      <title>{{ page.title }}</title>
+    {% endif %}
     <!-- CSS Variables - must load first -->
     <link rel="stylesheet" href="{{ "/styles/variables.css" | relative_url }}">
     <!-- Base styles (buttons, content-section, etc.) -->
     <link rel="stylesheet" href="{{ "/styles/style.css" | relative_url }}">
     <link rel="stylesheet" href="{{ "/styles/header.css" | relative_url }}">
     <link rel="stylesheet" href="{{ "/styles/footer.css" | relative_url }}">
+    {% if current_path contains '/freelance/' %}
+    <link rel="stylesheet" href="{{ '/styles/freelance.css' | relative_url }}">
+    {% endif %}
     <!-- Page-specific styles last so they can override base -->
     {% include styles.html %}
     {% if page.url contains '/projects/' %}
