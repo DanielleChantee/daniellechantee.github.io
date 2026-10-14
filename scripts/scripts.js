@@ -365,12 +365,15 @@ document.addEventListener("DOMContentLoaded", function () {
    * Homepage brands carousel controls
    */
   try {
-    const brandsCarousel = document.querySelector("[data-brands-carousel]");
-    const brandsTrack = document.querySelector("[data-brands-track]");
-    const brandsPrev = document.querySelector("[data-brands-prev]");
-    const brandsNext = document.querySelector("[data-brands-next]");
+    document.querySelectorAll("[data-brands-carousel]").forEach((brandsCarousel) => {
+      const brandsTrack = brandsCarousel.querySelector("[data-brands-track]");
+      const brandsPrev = brandsCarousel.querySelector("[data-brands-prev]");
+      const brandsNext = brandsCarousel.querySelector("[data-brands-next]");
 
-    if (brandsCarousel && brandsTrack && brandsPrev && brandsNext) {
+      if (!brandsTrack || !brandsPrev || !brandsNext) {
+        return;
+      }
+
       const getScrollAmount = () => {
         const firstSlide = brandsTrack.querySelector(".brands-slide");
         if (!firstSlide) {
@@ -405,8 +408,6 @@ document.addEventListener("DOMContentLoaded", function () {
           isDragging = false;
           startX = event.clientX;
           startScrollLeft = brandsTrack.scrollLeft;
-          brandsTrack.classList.add("is-dragging");
-          brandsTrack.setPointerCapture(event.pointerId);
         });
 
         brandsTrack.addEventListener("pointermove", (event) => {
@@ -414,8 +415,13 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
           }
           const deltaX = event.clientX - startX;
-          if (Math.abs(deltaX) > 4) {
+          if (!isDragging && Math.abs(deltaX) > 4) {
             isDragging = true;
+            brandsTrack.classList.add("is-dragging");
+            brandsTrack.setPointerCapture(event.pointerId);
+          }
+          if (!isDragging) {
+            return;
           }
           brandsTrack.scrollLeft = startScrollLeft - deltaX;
         });
@@ -451,7 +457,7 @@ document.addEventListener("DOMContentLoaded", function () {
           true,
         );
       }
-    }
+    });
   } catch (error) {
     console.error("Error initializing brands carousel:", error);
   }

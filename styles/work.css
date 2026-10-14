@@ -1044,3 +1044,19 @@ body {
   background: var(--bg-black);
   color: var(--text-white);
 }
+
+.work-client-carousel .brands-slide img {
+  aspect-ratio: 1 / 1;
+}
+
+.clients.content-section.work-client-carousel .content {
+  padding-bottom: 0;
+}
+
+.clients.content-section.work-client-carousel .content p {
+  margin-bottom: 0;
+}
+
+.work-client-carousel .brands-carousel {
+  margin-top: 16px;
+}
