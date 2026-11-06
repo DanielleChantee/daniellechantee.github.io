@@ -42,4 +42,4 @@ If most answers are yes, one store is usually simpler. If most are no, separate 
 
 Whichever you choose, the store should be built with the differences between countries in mind from the start. Adding them later costs more.
 
-If you are weighing this up, [get in touch](/contact/) with the countries you sell to and what you sell, and I can help you decide. You can also read about my [Shopify Plus work](/shopify-plus-developer/).
+If you are weighing this up, [get in touch](/contact/) with the countries you sell to and what you sell, and I can help you decide. You can also read about my work on [multi-country Shopify stores](/shopify-multi-country-developer/) and [B2B selling](/shopify-b2b-developer/).

@@ -34,4 +34,4 @@ For the first couple of months, someone should be keeping an eye on your search 
 
 ## Planning a move?
 
-I work directly with store owners on moving to Shopify and Shopify Plus. Have a look at my [Shopify Plus work](/shopify-plus-developer/), or [get in touch](/contact/) to talk through your move.
+I work directly with store owners on moving to Shopify and Shopify Plus. See my [Shopify migration developer](/shopify-migration-developer/) page, or [get in touch](/contact/) to talk through your move.
