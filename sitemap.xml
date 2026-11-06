@@ -7,7 +7,7 @@ layout: null
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-{% assign excluded = "/404.html,/portfolio/404.html,/sitemap.xml,/google1d7ad659e91554b5.html" | split: "," %}
+{% assign excluded = "/404.html,/portfolio/404.html,/portfolio/404/,/portfolio/,/sitemap.xml,/google1d7ad659e91554b5.html,/2024/11/23/my-first-post/" | split: "," %}
 {% for page in site.html_pages %}
   {% if page.url and excluded contains page.url %}
   {% else %}
@@ -20,11 +20,11 @@ layout: null
   {% endif %}
 {% endfor %}
 {% for post in site.posts %}
-  {% if post.url %}
+  {% unless excluded contains post.url %}
 <url>
   <loc>{{ site.url }}{{ site.baseurl }}{{ post.url | replace: 'index.html', '' | xml_escape }}</loc>
   <lastmod>{{ post.date | default: site.time | date_to_xmlschema }}</lastmod>
 </url>
-  {% endif %}
+  {% endunless %}
 {% endfor %}
 </urlset>
