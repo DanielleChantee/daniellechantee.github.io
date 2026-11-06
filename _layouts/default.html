@@ -9,6 +9,9 @@
       name="description"
       content="{% if page.description %}{{ page.description | escape }}{% else %}Danielle Adeyemo, Shopify Plus engineer delivering theme architecture, app integrations, checkout functions, and conversion-aware storefront implementation for high-growth ecommerce brands.{% endif %}"
     />
+    {% if page.robots %}
+    <meta name="robots" content="{{ page.robots | escape }}" />
+    {% endif %}
 
     <!-- Canonical URL -->
     {% assign base_url = site.url | append: site.baseurl %}

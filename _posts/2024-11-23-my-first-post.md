@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "My First Post"
+robots: noindex, follow
 date: 2024-11-23
 author: Danielle
 categories: [web development, portfolio]
