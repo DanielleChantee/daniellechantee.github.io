@@ -1,6 +1,27 @@
-<!-- title: -->
-<!-- Shopify Tips & Insights | Store Optimisation, Themes & SEO Strategies -->
-<!-- Description: -->
-<!-- Read the latest insights from Danielle Adeyemo, a Shopify Developer. Learn about
-custom themes, app integrations, Shopify development tips, and e-commerce best
-practices. -->
+---
+layout: default
+title: Shopify Plus Articles | Hiring, Migrations and Multi-Country Stores
+description: Plain-English Shopify Plus articles for store owners on hiring a developer, moving platforms and selling in more than one country.
+permalink: /blog/
+---
+
+<div class="client-work-image-banner image-banner">
+  <div class="image-banner-content">
+    <h1>Articles</h1>
+    <h2>Plain-English Shopify advice for store owners</h2>
+  </div>
+</div>
+
+<section class="about content-section article">
+  <div class="content article-list">
+    {% for post in site.posts %}
+      {% unless post.robots contains "noindex" %}
+    <article class="article-card">
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      <p>{{ post.description }}</p>
+      <a class="article-card-link" href="{{ post.url | relative_url }}">Read the article</a>
+    </article>
+      {% endunless %}
+    {% endfor %}
+  </div>
+</section>
